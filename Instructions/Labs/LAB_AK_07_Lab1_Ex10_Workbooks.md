@@ -62,7 +62,7 @@ In dieser Aufgabe speichern und ändern Sie eine Arbeitsmappenvorlage.
 
 1. Ändern Sie den Wert für *Säulenrenderer* auf **Wärmebild**. Scrollen Sie für *Farbpalette* nach unten und wählen Sie **32-Farben kategorisch**aus.
 
-1. Wählen Sie **Speichern und schließen** aus. Beachten Sie die Änderung in der Spalte *Aktivitäten*.
+1. Wählen Sie **Speichern und Schließen**. Beachten Sie die Änderung in der Spalte *Aktivitäten*.
 
 1. Wählen Sie **Bearbeitung abgeschlossen** am unteren Rand der Abfrage (nicht im oberen Menü) aus.
 

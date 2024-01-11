@@ -1,4 +1,4 @@
-# Modul 6: Erstellen von Erkennungen und Durchführen von Untersuchungen mithilfe von Microsoft Sentinel
+# Modul 6: Erstellen von Erkennungen und Durchführen von Untersuchungen mithilfe von Microsoft Sentinel
 
 **Hinweis:** Der erfolgreiche Abschluss dieser Demo hängt davon ab, dass Sie alle Schritte im [Dokument „Voraussetzungen“](00-prerequisites.md) abschließen. 
 
@@ -10,18 +10,18 @@ In dieser Aufgabe erstellen Sie eine NRT-Analyseabfrageregel (Near Real Time).
 
 1. Wählen Sie die Registerkarte **Erstellen** und dann **NRT-Abfrageregel** aus.
 
-1. Dadurch wird der Assistent für Analyseregeln geöffnet. Für den Registerkartentyp *Allgemein*:
+1. Dadurch wird der Assistent für Analyseregeln geöffnet. Für die Registerkarte *Allgemein* geben Sie ein:
 
     |Einstellung|Wert|
     |---|---|
     |Name|**NRT PowerShell Hunt**|
     |Beschreibung|**NRT PowerShell Hunt**|
     |Taktiken und Techniken|**Command-and-Control**|
-    |severity|**Hoch**|
+    |Severity|**Hoch**|
 
-1. Wählen Sie die Schaltfläche **Weiter: Regellogik festlegen >** aus. 
+1. Klicken Sie auf die Schaltfläche **Weiter: Regellogik festlegen >**. 
 
-1. Geben Sie für*Regelabfrage* die folgende KQL-Anweisung ein:
+1. Geben Sie die folgende KQL-Anweisung für die *Regelabfrage* ein:
 
     ```KQL
     let lookback = 2d; 
@@ -33,17 +33,17 @@ In dieser Aufgabe erstellen Sie eine NRT-Analyseabfrageregel (Near Real Time).
     | summarize min(TimeGenerated), count() by Computer, SubjectUserName, PwshParam
     ```
 
-1. Wählen Sie **Abfrageergebnisse anzeigen >** aus, um sicherzustellen, dass ihre Abfrage keine Fehler aufweist.
+1. Wählen Sie **Abfrageergebnisse anzeigen >** aus, um sicherzustellen, dass Ihre Abfrage keine Fehler enthält.
 
-1. Schließen Sie das Fenster *Protokolle*, indem Sie oben rechts im Fenster das **X** auswählen und auf **OK** klicken, um die Änderungen zu verwerfen. 
+1. Schließen Sie das Fenster *Protokolle*, indem Sie oben rechts im Fenster auf **X** klicken und dann auf **OK**, um die Änderungen zu verwerfen. 
 
-1. Wählen Sie **Testen mit aktuellen Daten** unter *Ergebnissimulation* aus. Beachten Sie die erwartete Anzahl von *Benachrichtigungen pro Tag*.
+1. Wählen Sie **Test mit aktuellen Daten** unter *Ergebnissimulation* aus. Beachten Sie die erwartete Anzahl von *Warnungen pro Tag*.
 
 1. Wählen Sie unter *Entitätszuordnung* Folgendes aus:
 
-    - Wählen Sie für die Dropdownliste *Entitätstyp* die Option **Host** aus.
-    - Wählen Sie für die Dropdownliste *Bezeichner* die Option **Hostname** aus.
-    - Wählen Sie für die Dropdownliste *Wert* die Option **Computer** aus.
+    - In der Dropdownliste *Entitätstyp* wählen Sie **Host** aus.
+    - In der Dropdownliste *Bezeichner* wählen Sie **HostName** aus.
+    - In der Dropdownliste *Wert* wählen Sie **Computer** aus.
 
 1. Scrollen Sie nach unten, und wählen Sie die Schaltfläche **Weiter: Incidenteinstellungen >** aus.
 
@@ -61,9 +61,9 @@ In dieser Aufgabe untersuchen Sie den Incident, der anhand der von Ihnen erstell
 
 1. Navigieren Sie im Edge-Browser zum Azure-Portal unter https://portal.azure.com.
 
-1. Kopieren Sie im Dialogfeld **Anmelden** das **Mandanten-E-Mail**-Konto für den Administrator, das von Ihrem Labhostinganbieter bereitgestellt wird, und fügen Sie es ein, und wählen Sie dann ** Weiter** aus.
+1. Kopieren Sie im Dialogfeld **Anmelden** das **Mandanten-E-Mail**-Konto für den Administrator, das von Ihrem Labhostinganbieter bereitgestellt wird, und fügen Sie es ein, und wählen Sie dann **Weiter**aus.
 
-1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das **Mandantenkennwort** für den Administrator, das von Ihrem Labhostinganbieter bereitgestellt wird, und fügen es ein, und wählen Sie dann **Anmelden** aus.
+1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das **Kennwort des Mandanten**, das Sie von Ihrem Labhostinganbieter erhalten haben, und fügen Sie es ein. Wählen Sie dann **Anmelden**.
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Sentinel* ein, und wählen Sie dann ** Microsoft Sentinel** aus.
 

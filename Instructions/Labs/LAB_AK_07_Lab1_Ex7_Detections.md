@@ -76,7 +76,7 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den ersten Angriff der vorhe
     |Name|Startup RegKey|
     |Beschreibung|Startup RegKey in c:\temp|
     |Taktik|Persistenz|
-    |severity|High|
+    |Severity|Hoch|
 
 1. Klicken Sie auf die Schaltfläche **Weiter: Regellogik festlegen >**.
 
@@ -180,7 +180,7 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den zweiten Angriff aus der 
     |Name|**SecurityEvent Benutzer*in zu „Lokale Administratoren“ hinzufügen**|
     |Beschreibung|**Benutzer*in zur Gruppe „Lokale Administratoren“ hinzugefügt**|
     |Taktik|**Rechteausweitung**|
-    |severity|**Hoch**|
+    |Severity|**Hoch**|
 
 1. Klicken Sie auf die Schaltfläche **Weiter: Regellogik festlegen >**. 
 

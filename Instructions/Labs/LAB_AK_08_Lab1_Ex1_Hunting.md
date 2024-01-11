@@ -143,7 +143,7 @@ In dieser Aufgabe erstellen Sie anstelle eines LiveStreams eine NRT-Analyseabfra
     |Name|**NRT PowerShell Hunt**|
     |Beschreibung|**NRT PowerShell Hunt**|
     |Taktik|**Command-and-Control**|
-    |severity|**Hoch**|
+    |Severity|**Hoch**|
 
 1. Klicken Sie auf die Schaltfläche **Weiter: Regellogik festlegen >**. 
 

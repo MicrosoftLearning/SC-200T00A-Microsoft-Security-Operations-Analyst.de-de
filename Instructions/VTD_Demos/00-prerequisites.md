@@ -2,7 +2,7 @@
 # Microsoft Security Operations Analyst
 Leitfaden zur Vorbereitung des Kursleiters
 
-## Purpose
+## Zweck
 
 Dieses Dokument richtet sich an Referenten, die sich auf die Teilnahme am Microsoft Security Virtual Training Day für `Defend Against Threats with Extended Detection and Response` und `Configure Security Operations Using Microsoft Sentinel` vorbereiten. Dieses Material ist eine Teilmenge des SC-200: Microsoft Security Operations Analyst Zertifizierungskurs.
 
@@ -108,7 +108,7 @@ In dieser Aufgabe konfigurieren Sie Rollen für die Verwendung mit Gerätegruppe
 
 1. Auf der Registerkarte „Zugewiesene Benutzergruppen“. Wählen Sie **sg-IT** und dann **Ausgewählte Gruppen hinzufügen** aus.
 
-1. Klicken Sie auf **Speichern**.
+1. Wählen Sie **Speichern**.
 
 ### Konfigurieren von Gerätegruppen
 

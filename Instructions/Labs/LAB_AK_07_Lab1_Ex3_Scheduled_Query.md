@@ -92,7 +92,7 @@ In dieser Aufgabe erstellen Sie eine geplante Abfrage und verbinden diese mit de
 
 1. Wählen Sie die Schaltfläche **Weiter: Überprüfen und erstellen >** aus.
   
-1. Klicken Sie auf **Speichern**.
+1. Wählen Sie **Speichern**.
 
 
 ### Aufgabe 2: Testen der neuen Regel

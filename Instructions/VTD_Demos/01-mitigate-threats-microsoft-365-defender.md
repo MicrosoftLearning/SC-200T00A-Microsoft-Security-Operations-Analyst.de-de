@@ -8,7 +8,7 @@ In dieser Aufgabe machen Sie sich mit den Funktionen des Microsoft 365 Defender-
 
 - Home (Dashboard)
 - Incidents und Warnungen
-- Hunting
+- Suche
 - Info-Center
 - Bedrohungsanalyse
 - Sicherheitsbewertung

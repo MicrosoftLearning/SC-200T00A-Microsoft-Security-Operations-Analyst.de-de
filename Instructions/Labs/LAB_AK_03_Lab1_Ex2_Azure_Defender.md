@@ -35,7 +35,7 @@ In dieser Aufgabe überprüfen Sie die Konfiguration der Einhaltung gesetzlicher
 
 1. Wählen Sie in der Symbolleiste **Verwalten von Konformitätsrichtlinien** aus.
 
-1. Wählen Sie Ihr Abonnementaus.
+1. Wählen Sie Ihr Abonnement aus.
 
 1. Wählen Sie unter *Richtlinieneinstellungen* im Portalmenü die Option **Sicherheitsrichtlinie** aus.
 

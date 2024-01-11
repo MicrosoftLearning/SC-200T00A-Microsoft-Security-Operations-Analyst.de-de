@@ -25,7 +25,7 @@ In dieser Aufgabe erstellen Sie eine Watchlist.
     Host5
     ```
 
-1. Wählen Sie aus dem Menü **Datei – Speichern unter** aus, benennen Sie die Datei `HighValue.csv`.  Ändern Sie dann den Dateityp in **Alle Dateien(*.*)**.  Wählen Sie dann **Speichern** aus.
+1. Wählen Sie aus dem Menü **Datei – Speichern unter** aus, benennen Sie die Datei `HighValue.csv`.  Ändern Sie dann den Dateityp in **Alle Dateien(*.*)**.  Klicken Sie dann auf **Speichern**.
 
 1. Schließen Sie den Editor.
 
