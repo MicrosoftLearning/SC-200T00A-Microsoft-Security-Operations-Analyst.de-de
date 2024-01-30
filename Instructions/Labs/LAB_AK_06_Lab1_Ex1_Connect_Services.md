@@ -37,7 +37,7 @@ In dieser Aufgabe greifen Sie auf Ihren Microsoft Sentinel-Arbeitsbereich zu.
 
 1. Wählen Sie *Vorfälle basierend auf Microsoft Defender for Cloud erstellen* in den Regelvorlagen aus.
 
-1. Wählen Sie im Connector-Informations-Blatt **Regel erstellen** aus.
+1. Wählen Sie im Regelinformationsbereich **Regel erstellen** aus, oder wählen Sie die Auslassungspunkte (...) und dann **+ Regel erstellen** aus.
 
 1. Wählen Sie im Assistenten für Analyseregeln **Weiter: Automatisierte Antwort** und dann **Weiter: Prüfen und erstellen** aus.
 

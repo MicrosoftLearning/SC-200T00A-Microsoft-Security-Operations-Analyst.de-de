@@ -37,22 +37,23 @@ In dieser Aufgabe überprüfen Sie die Konfiguration der Einhaltung gesetzlicher
 
 1. Wählen Sie Ihr Abonnement aus.
 
-1. Wählen Sie unter *Richtlinieneinstellungen* im Portalmenü die Option **Sicherheitsrichtlinie** aus.
+    >**Hinweis:** Wenn Sie über eine Hierarchie von Verwaltungsgruppen verfügen, wählen Sie **Alle erweitern** aus, um Ihr Abonnement zu finden.
 
-1. Scrollen Sie nach unten und sehen Sie sich die „Branchen- und gesetzlichen Standards“ an, die Ihnen standardmäßig zur Verfügung stehen. Beachten Sie, dass *ISO 27001* inzwischen veraltet ist.
+1. Wählen Sie im Portalmenü unter *Einstellungen* die Option **Sicherheitsrichtlinie** aus.
 
-1. Wählen Sie **Weitere Normen hinzufügen**, um die aktualisierte Norm ISO 27001:2013 hinzuzufügen.
+1. Scrollen Sie nach unten, und überprüfen Sie die standardmäßig für Sie verfügbaren „Sicherheitsstandards“.
 
-1. Klicken Sie auf die Schaltfläche **Hinzufügen** rechts neben *ISO 27001:2013*.
+1. Verwenden Sie das Suchfeld, um *ISO 27001:2013* zu finden.
 
-1. Eine neue Seite für die Zuordnung der Azure-Richtlinieninitiative wird geöffnet. Bestätigen Sie, dass Ihr Abonnement unter *Geltungsbereich* ausgewählt ist und klicken Sie auf **Überprüfen und erstellen**.
+1. Schalten Sie den Schieberegler**Status** rechts neben *ISO 27001:2013* auf **Ein** um.
 
-1. Wählen Sie **Erstellen** aus, um die Azure-Richtlinieninitiative Ihrem Abonnement zuzuweisen.
+    >**Hinweis:** Einige Standards erfordern die Zuweisung einer Azure Policy-Initiative.
 
-1. Wählen Sie Microsoft Defender for Cloud unter dem Suchfeld, um zum Hauptblatt zurückzukehren.
+1. Wählen Sie im Seitenmenü **Aktualisieren** aus, um zu bestätigen, dass *ISO 27001:2013* für Ihr Abonnement auf *Ein* festgelegt wird.
+
+1. Schließen Sie die Seite *Sicherheitsrichtlinien*, indem Sie rechts oben auf der Seite das „X“ auswählen, um zu den **Umgebungseinstellungen** zurückzukehren.
 
     >**Hinweis:** Möglicherweise möchten Sie zu einem späteren Zeitpunkt zu *Einhaltung gesetzlicher Bestimmungen* zurückkehren, um die neuen Standardkontrollen und Empfehlungen zu überprüfen.
-
 
 ### Aufgabe 2: Erkunden von Sicherheitsstatus und Empfehlungen
 

@@ -581,97 +581,97 @@ In dieser Aufgabe führen Sie Angriffe auf einen Host aus, auf dem Microsoft Def
 1. Geben Sie bei der Suche in der Taskleiste *Befehl* ein.  Die Eingabeaufforderung wird in den Suchergebnissen angezeigt.  Klicken Sie mit der rechten Maustaste auf „Eingabeaufforderung“, und wählen Sie **Als Administrator ausführen** aus. Bestätigen Sie alle Aufforderungen zur Benutzerkontensteuerung, die erscheinen.
 
 1. Geben Sie in der Eingabeaufforderung den Befehl in jeder Zeile ein und drücken Sie nach jeder Zeile die Eingabetaste:
-```
-cd \
-mkdir temp
-cd temp
-```
+
+    ```CommandPrompt
+    cd \
+    mkdir temp
+    cd temp
+    ```
 
 1. Kopieren Sie diesen Befehl und führen Sie ihn aus:
 
-```
-REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
-```
+    ```CommandPrompt
+    REG ADD "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /V "SOC Test" /t REG_SZ /F /D "C:\temp\startup.bat"
+    ```
 
 ### Aufgabe 2: Erstellen eines C2-Angriffs (Command and Control)
 
 1. Melden Sie sich beim `WIN1`virtuellen Computer als Administrator*in mit dem Kennwort **Pa55w.rd** an.  
 
 1. Geben Sie bei der Suche in der Taskleiste *Befehl* ein.  Die Eingabeaufforderung wird in den Suchergebnissen angezeigt.  Klicken Sie mit der rechten Maustaste auf „Eingabeaufforderung“, und wählen Sie **Als Administrator ausführen** aus. Bestätigen Sie alle Aufforderungen zur Benutzerkontensteuerung, die erscheinen.
-1. 
-1. 
+
 1. Angriff 2 – Kopieren Sie diesen Befehl und führen Sie ihn aus:
 
-```
-notepad c2.ps1
-```
+    ```CommandPrompt
+    notepad c2.ps1
+    ```
+
 Klicken Sie auf **Ja**, um eine neue Datei zu erstellen und kopieren Sie das folgende PowerShell-Skript in c2.ps1 und klicken Sie auf **Speichern**.
 
-**Hinweis:** Das Einfügen in den virtuellen Computer kann eine begrenzte Länge haben.  Fügen Sie es in drei Abschnitten ein, um sicherzustellen, dass das gesamte Skript in den virtuellen Computer eingefügt wird.  Stellen Sie sicher, dass das Skript in der Notepad-Datei c2.ps1 so aussieht, wie in dieser Anleitung dargestellt.
+>**Hinweis:** Für das Einfügen auf der VM gilt möglicherweise eine Längenbegrenzung.  Fügen Sie es in drei Abschnitten ein, um sicherzustellen, dass das gesamte Skript in den virtuellen Computer eingefügt wird.  Stellen Sie sicher, dass das Skript in der Notepad-Datei c2.ps1 so aussieht, wie in dieser Anleitung dargestellt.
 
-```
-
-
-param(
-    [string]$Domain = "microsoft.com",
-    [string]$Subdomain = "subdomain",
-    [string]$Sub2domain = "sub2domain",
-    [string]$Sub3domain = "sub3domain",
-    [string]$QueryType = "TXT",
-        [int]$C2Interval = 8,
-        [int]$C2Jitter = 20,
-        [int]$RunTime = 240
-)
-
-
-$RunStart = Get-Date
-$RunEnd = $RunStart.addminutes($RunTime)
-
-$x2 = 1
-$x3 = 1 
-Do {
-    $TimeNow = Get-Date
-    Resolve-DnsName -type $QueryType $Subdomain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-
-    if ($x2 -eq 3 )
-    {
-        Resolve-DnsName -type $QueryType $Sub2domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-        
-        $x2 = 1
-
-    }
-    else
-    {
-        $x2 = $x2 + 1
-    }
+    ```PowerShell
     
-    if ($x3 -eq 7 )
-    {
-
-        Resolve-DnsName -type $QueryType $Sub3domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
-
-        $x3 = 1
+    param(
+        [string]$Domain = "microsoft.com",
+        [string]$Subdomain = "subdomain",
+        [string]$Sub2domain = "sub2domain",
+        [string]$Sub3domain = "sub3domain",
+        [string]$QueryType = "TXT",
+            [int]$C2Interval = 8,
+            [int]$C2Jitter = 20,
+            [int]$RunTime = 240
+    )
+    
+    
+    $RunStart = Get-Date
+    $RunEnd = $RunStart.addminutes($RunTime)
+    
+    $x2 = 1
+    $x3 = 1 
+    Do {
+        $TimeNow = Get-Date
+        Resolve-DnsName -type $QueryType $Subdomain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+    
+        if ($x2 -eq 3 )
+        {
+            Resolve-DnsName -type $QueryType $Sub2domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+            
+            $x2 = 1
+    
+        }
+        else
+        {
+            $x2 = $x2 + 1
+        }
         
+        if ($x3 -eq 7 )
+        {
+    
+            Resolve-DnsName -type $QueryType $Sub3domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+    
+            $x3 = 1
+            
+        }
+        else
+        {
+            $x3 = $x3 + 1
+        }
+    
+    
+        $Jitter = ((Get-Random -Minimum -$C2Jitter -Maximum $C2Jitter) / 100 + 1) +$C2Interval
+        Start-Sleep -Seconds $Jitter
     }
-    else
-    {
-        $x3 = $x3 + 1
-    }
-
-
-    $Jitter = ((Get-Random -Minimum -$C2Jitter -Maximum $C2Jitter) / 100 + 1) +$C2Interval
-    Start-Sleep -Seconds $Jitter
-}
-Until ($TimeNow -ge $RunEnd)
-
-```
+    Until ($TimeNow -ge $RunEnd)
+    ```
 
 Geben Sie an der Eingabeaufforderung Folgendes ein, und geben Sie den Befehl in jeder Zeile ein, und drücken Sie nach jeder Zeile die Eingabetaste:
-```
-powershell
-.\c2.ps1
-```
-**Hinweis:** Es wird Fehler auflösen angezeigt. Dies ist zu erwarten.
+
+    ```PowerShell
+    .\c2.ps1
+    ```
+
+>**Hinweis:** Es wird Fehler auflösen angezeigt. Dies ist zu erwarten.
 Lassen Sie diesen Befehl/dieses Powershell-Skript im Hintergrund laufen. Schließen Sie das Fenster nicht.  Der Befehl muss einige Stunden lang Protokolleinträge generieren.  Sie können mit der nächsten Aufgabe und den nächsten Übungen fortfahren, während dieses Skript läuft.  Die durch diese Aufgabe erzeugten Daten werden später im Lab zur Bedrohungssuche verwendet.  Bei diesem Vorgang werden keine großen Datenmengen erzeugt oder verarbeitet.
 
 ### Aufgabe 2: Angriff auf Windows, das mit dem Azure Monitor Agent (AMA) konfiguriert ist
@@ -692,6 +692,6 @@ In dieser Aufgabe führen Sie Angriffe auf einen Host durch, für den der Sicher
     net localgroup administrators theusernametoadd /add
     ```
 
->**Hinweis**: Achten Sie darauf, dass Sie nur einen Befehl pro Zeile eingeben und dass Sie die Befehle durch Ändern des Benutzernamens erneut ausführen können.
+    >**Hinweis**: Achten Sie darauf, dass Sie nur einen Befehl pro Zeile eingeben und dass Sie die Befehle durch Ändern des Benutzernamens erneut ausführen können.
 
 1. Im Fenster `Output` sollte `The command completed successfully` dreimal angezeigt werden.
