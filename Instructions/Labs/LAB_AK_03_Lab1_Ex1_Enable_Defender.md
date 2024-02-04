@@ -41,7 +41,7 @@ In dieser Aufgabe richten Sie ein Azure-Abonnement ein, das zum Abschließen die
 
 1. Wählen Sie auf der Registerkarte *Mitglieder* die Option **+ Mitglieder auswählen**aus, wählen Sie das Konto **MOD-Administrator** und wählen Sie **Auswählen**aus, um fortzufahren.
 
-    >**Hinweis:** Wenn Sie die Registerkarte **Bedingungen** (mit einem roten Punkt) sehen, wählen Sie **Weiter** aus und dann **Nicht eingeschränkt** aus dem *Delegierungstyp.
+    >**Hinweis:** Wenn auf der Registerkarte **Bedingungen** ein roter Punkt angezeigt wird, wählen Sie **Weiter** und dann entweder **Nicht eingeschränkt** aus, wenn der Typ *Delegierung* angezeigt wird, oder **Benutzer das Zuweisen aller Rollen erlauben (hoch privilegiert)**, wenn *Benutzerberechtigungen* angezeigt wird.
 
 1. Wählen Sie zweimal **Überprüfen + Zuweisen** aus, um die Besitzerrolle Ihrem Administratorkonto zuzuweisen.
 
@@ -124,7 +124,7 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 1. Wählen Sie **Skript generieren** aus dem Abschnitt „Einen einzelnen Server hinzufügen“ aus.
 
-1. Lesen Sie sich die Registerkarte *Voraussetzungen* durch und wählen Sie dann **Weiter** aus, um fortzufahren.
+    <!--- 1. Read through the *Prerequisites* tab and then select **Next** to continue.--->
 
 1. Wählen Sie auf der Seite *Hinzufügen eines Servers mit Azure Arc* die Ressourcengruppe aus, die Sie zuvor unter *Projektdetails* erstellt haben. **Hinweis:***RG-Defender*
 
