@@ -51,9 +51,11 @@ In dieser Aufgabe verbinden Sie Microsoft Defender für Cloud-Datenconnector.
 
 1. Suchen Sie im *Content Hub* nach der Lösung **Microsoft Defender für Cloud**, und wählen Sie sie aus der Liste aus.
 
-1. Auf der Seite *Microsoft Defender für Cloud* wählen Sie **Installieren**.
+1. Wählen Sie auf der Seite mit den Lösungsdetails von *Microsoft Defender for Cloud* die Option **Installieren** aus.
 
-1. Wenn die Installation abgeschlossen ist, wählen Sie **Verwalten** aus
+1. Wenn die Installation abgeschlossen ist, suchen Sie nach der Lösung von **Microsoft Defender for Cloud**, und wählen Sie sie aus.
+
+1. Wählen Sie auf der Seite mit den Lösungsdetails von *Microsoft Defender for Cloud* die Option **Verwalten** aus.
 
     >**Hinweis:** Die Lösung *Microsoft Defender for Cloud* installiert den *abonnementbasierten Microsoft Defender for Cloud (Legacy)*-Datenconnector, den *mandantenbasierten Microsoft Defender for Cloud (Vorschau)*.Datenconnector und eine Analyseregel.
 
@@ -65,7 +67,7 @@ In dieser Aufgabe verbinden Sie Microsoft Defender für Cloud-Datenconnector.
 
 1. Der *Status* sollte jetzt **Verbunden** sein und „Bidirektionale Synchronisierung“ sollte *Aktiviert* sein.
 
-1. Scrollen Sie nach unten und stellen Sie unter dem Bereich *Erstellen von Vorfällen – empfohlen!* sicher dass *Automatisch Vorfälle anhand aller Warnungen erstellen, die in diesem verbundenen Dienst generiert werden* **Aktiviert** ist.
+    <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
 
 ### Aufgabe 3: Verbinden des Azure-Aktivitätsdatenconnectors
 

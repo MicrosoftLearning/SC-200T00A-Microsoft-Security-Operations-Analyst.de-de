@@ -111,7 +111,9 @@ In dieser Aufgabe fügen Sie einen mit Azure Arc verbundenen virtuellen Nicht-Az
 
 1. Bearbeiten Sie auf der Registerkarte **Anweisungen** im Abschnitt *Konfiguration* die **AZWINDCR***Datenerfassungsregel*, indem Sie das Symbol *Bleistift* auswählen.
 
-1. Wählen Sie **Weiter: Ressourcen** und **+Ressource(n)** aus.
+1. Klicken Sie auf **Weiter: Ressourcen**, und erweitern Sie Ihr *Abonnement* auf der Registerkarte *Ressourcen* unter *Bereich*.
+
+    >**Hinweis:** Sie können die gesamte Hierarchie *Bereich* erweitern, indem Sie die Option „>“ vor der Spalte *Bereich* auswählen.
 
 1. Erweitern Sie **RG-Defender** (oder die von Ihnen erstellte Ressourcengruppe), und wählen Sie **dann WINServer** aus.
 

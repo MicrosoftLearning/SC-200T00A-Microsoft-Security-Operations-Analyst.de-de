@@ -53,9 +53,9 @@ In dieser Aufgabe untersuchen Sie einen Incident.
 
 1. Blenden Sie das linke Blatt aus, indem Sie das **<<** Symbol neben dem Besitzer auswählen.
 
-1. Lesen Sie den Inhalt des Fensters **Zeitleiste des Incidents**. Klicken Sie bei der Warnung *Startup-RegKey* auf die Auslassungspunkte **(...)** und dann auf **Playbook ausführen**.  Sie sehen das Playbook *PostMessageTeams-OnAlert*. Mit dieser Option können Sie Playbooks manuell ausführen.
+1. Lesen Sie den Inhalt des Fensters **Zeitleiste des Incidents**. Wählen Sie oben rechts die Schaltfläche **Vorfallaktionen** und dann **Playbook ausführen** aus. Das Playbook *PostMessageTeams-OnIncident* wird angezeigt. Mit dieser Option können Sie Playbooks manuell ausführen.
 
-1. Schließen Sie das Blatt *Playbook-Warnungen* durch Klicken auf das Symbol **x** in der oberen rechten Ecke.
+1. Schließen Sie das Blatt *Playbook für Incident ausführen*, indem Sie oben rechts das Symbol **x** auswählen.
 
 1. Lesen Sie den Inhalt des Fensters **Entitäten**. Es sollte mindestens die Entität *Host* erscheinen, die wir in der KQL-Abfrage der vorherigen Übung zugeordnet haben. **Hinweis:** Wenn keine Entitäten angezeigt werden, aktualisieren Sie die Seite.
 
