@@ -12,10 +12,9 @@ lab:
 
 Sie sind Security Operations Analyst in einem Unternehmen, das Microsoft Defender für Endpunkt implementiert. Ihr Vorgesetzter plant, einige Geräte zu integrieren, um einen Einblick in die erforderlichen Änderungen der Reaktionsverfahren des SecOps-Teams zu erhalten.
 
-Um die Fähigkeiten von Defender for Endpoint zur Abwehr von Angriffen zu testen, führen Sie zwei simulierte Angriffe aus.
+Zum Erkunden der Angriffsentschärfungsfunktionen von Defender for Endpoint werden Sie das erfolgreiche Geräte-Onboarding überprüfen sowie Warnungen und Vorfälle untersuchen, die während dieses Prozesses erstellt wurden.
 
 >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
-
 
 ### Aufgabe 1: Überprüfung des Onboarding der Geräte
 
@@ -33,50 +32,58 @@ In dieser Aufgabe bestätigen Sie, dass das Gerät erfolgreich integriert ist un
 
 1. Scrollen Sie nach unten und kopieren Sie im Abschnitt *„2. Erkennungstest durchführen“* das Erkennungstest-Skript, indem Sie die Schaltfläche **Kopieren**auswählen.  
 
-1. Geben Sie in der Windows-Suchleiste den virtuellen Computer WIN1 **CMD** ein und wählen Sie im rechten Fensterbereich **Als Administrator ausführen** für die Eingabeaufforderung aus. 
+1. Geben Sie in der Windows-Suchleiste den virtuellen Computer WIN1 **CMD** ein und wählen Sie im rechten Fensterbereich **Als Administrator ausführen** für die Eingabeaufforderung aus.
 
 1. Wenn das Fenster „Benutzerkontensteuerung“ angezeigt wird, wählen Sie **Ja**, um die App auszuführen. 
 
 1. Fügen Sie das Skript ein, indem Sie mit der rechten Maustaste auf die **Administrator: Eingabeaufforderung** klicken und die **Eingabetaste** drücken, um es auszuführen.
 
-    >**Hinweis:** Nach der Ausführung des Skripts schließt sich das Fenster automatisch.
+    >**Hinweis:** Nach erfolgreicher Ausführung des Skripts wird das Fenster automatisch geschlossen, und nach ein paar Minuten werden Warnungen im Microsoft Defender XDR-Portal generiert.
 
-### Aufgabe 2: Simulierte Angriffe
+<!--- ### Task 2: Simulated Attacks
 
->**Hinweis:** Das Auswertungslabor und der Abschnitt „Tutorials & Simulationen“ des Portals sind nicht mehr verfügbar. Die folgenden Schritte werden nur zur Referenz bereitgestellt. Eine Demonstration der simulierten Angriffe finden Sie in der **[interaktiven Laborsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)**. Wir arbeiten daran, einen Ersatz für die simulierten Angriffe zu finden.
+>**Note:** The Evaluation lab and the Tutorials & simulations section of the portal is no longer available. Please refer to the **[interactive lab simulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** for a demonstration of the simulated attacks.
 
-1. Wählen Sie im linken Menü unter **Endpunkte** die Option **Auswertung und Tutorials** und dann auf der linken Seite **Tutorials und Simulationen** aus.
+1. From the left menu, under **Endpoints**, select **Evaluation & tutorials** and then select **Tutorials & simulations** from the left side.
 
-1. Wählen Sie die Registerkarte **Tutorials** aus.
+1. Select the **Tutorials** tab.
 
-1. Unter *Automatisierte Untersuchung (Hintertür)* sehen Sie eine Meldung, die das Szenario beschreibt.  Klicken Sie unterhalb dieses Absatzes auf **Exemplarische Vorgehensweise lesen**. Eine neue Browser-Registerkarte mit Anweisungen zur Durchführung der Simulation wird geöffnet.
+1. Under *Automated investigation (backdoor)* you will see a message describing the scenario. Below this paragraph, click **Read the walkthrough**. A new browser tab opens which includes instructions to perform the simulation.
 
-1. Suchen Sie in der neuen Browser-Registerkarte den Abschnitt **Simulation durchführen** (Seite 5, ab Schritt 2) und führen Sie die Schritte zur Durchführung des Angriffs aus. **Hinweis:** Die Simulationsdatei *RS4_WinATP-Intro-Invoice.docm* finden Sie im Portal direkt unter der **exemplarischen Vorgehensweise**, die Sie im vorherigen Schritt über die Schaltfläche **Simulationsdatei erhalten** ausgewählt haben.
+1. In the new browser tab, locate the section named **Run the simulation** (page 5, starting at step 2) and follow the steps to run the attack. **Hint:** The simulation file *RS4_WinATP-Intro-Invoice.docm* can be found back in portal, just below the **Read the walkthrough** you selected in the previous step by selecting the **Get simulation file** button.
 
     <!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
 
-### Aufgabe 3: Untersuchung der Angriffe
+### Aufgabe 2: Untersuchen von Warnungen und Vorfällen
 
-1. Wählen Sie im Microsoft Defender XDR-Portal auf der linken Menüleiste **Incidents und Warnungen** und dann **Incidents** aus.
+In dieser Aufgabe untersuchen Sie die Warnungen und Vorfälle, die vom Onboarding-Erkennungstestskript in der vorherigen Aufgabe generiert wurden.
 
-1. Im rechten Bereich wird ein neuer Incident angezeigt mit der Meldung, dass auf einem Endpunkt mehrere Bedrohungsfamilien erkannt wurden. Wählen Sie den Namen des Vorfalls, um seine Details zu laden.
+1. Wählen Sie im Microsoft Defender XDR-Portal in der linken Menüleiste **Incidents und Warnungen** und dann **Warnungen** aus.
 
-    <!---    >**Note:** You should see both *Bloodhound* and Mimikatz* alerts in the **Alerts** pane. In **Assets/Devices**, the *win1* computer will now have a **Risk level** of *High*. --->
+1. Wählen Sie im Bereich **Warnungen** die Warnung namens *Verdächtige PowerShell-Befehlszeile* aus, um ihre Details zu laden.
 
-1. Wählen Sie die Schaltfläche **Vorfall verwalten** aus und ein neues Fenster wird geöffnet. 
+1. Überprüfen Sie die Zeitachse *Warnungsverlauf* und dann die Registerkarten *Details* und *Empfehlungen*.
 
-1. Geben Sie unter **Incidenttags** die Zeichenfolge „Simulation“ ein, und wählen Sie **Simulation (Neu erstellen)** aus, um ein neues Tag zu erstellen. 
+    >**Hinweis:** Unter der Registerkarte *Details* der Warnung können Sie nach unten zum Bereich *Details zum Incident* blättern und dann den Link *Ausführungsvorfall auf einem Endpunkt* auswählen, um den Vorfall zu öffnen.
 
-1. Wählen Sie die Schaltfläche **Zuweisen an**  und fügen Sie Ihr Benutzerkonto (Ich) als Besitzer des Vorfalls hinzu. 
+1. Wählen Sie im Microsoft Defender XDR-Portal in der linken Menüleiste **Incidents und Warnungen** und dann **Incidents** aus.
 
-1. Erweitern Sie unter **Klassifizierung**das Dropdownmenü. 
+1. Ein neuer Vorfall namens *Ausführungsvorfall auf einem Endpunkt* befindet sich im rechten Bereich. Wählen Sie den Namen des Vorfalls, um seine Details zu laden.
 
-1. Wählen Sie unter **Information, erwartete Aktivität** **Sicherheitstests** aus. 
+1. Wählen Sie den Link **Vorfall verwalten** (mit einem Bleistiftsymbol) aus. Daraufhin wird ein neues Fensterblatt angezeigt.
+
+1. Geben Sie unter **Incidenttags** die Zeichenfolge „Simulation“ ein, und wählen Sie **Simulation (Neu erstellen)** aus, um ein neues Tag zu erstellen.
+
+1. Wählen Sie die Schaltfläche **Zuweisen an**  und fügen Sie Ihr Benutzerkonto (Ich) als Besitzer des Vorfalls hinzu.
+
+1. Erweitern Sie unter **Klassifizierung**das Dropdownmenü.
+
+1. Wählen Sie unter **Information, erwartete Aktivität** **Sicherheitstests** aus.
 
 1. Fügen Sie bei Bedarf Kommentare hinzu und wählen Sie **Speichern**, um das Ereignis zu aktualisieren und zu schließen.
 
-1. Überprüfen Sie den Inhalt der Registerkarten *Angriffshistorie, Alarme, Ressourcen, Untersuchungen, Beweise und Reaktion* und *Zusammenfassung*. Geräte und Benutzer befinden sich unter der Registerkarte *Ressourcen*. Die Registerkarte *Angriffshistorie* zeigt das *Vorfallsdiagramm*. Der **Hinweis:** Einige Registerkarten können aufgrund der Größe Ihres Bildschirms ausgeblendet sein. Wählen Sie die Registerkarte Auslassungspunkte (…), um sie anzuzeigen.
+1. Überprüfen Sie den Inhalt der Registerkarten *Angriffshistorie, Alarme, Ressourcen, Untersuchungen, Beweise und Reaktion* und *Zusammenfassung*. Geräte und Benutzer:innen befinden sich unter der Registerkarte *Ressourcen*. In einem echten Vorfall wird auf der Registerkarte *Angriffsverlauf* das *Vorfalldiagramm* angezeigt. **Hinweis:** Einige Registerkarten sind möglicherweise wegen der Größe Ihres Displays nicht sichtbar. Wählen Sie die Registerkarte Auslassungspunkte (…), um sie anzuzeigen.
 
-    >**Warnung:** Die hier gezeigten simulierten Angriffe sind eine hervorragende praktische Lernquelle. Führen Sie die Angriffe aus den Anweisungen für diese Übung nur aus, wenn Sie den für den Kurs bereitgestellten Azure-Mandanten verwenden.  Sie können andere simulierte Angriffe für diesen Mandanten durchführen, *nachdem* dieser Schulungskurs abgeschlossen wurde.
+<!---    >**Warning:** The simulated attacks here are an excellent source of learning through practice. Only perform the attacks in the instructions provided for this lab when using the course provided Azure tenant.  You may perform other simulated attacks *after* this training course is complete with this tenant. --->
 
-## Damit haben Sie das Lab beendet.
+## Damit haben Sie das Lab beendet
