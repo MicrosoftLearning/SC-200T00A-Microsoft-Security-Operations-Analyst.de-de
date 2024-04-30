@@ -30,6 +30,8 @@ In dieser Aufgabe erstellen Sie ein Microsoft Teams-Team für die Verwendung im 
 
 1. Schließen Sie alle Teams-Popups, die möglicherweise angezeigt werden.
 
+    >**Hinweis:** Wenn Sie aufgefordert werden, **Neue Teams** zu verwenden, akzeptieren Sie und fahren Sie mit der Übung fort.
+
 1. Falls noch nicht ausgewählt, wählen Sie im linken Menü **Teams** und dann oben das ![Plus-Zeichen](../Media/plus-sign-icon-lab.png) aus.
 
 1. Wählen Sie die Option **Team erstellen** aus.
@@ -97,25 +99,25 @@ In dieser Aufgabe aktualisieren Sie das neu erstellte Playbook mit den korrekten
 
 1. Wählen Sie im Bereich *Konfiguration* **Automatisierung** und dann die Registerkarte **Aktive Playbooks** aus.
 
-1. Wählen Sie in der Befehlsleiste **Aktualisieren** aus, wenn keine Playbooks angezeigt werden. Sie sollten das im vorherigen Schritt erstellte Playbook mit dem **Microsoft Sentinel Incident** *die Art des Triggers* sehen.
+1. Wählen Sie in der Befehlsleiste **Aktualisieren** aus, wenn keine Playbooks angezeigt werden. Das im vorherigen Schritt erstellte Playbook sollte angezeigt werden.
 
-1. Wählen Sie den Namen des Playbooks **PostMessageTeams-OnIncident** aus.
+1. Wählen Sie den Playbooknamen **PostMessageTeams** aus.
 
-1. Klicken Sie auf der Seite „Logik-App“ für *PostMessageTeams-OnIncident* im Befehlsmenü auf **Bearbeiten**.
+1. Wählen Sie auf der Seite „Logik-App“ für *PostMessageTeams* im Befehlsmenü **Bearbeiten** aus.
 
     >**Hinweis:** Möglicherweise müssen Sie die Seite aktualisieren.
 
-1. Wählen Sie den *ersten* Block, **Microsoft Sentinel Incident (Vorschau)** aus.
+1. Wählen Sie den *ersten* Block aus, **Microsoft Sentinel-Vorfall**.
 
 1. Wählen Sie den Link **Verbindung ändern** aus.
 
 1. Klicken Sie auf **Neu hinzufügen** und dann **Anmelden**. Wählen Sie im neuen Fenster Ihre Azure-Administrator-Anmeldeinformationen aus, wenn Sie dazu aufgefordert werden. In der letzten Zeile des Blocks sollte nun „Verbunden mit Ihrem Administrator-Benutzernamen“ stehen.
 
-1. Wählen Sie nun den *zweiten* Block, **Verbindungen**, aus.
+1. Wählen Sie nun den *zweiten* Block aus, **Eine Nachricht posten (V3)**.
 
-1. Wählen Sie **Neu hinzufügen** und wählen Sie Ihre Azure Administrator-Anmeldeinformationen aus, wenn Sie dazu aufgefordert werden. In der letzten Zeile des Blocks sollte nun „Verbunden mit Ihrem Administrator-Benutzernamen“ stehen.
+1. Scrollen Sie auf der Registerkarte „Prameter“ nach unten, und wählen Sie den Link **Verbindung ändern** aus, und wählen Sie dann **Neu hinzufügen** und **Anmelden** aus. Wählen Sie Ihre Azure-Anmeldeinformationen des Administrators für das Gerät auf Aufforderung aus. Auf der Registerkarte „Prameter“ sollte jetzt „Verbunden mit Ihr-Administratorbenutzername“ zu lesen sein.
 
-1. Der Block ist nun umbenannt in **Nachricht schreiben (V3)(Vorschau)**. Klicken Sie am Ende des Feldes *Team* auf **X**, um den Inhalt zu löschen.  Das Feld ändert sich in ein Dropdownfeld mit einer Liste der verfügbaren Microsoft Teams. Wählen Sie **SOC** aus.
+1. Wählen Sie am Ende des Felds *Team* das **X** aus, um den Inhalt zu löschen.  Das Feld ändert sich in ein Dropdownfeld mit einer Liste der verfügbaren Microsoft Teams. Wählen Sie **SOC** aus.
 
 1. Machen Sie dasselbe mit dem Feld *Kanal*, klicken Sie am Ende des Feldes auf **X**, um den Inhalt zu löschen. Das Feld ändert sich in ein Dropdownfeld mit einer Liste der Kanäle des SOC-Teams. Wählen Sie **Neue Warnungen** aus.
 
