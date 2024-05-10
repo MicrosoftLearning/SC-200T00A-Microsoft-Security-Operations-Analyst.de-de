@@ -33,7 +33,7 @@ In dieser Aufgabe überprüfen Sie die Konfiguration der Einhaltung gesetzlicher
 
 1. Wählen Sie unter *Cloudsicherheit* im Menü des Portals **Einhaltung gesetzlicher Bestimmungen** aus.
 
-1. Wählen Sie in der Symbolleiste **Verwalten von Konformitätsrichtlinien** aus.
+1. Wählen Sie auf der Symbolleiste **Compliancestandards verwalten** aus.
 
 1. Wählen Sie Ihr Abonnement aus.
 
@@ -58,6 +58,8 @@ In dieser Aufgabe überprüfen Sie die Konfiguration der Einhaltung gesetzlicher
 ### Aufgabe 2: Erkunden von Sicherheitsstatus und Empfehlungen
 
 In dieser Aufgabe überprüfen Sie die Verwaltung vom Cloudsicherheitsstatus.  Die Neuberechnung der Informationen zur Sicherheitsbewertung können 24 Stunden dauern. Es wird empfohlen, diese Aufgabe in 24 Stunden erneut auszuführen.
+
+1. Wählen Sie den Link **Microsoft Defender for Cloud | Einhaltung gesetzlicher Bestimmungen** am oberen Rand der Seite aus, um zu den oberen Menüs zurückzukehren.
 
 1. Wählen Sie im Portalmenü unter *Cloudsicherheit* **Sicherheitsstatus** aus.
 

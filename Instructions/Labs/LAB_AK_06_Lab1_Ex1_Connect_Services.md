@@ -33,21 +33,13 @@ In dieser Aufgabe greifen Sie auf Ihren Microsoft Sentinel-Arbeitsbereich zu.
 
 1. Wählen Sie Ihren Microsoft Sentinel-Arbeitsbereich aus, den Sie in dem vorherigen Lab erstellt haben.
 
-1. Wählen Sie im Navigationsmenü Analytics aus.
-
-1. Wählen Sie *Vorfälle basierend auf Microsoft Defender for Cloud erstellen* in den Regelvorlagen aus.
-
-1. Wählen Sie im Regelinformationsbereich **Regel erstellen** aus, oder wählen Sie die Auslassungspunkte (...) und dann **+ Regel erstellen** aus.
-
-1. Wählen Sie im Assistenten für Analyseregeln **Weiter: Automatisierte Antwort** und dann **Weiter: Prüfen und erstellen** aus.
-
-1. Wählen Sie **save** (Speichern) aus.
+1. Fahren Sie mit der nächsten Aufgabe fort.
 
 ### Aufgabe 2: Herstellen einer Verbindung mit dem Microsoft Defender für Cloud-Datenconnector
 
 In dieser Aufgabe verbinden Sie Microsoft Defender für Cloud-Datenconnector.
 
-1. Scrollen Sie im Bereich Microsoft Sentinel im linken Menü nach unten zu *Inhaltsverwaltung*, und wählen Sie **Content Hub** aus.
+1. Scrollen Sie im Bereich Microsoft Sentinel im linken Menü nach unten zu **Inhaltsverwaltung**, und wählen Sie **Content Hub** aus.
 
 1. Suchen Sie im *Content Hub* nach der Lösung **Microsoft Defender für Cloud**, und wählen Sie sie aus der Liste aus.
 
@@ -57,7 +49,7 @@ In dieser Aufgabe verbinden Sie Microsoft Defender für Cloud-Datenconnector.
 
 1. Wählen Sie auf der Seite mit den Lösungsdetails von *Microsoft Defender for Cloud* die Option **Verwalten** aus.
 
-    >**Hinweis:** Die Lösung *Microsoft Defender for Cloud* installiert den *abonnementbasierten Microsoft Defender for Cloud (Legacy)*-Datenconnector, den *mandantenbasierten Microsoft Defender for Cloud (Vorschau)*.Datenconnector und eine Analyseregel.
+    >**Hinweis:** Die Lösung *Microsoft Defender for Cloud* installiert den *abonnementbasierten Microsoft Defender for Cloud (Legacy)*-Datenconnector, den *mandantenbasierten Microsoft Defender for Cloud (Vorschau)*.Datenconnector und eine Analyseregel. Der *mandantenbasierte Microsoft Defender for Cloud (Preview)* -Datenconnector wird verwendet, wenn ein Mandant über mehrere Abonnements verfügt.
 
 1. Aktivieren Sie das Kontrollkästchen *Abonnementbasierter Microsoft Defender for Cloud (Legacy)*-Datenconnector, und wählen Sie dann die Seite **Connector öffnen** aus.
 
