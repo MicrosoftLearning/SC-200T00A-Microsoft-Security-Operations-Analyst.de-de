@@ -80,14 +80,14 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den ersten Angriff der vorhe
 
 1. Klicken Sie auf die Schaltfläche **Weiter: Regellogik festlegen >**.
 
-1. Auf der Registerkarte *Regellogik festlegen* sollte die *Regelabfrage* bereits mit Ihrer KQL-Abfrage ausgefüllt sein, ebenso die Entitäten unter *Warnungsanreicherung – Entitätszuordnung*.
+1. Auf der Registerkarte *Regellogik festlegen* sollte die *Regelabfrage* bereits mit der KQL-Abfrage sowie den Entitäten unter *Warnungserweiterung – Entitätszuordnung* aufgefüllt werden.
 
     |Entity|Bezeichner|Datenfeld|
     |:----|:----|:----|
     |Konto|FullName|AccountCustomEntity|
     |Host|Hostname|HostCustomEntity|
 
-1. Wenn **Hostname** für *Host* nicht ausgewählt ist, wählen Sie diesen aus der Dropdownliste aus.
+1. Wenn **Hostname** für die *Host*-Entität nicht ausgewählt ist, wählen Sie ihn aus der Dropdownliste aus, und verwenden Sie die Parameter in der vorherigen Tabelle, um die Felder aufzufüllen.
 
 1. Legen Sie für *Abfrageplanung* Folgendes fest:
 
@@ -117,9 +117,9 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den ersten Angriff der vorhe
 
 1. Wählen Sie **Übernehmen** aus.
 
-1. Klicken Sie auf die Schaltfläche **Weiter: Überprüfung >**.
+1. Wählen Sie unten **Weiter: Überprüfen + erstellen >**.
   
-1. Klicken Sie auf der Registerkarte *Überprüfen und Erstellen* auf die Schaltfläche **Erstellen**, um die neue Regel für die geplante Analyse zu erstellen.
+1. Wählen Sie auf der Registerkarte *Überprüfen und erstellen* die Schaltfläche **Speichern** aus, um die neue Regel „Geplante Analyse“ zu erstellen.
 
 ### Aufgabe 2: Erkennung von Angriffen zur Rechteerweiterung
 
@@ -182,9 +182,16 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den zweiten Angriff aus der 
     |Taktik|**Rechteausweitung**|
     |Severity|**Hoch**|
 
-1. Klicken Sie auf die Schaltfläche **Weiter: Regellogik festlegen >**. 
+1. Klicken Sie auf die Schaltfläche **Weiter: Regellogik festlegen >**.
 
-1. Auf der Registerkarte *Regellogik festlegen* sollte die *Regelabfrage* bereits mit Ihrer KQL-Abfrage ausgefüllt sein, ebenso die Entitäten unter *Warnungsanreicherung – Entitätszuordnung*.
+1. Auf der Registerkarte *Regellogik festlegen* sollte die *Regelabfrage* bereits mit der KQL-Abfrage sowie den Entitäten unter *Warnungserweiterung – Entitätszuordnung* aufgefüllt werden.
+
+    |Entity|Bezeichner|Datenfeld|
+    |:----|:----|:----|
+    |Konto|FullName|AccountCustomEntity|
+    |Host|Hostname|HostCustomEntity|
+
+1. Wenn **Hostname** für die *Host*-Entität nicht ausgewählt ist, wählen Sie ihn aus der Dropdownliste aus, und verwenden Sie die Parameter in der vorherigen Tabelle, um die Felder aufzufüllen.
 
 1. Legen Sie für *Abfrageplanung* Folgendes fest:
 

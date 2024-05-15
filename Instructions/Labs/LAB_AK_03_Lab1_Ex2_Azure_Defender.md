@@ -17,13 +17,13 @@ Sie arbeiten als Security Operations Analyst in einem Unternehmen, das Microsoft
 
 ### Aufgabe 1: Erkunden der Einhaltung gesetzlicher Bestimmungen
 
-In dieser Aufgabe überprüfen Sie die Konfiguration der Einhaltung gesetzlicher Bestimmungen in Microsoft Defender for Cloud. 
+In dieser Aufgabe überprüfen Sie die Konfiguration für die Einhaltung gesetzlicher Bestimmungen in Microsoft Defender for Cloud. 
 
 >**Wichtig:** Die nächsten Schritte werden in einer anderen VM ausgeführt als der, in der Sie zuvor gearbeitet haben. Suchen Sie nach den Namensverweisen der virtuellen Maschine.
 
 1. Melden Sie sich beim virtuellen Computer **WIN1** als Administrator mit dem Kennwort **Pa55w.rd**an.  
 
-1. Öffnen Sie im Edge-Browser das Azure-Portal unter (https://portal.azure.com).
+1. Öffnen Sie im Microsoft Edge-Browser das Azure-Portal unter https://portal.azure.com).
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
 
@@ -31,7 +31,7 @@ In dieser Aufgabe überprüfen Sie die Konfiguration der Einhaltung gesetzlicher
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Defender* ein und wählen Sie dann **Microsoft Defender for Cloud** aus.
 
-1. Wählen Sie unter *Cloudsicherheit* im Menü des Portals **Einhaltung gesetzlicher Bestimmungen** aus.
+1. Wählen Sie unter *Cloudsicherheit* die Option **Einhaltung gesetzlicher Bestimmungen** aus den linken Menüelementen aus.
 
 1. Wählen Sie auf der Symbolleiste **Compliancestandards verwalten** aus.
 
@@ -41,7 +41,7 @@ In dieser Aufgabe überprüfen Sie die Konfiguration der Einhaltung gesetzlicher
 
 1. Wählen Sie im Portalmenü unter *Einstellungen* die Option **Sicherheitsrichtlinie** aus.
 
-1. Scrollen Sie nach unten, und überprüfen Sie die standardmäßig für Sie verfügbaren „Sicherheitsstandards“.
+1. Führen Sie einen Bildlauf nach unten aus, und überprüfen Sie die standardmäßig für Sie verfügbaren „Sicherheitsstandards“.
 
 1. Verwenden Sie das Suchfeld, um *ISO 27001:2013* zu finden.
 
@@ -57,29 +57,25 @@ In dieser Aufgabe überprüfen Sie die Konfiguration der Einhaltung gesetzlicher
 
 ### Aufgabe 2: Erkunden von Sicherheitsstatus und Empfehlungen
 
-In dieser Aufgabe überprüfen Sie die Verwaltung vom Cloudsicherheitsstatus.  Die Neuberechnung der Informationen zur Sicherheitsbewertung können 24 Stunden dauern. Es wird empfohlen, diese Aufgabe in 24 Stunden erneut auszuführen.
+In dieser Aufgabe überprüfen Sie die Verwaltung des Cloudsicherheitsstatus.  Die Neuberechnung der Informationen zur Sicherheitsbewertung können 24 Stunden dauern. Es wird empfohlen, diese Aufgabe in 24 Stunden erneut auszuführen.
 
-1. Wählen Sie den Link **Microsoft Defender for Cloud | Einhaltung gesetzlicher Bestimmungen** am oberen Rand der Seite aus, um zu den oberen Menüs zurückzukehren.
-
-1. Wählen Sie im Portalmenü unter *Cloudsicherheit* **Sicherheitsstatus** aus.
+1. Wählen Sie unter *Cloudsicherheit* die Option **Sicherheitsstatus** aus den linken Menüelementen aus.
 
 1. Die *Sicherheitsbewertung* bezieht sich standardmäßig auf die *Azure-Umgebung*.
 
-1. Wählen Sie auf der Registerkarte *Umgebung* die Option **Empfehlungen anzeigen >** aus.
+1. Wählen Sie auf der Registerkarte *Umgebung* den Link **Empfehlungen anzeigen >** aus.
 
-1. Wählen Sie auf der Seite *Empfehlungen* die Registerkarte **Alle Empfehlungen** aus.
+1. Wählen Sie zunächst die Option **Filter hinzufügen** und dann **Ressourcentyp** aus.
 
-    >**Hinweis:** Sie können auch die *Empfehlungen für die Sicherheitsbewertung* verwenden.
+1. Aktivieren Sie das Kontrollkästchen **Computer – Azure Arc**, und wählen Sie dann die Schaltfläche **Anwenden** aus.
 
-1. Wählen Sie den Filter **Ressourcentyp** und den Dropdownselektor **Wert** aus.
-
-1. Aktivieren Sie das Kontrollkästchen **Computer – Azure Arc**, und wählen Sie dann die Schaltfläche **OK** aus.
+    >**Hinweis:** Wenn das Kontrollkästchen **Computer – Azure Arc** nicht angezeigt wird, stellen Sie sicher, dass Sie den Lernpfad 3 – Lab 1 – Übung 1, Aufgabe 4 abgeschlossen haben.
 
 1. Wählen Sie eine Empfehlung aus, deren Status nicht *„Abgeschlossen“* lautet.
 
-1. Lesen Sie die Empfehlung und scrollen Sie nach unten, um das Kontrollkästchen „WINServer“ zu **markieren**. **Hinweis:** Möglicherweise müssen Sie den Bereich **Betroffene Ressourcen** erweitern und nach unten scrollen, damit sie angezeigt wird.
+1. Überprüfen Sie die Empfehlung, und führen Sie auf der Registerkarte **Aktion ausführen** einen Bildlauf nach unten zu **Delegat** durch, und wählen Sie **Besitzer zuweisen und Fälligkeitsdatum festlegen** aus.
 
-1. Wählen Sie **Besitzer zuweisen** aus, und erweitern Sie dann **Zuordnungsdetails**.
+1. Lassen Sie im Fenster **Zuweisung erstellen** die Option *Typ* auf *Defender for Cloud* festgelegt, und erweitern Sie die **Zuweisungsdetails**.
 
 1. Geben Sie in das Feld `Set owner` *E-Mail-Adresse* Ihre Administrator-E-Mail-Adresse ein. **Tipp:** Sie können diese aus den Anweisungen auf der Registerkarte *Ressourcen* kopieren.
 
@@ -92,7 +88,7 @@ In dieser Aufgabe überprüfen Sie die Verwaltung vom Cloudsicherheitsstatus.  D
 
 ### Aufgabe 3: Verringern von Sicherheitswarnungen
 
-In dieser Aufgabe laden Sie Beispiele für Sicherheitswarnungen und lesen die Details der Warnungen.
+In dieser Aufgabe laden Sie Beispielsicherheitswarnungen und überprüfen die Warnungsdetails.
 
 
 1. Wählen Sie im Portalmenü unter *Allgemein* die Option **Sicherheitswarnungen** aus.

@@ -23,13 +23,13 @@ Zunächst initialisieren Sie die Defender for Endpoint-Umgebung. Danach führen 
 
 ### Aufgabe 1: Initialisieren von Microsoft Defender for Endpunkt
 
-In dieser Aufgabe führen Sie die Initialisierung des Portals „Microsoft Defender for Endpoint“ durch.
+In dieser Aufgabe führen Sie die Initialisierung von Microsoft Defender for Endpoint aus.
 
 1. Melden Sie sich beim virtuellen Computer **WIN1** als Administrator mit dem Kennwort **Pa55w.rd**an.  
 
-1. Wenn Sie sich nicht bereits im Microsoft 365 Defender-Portal befinden, starten Sie den Microsoft Edge-Browser.
+1. Wenn Sie sich noch nicht im Microsoft Defender XDR-Portal befinden, starten Sie den Microsoft Edge-Browser.
 
-1. Öffnen Sie im Edge-Browser das Microsoft 365 Defender-Portal (https://security.microsoft.com)).
+1. Wechseln Sie im Edge-Browser zum Defender XDR-Portal unter https://security.microsoft.com).
 
 1. Kopieren Sie im Dialogfeld **Anmelden**das von Ihrem Labhostinganbieter bereitgestellte Mandanten-E-Mail-Konto für den Administrator, und fügen Sie es ein, und wählen Sie dann **Weiter** aus.
 
@@ -37,7 +37,7 @@ In dieser Aufgabe führen Sie die Initialisierung des Portals „Microsoft Defen
 
     >**Tipp:** Das Administrator-E-Mail-Konto und Kennwort des Mandanten finden Sie auf der Registerkarte „Ressourcen“.
 
-1. Wählen Sie im **Microsoft 365 Defender**-Portal im Navigationsmenü auf der linken Seite **Einstellungen** aus.
+1. Wählen Sie im Navigationsmenü des **Defender XDR**-Portals auf der linken Seite die Option **Einstellungen** aus.
 
 1. Wählen Sie auf der Seite „Einstellungen“ die Option **Geräteermittlung** aus. 
 
@@ -80,7 +80,7 @@ In dieser Aufgabe integrieren Sie ein Gerät in Microsoft Defender for Endpoint 
 
 In dieser Aufgabe konfigurieren Sie Rollen für die Verwendung mit Gerätegruppen.
 
-1. Wählen Sie im Microsoft 365 Defender-Portal in der linken Menüleiste **Einstellungen** und dann **Endpunkte** aus. 
+1. Wählen Sie zunächst im Microsoft Defender XDR-Portal in der linken Menüleiste die Option **Einstellungen** und dann **Endpunkte** aus. 
 
 1. Wählen Sie im Bereich „Berechtigungen“ die Option **Rollen** aus.
 
@@ -107,7 +107,7 @@ In dieser Aufgabe konfigurieren Sie Rollen für die Verwendung mit Gerätegruppe
 
 In dieser Aufgabe konfigurieren Sie Gerätegruppen, die die Zugriffssteuerung und die Automatisierungskonfiguration ermöglichen.
 
-1. Wählen Sie im Microsoft 365 Defender-Portal in der linken Menüleiste **Einstellungen** und dann **Endpunkte** aus. 
+1. Wählen Sie zunächst im Microsoft Defender XDR-Portal in der linken Menüleiste die Option **Einstellungen** und dann **Endpunkte** aus. 
 
 1. Wählen Sie im Bereich Berechtigungen die Option **Gerätegruppen** aus.
 
