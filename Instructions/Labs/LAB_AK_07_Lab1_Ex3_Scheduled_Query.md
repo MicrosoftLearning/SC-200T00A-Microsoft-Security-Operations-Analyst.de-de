@@ -97,13 +97,19 @@ In dieser Aufgabe erstellen Sie eine geplante Abfrage und verbinden diese mit de
 
 ### Aufgabe 2: Testen der neuen Regel
 
-In dieser Aufgabe testen Sie Ihre neue Regel für geplante Abfragen.
+In dieser Aufgabe testen Sie ihre neue Regel für geplante Abfragen.
 
 1. Klicken Sie in der oberen Leiste des Azure-Portals auf das Symbol **>_**, das der Cloud Shell entspricht. Möglicherweise müssen Sie zuerst das Symbol mit den Auslassungspunkten **(...)** auswählen, wenn Ihre Bildschirmauflösung zu niedrig ist.
 
-1. Wählen Sie **Powershell** und dann **Speicher erstellen** aus. Warten Sie, bis die Cloud Shell eingerichtet ist.
+1. Wählen Sie im Fenster *Willkommen bei Azure Cloud Shell* die Option **PowerShell** aus.
 
-1. Schließen Sie das Azure Cloud Shell-Fenster.
+1. Wählen Sie auf der Seite *Erste Schritte* die Option **Speicherkonto bereitstellen** aus, und wählen Sie dann Ihren **Azure Pass – Sponsoring** aus dem Dropdownmenüelement *Speicherkontoabonnement* aus, und klicken Sie auf die Schaltfläche **Anwenden**.
+
+    >**Wichtig:** Wählen Sie nicht die Option *Kein Speicherkonto erforderlich* aus. Dies führt dazu, dass die Vorfallerstellung fehlschlägt.
+
+1. Wählen Sie auf der Seite *Speicherkonto bereitstellen* die Option **Wir erstellen ein Speicherkonto für Sie** und dann **Weiter** aus.
+
+1. Warten Sie, bis die Cloud Shell bereitgestellt wird, und schließen Sie dann das Azure Cloud Shell-Fenster.
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Aktivität* ein und wählen Sie dann **Aktivitätsprotokoll** aus.
 

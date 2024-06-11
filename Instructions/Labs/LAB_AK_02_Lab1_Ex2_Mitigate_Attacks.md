@@ -90,7 +90,7 @@ In dieser Aufgabe simulieren Sie einen Angriff auf die WIN1-VM und überprüfen,
     $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
     ```
 
-    >**Hinweis:** Wenn beim Ausführen des Skripts Fehler (rot) auftreten, können Sie die Editor-App öffnen und das Skript in eine leere Datei kopieren. Stellen Sie sicher, dass *Zeilenumbruch* im Editor aktiviert ist. Kopieren Sie jede Zeile des Skripts, und führen Sie sie separat in PowerShell aus.
+    >**Hinweis:** Wenn beim Ausführen des Skripts Fehler (rot) auftreten, können Sie die Editor-App öffnen und das Skript in eine leere Datei kopieren. Stellen Sie sicher, dass *Zeilenumbruch* im Editor aktiviert ist. Kopieren Sie dann jede Zeile des Skripts separat in PowerShell, und führen Sie sie aus. Außerdem wurde ein PowerShell-Skript (attacksim.ps1) in den Dateien bereitgestellt, die am Anfang der Labore heruntergeladen wurden. Um das Skript zu verwenden, navigieren Sie in **Windows PowerShell (Administrator)** zum *Ordner \Users\Admin\Desktop*, und geben Sie *.\attacksim.ps1* ein, und drücken **Sie die EINGABETASTE**, um es auszuführen.
 
 1. Das Skript erzeugt eine Ausgabe mit mehreren Zeilen und die Meldung, dass *Domänencontroller in der Domäne nicht aufgelöst werden konnten*. Ein paar Sekunden später wird die *Editor*-App geöffnet. Ein simulierter Angriffscode wird im Editor eingefügt. Lassen Sie die automatisch generierte Editor-Instanz geöffnet, um das vollständige Szenario zu erleben. Der simulierte Angriffscode versucht, mit einer externen IP-Adresse zu kommunizieren (simuliert einen C2-Server).
 

@@ -48,11 +48,17 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
 >**Wichtig:** Löschen Sie bei jeder Abfrage die vorherige Anweisung aus dem Abfragefenster oder öffnen Sie ein neues Abfragefenster, indem Sie **+** nach der zuletzt geöffneten Registerkarte (bis zu 25) auswählen.
 
-1. Die folgende Anweisung demonstriert den Operator **Suchen**, der alle Spalten der Tabelle nach dem Wert durchsucht. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert den Operator **Suchen**, der alle Spalten der Tabelle nach dem Wert durchsucht. 
+
+1. Ändern Sie im Abfragefenster den *Zeitbereich* in **Letzte 30 Minuten**.
+
+1. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    search "new"
+    search "location"
     ```
+
+    >**Hinweis:** Die Verwendung des *Suchoperators* ohne bestimmte Tabellen oder qualifizierende Klauseln ist weniger effizient als tabellenspezifische und spaltenspezifische Textfilterung.
 
 1. Die folgende Anweisung demonstriert die **Suche** über die in der **in**-Klausel angegebenen Tabellen. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 

@@ -118,7 +118,7 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Arc* ein und wählen Sie **Azure Arc** aus.
 
-1. Wählen Sie im Navigationsbereich unter **Infrastruktur** **Computer** aus.
+1. Wählen Sie im Navigationsbereich unter **Azure Arc-Ressourcen** die Option **Computer** aus.
 
 1. Klicken Sie auf **+ Hinzufügen/Erstellen** und dann auf **Computer hinzufügen**.
 
@@ -205,7 +205,15 @@ In dieser Aufgabe installieren Sie den *Azure Monitor Agent* manuell, indem Sie 
 
     >**Hinweis:** Für dieses Lab können Sie *Windows Ereignisprotokolle* auswählen. Diese Auswahlen können später überarbeitet werden.
 
-1. Wählen Sie **Datenquelle hinzufügen** und wählen Sie **Überprüfen + Erstellen** aus.
+1. Klicken Sie auf die Registerkarte **Ziel**.
+
+1. Wählen Sie **Azure Monitor-Protokolle** in der Dropdownliste **Zieltyp** aus.
+
+1. Wählen Sie Ihr Abonnement *Azure Pass – Sponsoring* aus der Dropdownliste **Abonnement** aus.
+
+1. Wählen Sie ihren Arbeitsbereichsnamen aus. **Hinweis:** *RG-Defender* aus der Dropdownliste **Konto oder Namespace**
+
+1.  Wählen Sie **Datenquelle hinzufügen** und wählen Sie **Überprüfen + Erstellen** aus.
 
 1. Wählen Sie **Erstellen** aus, nachdem *Validierung erfolgreich* angezeigt wurde.
 

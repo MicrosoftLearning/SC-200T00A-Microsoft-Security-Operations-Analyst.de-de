@@ -37,8 +37,9 @@ In dieser Aufgabe erstellen Sie einen Microsoft Sentinel-Arbeitsbereich.
 
     >**Hinweis:** Wenn hier kein Log Analytics-Arbeitsbereich angezeigt wird, lesen Sie bitte Modul 3, Übung 1, Aufgabe 2, um einen zu erstellen.
 
-1. Navigieren Sie durch den neu erstellten Microsoft Sentinel-Arbeitsbereich, um sich mit den Optionen der Benutzeroberfläche vertraut zu machen.
+1. In **Microsoft Sentinel** sollten Sie sich im Abschnitt **Allgemeinen** *Neuigkeiten und Leitfäden* befinden und folgenden Hinweis sehen: *Kostenlose Testversion von Microsoft Sentinel aktiviert*. Klicken Sie auf die Schaltfläche **OK**.
 
+1. Navigieren Sie durch den neu erstellten Microsoft Sentinel-Arbeitsbereich, um sich mit den Optionen der Benutzeroberfläche vertraut zu machen.
 
 ### Aufgabe 2: Erstellen einer Watchlist
 
