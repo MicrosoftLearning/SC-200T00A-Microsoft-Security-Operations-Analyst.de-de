@@ -26,7 +26,7 @@ In dieser Aufgabe bestätigen Sie, dass das Gerät erfolgreich integriert ist un
 
     >**Hinweis:** Wenn Sie den Onboarding-Prozess abgeschlossen haben und nach einer Stunde keine Geräte in der Liste „Geräte“ angezeigt werden, kann dies auf ein Onboarding- oder Verbindungsproblem hindeuten.
 
-1. Wählen Sie in der linken Menüleiste **Einstellungen** und dann auf der Seite Einstellungen **Endpunkte** aus.
+1. Erweitern Sie im Microsoft Defender XDR-Portal auf der linken Menüleiste den Abschnitt **System**, wählen Sie **Einstellungen** und anschließend auf der Seite *Einstellungen* **Endpunkte** aus.
 
 1. Wählen Sie im Abschnitt Geräteverwaltung **Onboarding** und stellen Sie sicher, dass *„Windows 10 und 11“* als Betriebssystem ausgewählt ist. Die Meldung *„Erstes Gerät integriert“* zeigt nun *Abgeschlossen* an.
 
@@ -44,9 +44,11 @@ In dieser Aufgabe bestätigen Sie, dass das Gerät erfolgreich integriert ist un
 
 In dieser Aufgabe untersuchen Sie die Warnungen und Vorfälle, die vom Onboarding-Erkennungstestskript in der vorherigen Aufgabe generiert wurden.
 
-1. Wählen Sie im Microsoft Defender XDR-Portal in der linken Menüleiste **Incidents und Warnungen** und dann **Warnungen** aus.
+1. Erweitern Sie im Microsoft Defender XDR-Portal auf der linken Menüleiste **Untersuchung und Antwort** und anschließend **Incidents und Warnungen**, und wählen Sie **Warnungen** aus.
 
-1. Wählen Sie im Bereich **Warnungen** die Warnung namens *Verdächtige PowerShell-Befehlszeile* aus, um ihre Details zu laden.
+    >**Hinweis:** Auf aktualisierten Versionen der Seite des Microsoft Defender XDR-Portals befindet sich *Incidents und Warnungen* unter der Menüüberschrift *Untersuchungen und Antwort*.
+
+1. Wählen Sie im Bereich **Warnungen** die Warnung mit dem Namen *[TestAlert] Verdächtige PowerShell-Befehlszeile* aus, um die Details der Warnung zu laden.
 
 1. Überprüfen Sie die Zeitachse *Warnungsverlauf* und dann die Registerkarten *Details* und *Empfehlungen*.
 
@@ -54,7 +56,9 @@ In dieser Aufgabe untersuchen Sie die Warnungen und Vorfälle, die vom Onboardin
 
 1. Wählen Sie im Microsoft Defender XDR-Portal in der linken Menüleiste **Incidents und Warnungen** und dann **Incidents** aus.
 
-1. Ein neuer Vorfall namens *Ausführungsvorfall auf einem Endpunkt* befindet sich im rechten Bereich. Wählen Sie den Namen des Vorfalls, um seine Details zu laden.
+1. Deaktivieren Sie den Filter *Warnungsschweregrad*, indem Sie auf der rechten Seite des Filters das Symbol **X** auswählen.
+
+1. Im rechten Bereich wird ein neuer Incident namens *[TestAlert] Verdächtige PowerShell-Befehlszeile* angezeigt. Wählen Sie den Namen des Vorfalls, um seine Details zu laden.
 
 1. Wählen Sie den Link **Vorfall verwalten** (mit einem Bleistiftsymbol) aus. Daraufhin wird ein neues Fensterblatt angezeigt.
 
@@ -90,15 +94,19 @@ In dieser Aufgabe simulieren Sie einen Angriff auf die WIN1-VM und überprüfen,
     $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
     ```
 
-    >**Hinweis:** Wenn beim Ausführen des Skripts Fehler (rot) auftreten, können Sie die Editor-App öffnen und das Skript in eine leere Datei kopieren. Stellen Sie sicher, dass *Zeilenumbruch* im Editor aktiviert ist. Kopieren Sie dann jede Zeile des Skripts separat in PowerShell, und führen Sie sie aus. Außerdem wurde ein PowerShell-Skript (attacksim.ps1) in den Dateien bereitgestellt, die am Anfang der Labore heruntergeladen wurden. Um das Skript zu verwenden, navigieren Sie in **Windows PowerShell (Administrator)** zum *Ordner \Users\Admin\Desktop*, und geben Sie *.\attacksim.ps1* ein, und drücken **Sie die EINGABETASTE**, um es auszuführen.
+    >**Hinweis:** Wenn beim Ausführen des Skripts Fehler (rot) auftreten, können Sie die Editor-App öffnen und das Skript in eine leere Datei kopieren. Stellen Sie sicher, dass *Zeilenumbruch* im Editor aktiviert ist. Kopieren Sie dann jede Zeile des Skripts separat in PowerShell, und führen Sie sie aus. Außerdem wurde ein PowerShell-Skript (attacksim.ps1) in den Dateien bereitgestellt, die am Anfang der Labore heruntergeladen wurden. Navigieren Sie zur Verwendung des Skripts in **Windows PowerShell (Administrator)** zum Ordner *\Users\Admin\Desktop\Allfiles*, geben Sie *.\attacksim.ps1* ein, und drücken Sie die **EINGABETASTE**, um es auszuführen.
 
 1. Das Skript erzeugt eine Ausgabe mit mehreren Zeilen und die Meldung, dass *Domänencontroller in der Domäne nicht aufgelöst werden konnten*. Ein paar Sekunden später wird die *Editor*-App geöffnet. Ein simulierter Angriffscode wird im Editor eingefügt. Lassen Sie die automatisch generierte Editor-Instanz geöffnet, um das vollständige Szenario zu erleben. Der simulierte Angriffscode versucht, mit einer externen IP-Adresse zu kommunizieren (simuliert einen C2-Server).
 
 ### Aufgabe 4: Untersuchen des simulierten Angriffs als einzelner Incident
 
-1. Wählen Sie im Microsoft Defender XDR-Portal in der linken Menüleiste **Incidents und Warnungen** und dann **Incidents** aus.
+1. Erweitern Sie im Microsoft Defender XDR-Portal auf der linken Menüleiste **Untersuchung und Antwort** und anschließend **Incidents und Warnungen**, und wählen Sie **Incidents** aus.
+
+    >**Hinweis:** Auf aktualisierten Versionen der Seite des Microsoft Defender XDR-Portals befindet sich *Incidents und Warnungen* unter der Menüüberschrift *Untersuchungen und Antwort*.
 
 1. Ein neuer Incident namens *Mehrstufiger Incident mit Verteidigungsumgehung und -ermittlung auf einem Endpunkt* befindet sich im rechten Bereich. Wählen Sie den Namen des Vorfalls, um seine Details zu laden.
+
+    >**Hinweis:** Wenn der Incident nicht angezeigt wird, müssen Sie den Filter *Warnungsschweregrad* löschen, indem Sie auf der rechten Seite des Filters das Symbol **X** auswählen.
 
 1. Reduzieren Sie auf der Registerkarte *Angriffsverlauf* die Bereiche **Warnungen** und **Incidentdetails**, um das vollständige **Incidentdiagramm** anzuzeigen.
 
