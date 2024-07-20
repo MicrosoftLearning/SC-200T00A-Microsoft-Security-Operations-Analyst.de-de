@@ -12,6 +12,8 @@ lab:
 
 Sie sind Security Operations Analyst und arbeiten in einem Unternehmen, das Microsoft Defender XDR und Microsoft Sentinel bereitgestellt hat. Sie müssen sich auf die einheitliche Security Operations-Platform vorbereiten, die Microsoft Sentinel mit Defender XDR verbindet. Im nächsten Schritt installieren Sie die Defender XDR Content Hub-Lösung und stellen den Defender XDR-Datenconnector in Microsoft Sentinel bereit.
 
+>**Wichtig:** Beachten Sie, dass es Funktionsunterschiede zwischen dem Microsoft Sentinel-Portal und Sentinel im Microsoft Defender XDR-Portal **[Portal-Funktionsunterschiede](https://learn.microsoft.com/azure/sentinel/microsoft-sentinel-defender-portal#capability-differences-between-portals)** gibt.
+
 ### Aufgabe 1: Verbinden von Defender XDR
 
 In dieser Aufgabe stellen Sie den Microsoft Defender XDR-Connector bereit.

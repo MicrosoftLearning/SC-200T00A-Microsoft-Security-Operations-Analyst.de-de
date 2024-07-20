@@ -85,7 +85,7 @@ In dieser Aufgabe aktivieren und konfigurieren Sie Microsoft Defender for Cloud.
 
 1. Überprüfen Sie die Azure-Ressourcen, die nun durch die Defender for Cloud-Pläne geschützt sind.
 
-    >**Wichtig:** Wenn alle Defender-Pläne *deaktiviert* sind, wählen Sie **Alle Pläne aktivieren** und klicken Sie auf **Speichern** aus.  Warten Sie, bis die Benachrichtigung  *„Der Ressourcenplan im Azure Pass-Abonnement wurde erfolgreich gespeichert!“* angezeigt wird.
+    >**Wichtig:** Wenn alle Defender-Pläne *deaktiviert* sind, wählen Sie **Alle Pläne aktivieren** aus. Wählen Sie den *Microsoft Defender für APIs-Plan 1 für 200 USD/Monat* aus, und wählen Sie dann **Speichern**. Wählen Sie oben auf der Seite **Speichern** aus, und warten Sie auf die Benachrichtigung *„Defender-Pläne (für Ihr) Abonnement wurden erfolgreich gespeichert!“* erscheint.
 
 1. Wählen Sie im Bereich Einstellungen (neben Speichern) die Registerkarte **Einstellungen und Überwachung** aus.
 
