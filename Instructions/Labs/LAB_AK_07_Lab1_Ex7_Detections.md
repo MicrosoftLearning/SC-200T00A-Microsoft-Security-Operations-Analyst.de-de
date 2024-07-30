@@ -80,14 +80,14 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den ersten Angriff der vorhe
 
 1. Klicken Sie auf die Schaltfläche **Weiter: Regellogik festlegen >**.
 
-1. Auf der Registerkarte *Regellogik festlegen* sollte die *Regelabfrage* bereits mit der KQL-Abfrage sowie den Entitäten unter *Warnungserweiterung – Entitätszuordnung* aufgefüllt werden.
+1. Auf der Registerkarte *Regellogik festlegen* sollte die *Regelabfrage* bereits mit Ihrer KQL-Abfrage ausgefüllt sein.
+
+1. Konfigurieren Sie die Entitäten unter *Warnungserweiterung - Entitätszuordnung* mit Hilfe der Parameter in der folgenden Tabelle.
 
     |Entity|Bezeichner|Datenfeld|
     |:----|:----|:----|
     |Konto|FullName|AccountCustomEntity|
     |Host|Hostname|HostCustomEntity|
-
-1. Wenn **Hostname** für die *Host*-Entität nicht ausgewählt ist, wählen Sie ihn aus der Dropdownliste aus, und verwenden Sie die Parameter in der vorherigen Tabelle, um die Felder aufzufüllen.
 
 1. Legen Sie für *Abfrageplanung* Folgendes fest:
 

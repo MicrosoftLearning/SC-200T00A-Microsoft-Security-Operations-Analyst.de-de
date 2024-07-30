@@ -65,7 +65,7 @@ In dieser Aufgabe erstellen Sie eine Watchlist in Microsoft Sentinel.
 
 1. Wählen Sie in Microsoft Sentinel unter Konfiguration die Option **Watchlist** aus.
 
-1. Wählen Sie in der Befehlsleiste **+ Neu hinzufügen** aus.
+1. Wählen Sie in der Befehlsleiste **+ Neu** aus.
 
 1. Geben Sie im Watchlist-Assistenten Folgendes ein:
 
@@ -108,7 +108,7 @@ In dieser Aufgabe erstellen Sie einen Indikator in Microsoft Sentinel.
 
 1. Geben Sie für Domain einen Domainnamen ein, zum Beispiel *contoso.com*.
 
-1. Wählen Sie für *Bedrohungsarten* die Option **+ Hinzufügen** und geben Sie **Schädliche Aktivität** ein. Klickan Sie auf **OK**.
+1. Wählen Sie für *Bedrohungsarten* die Option **+ Hinzufügen** und geben Sie **Schädliche Aktivität** ein. Wählen Sie **Übernehmen**.
 
 1. Geben Sie eine **Beschreibung** ein.
 

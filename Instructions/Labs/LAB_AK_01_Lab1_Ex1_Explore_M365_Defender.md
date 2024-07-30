@@ -84,7 +84,7 @@ In dieser Aufgabe weisen Sie im Microsoft 365 Security-Portal voreingestellte S
 
 1. Lesen Sie den Inhalt unter *Änderungen überprüfen und bestätigen* und wählen Sie **Bestätigen**aus, um die Änderungen zu übernehmen und wählen Sie **Fertig**aus, um den Vorgang abzuschließen.
 
-    >**Hinweis:** Wenn Sie die Meldung *„Der URI ‚https://outlook.office365.com/psws/service.svc/AntiPhishPolicy‘ ist für die PUT-Operation nicht gültig. Der URI muss auf eine einzelne Ressource für PUT-Operationen zeigen“*, wählen Sie einfach **OK** und dann **Abbrechen**, um zur Hauptseite zurückzukehren. Sie werden sehen, dass die Option *Strenger Schutz ist aktiviert* aktiviert ist.
+    >**Hinweis:** Wenn Sie die Meldung *„Der URI ‚<https://outlook.office365.com/psws/service.svc/AntiPhishPolicy>‘ ist für die PUT-Operation nicht gültig. Der URI muss auf eine einzelne Ressource für PUT-Operationen zeigen“*, wählen Sie einfach **OK** und dann **Abbrechen**, um zur Hauptseite zurückzukehren. Sie werden sehen, dass die Option *Strenger Schutz ist aktiviert* aktiviert ist.
 
 ### Aufgabe 3: Vorbereiten des Microsoft Defender XDR-Arbeitsbereichs
 
@@ -92,14 +92,12 @@ In dieser Aufgabe weisen Sie im Microsoft 365 Security-Portal voreingestellte S
 
     >**Hinweis:** Möglicherweise müssen Sie im Menü ganz nach oben scrollen.
 
-1. Auf der Portalseite **Startseite** wird das Banner **SIEM und XDR an einem zentralen Ort** angezeigt.
-
 1. Scrollen Sie die Menüelemente nach unten zu **Ressourcen**, und wählen Sie **Geräte** aus.
 
 1. Der Prozess zum Bereitstellen des Defender XDR-Arbeitsbereichs sollte gestartet werden, und es sollten Meldungen wie *Laden und Initialisieren* kurz oben auf der Seite angezeigt werden. Dann sehen Sie ein Bild eines Kaffeebechers und folgende Meldung: **Warten Sie einen Moment! Wir bereiten neue Orte für Ihre Daten vor und verbinden sie.** Die Bereitstellung dauert ungefähr fünf Minuten. *Lassen Sie die Seite geöffnet, und stellen Sie sicher, dass die Bereitstellung abgeschlossen wird, da sie für das nächste Lab erforderlich ist.*
 
     >**Hinweis:** Ignorieren Sie die Popups mit der Fehlermeldung: *Einige Ihrer Daten können nicht abgerufen werden*. Wenn die Meldung „Warten Sie einen Moment. Wir bereiten neue Speicherplätze für Ihre Daten vor und verknüpfen sie.“ nicht angezeigt wird, oder die Seite „Einstellungen > Microsoft Defender XDR > Konto“ geöffnet wird, Ihnen jedoch die Meldung *Fehler beim Laden des Datenspeicherorts. Versuchen Sie es später erneut.* angezeigt wird, wählen Sie im Menü „Allgemein“ die Option „Diensteinstellungen für Warnungen“ aus.
 
-1. Wenn der neue Speicherplatz erfolgreich abgeschlossen ist, werden die allgemeinen Einstellungen in Microsoft Defender XDR für „Konto“, „E-Mail-Benachrichtigungen“, „Diensteinstellungen für Warnungen“, „Berechtigungen und Rollen“ und „Streaming-API“ angezeigt. Außerdem werden **Features in der Preview** aktiviert.
+1. Wenn die neue Arbeitsbereichsinitialisierung erfolgreich abgeschlossen ist, wird auf der Portalseite **Startseite** ein Banner **SIEM und XDR an einem zentralen Ort abrufen** angezeigt. Außerdem sind in den **Einstellungen** die allgemeinen Microsoft Defender XDR-Einstellungen für Konto, E-Mail-Benachrichtigungen, **Vorschaufeatures**, Warnungsdiensteinstellungen, Berechtigungen und Rollen und Streaming-API jetzt aktiviert.
 
 ## Damit haben Sie das Lab beendet

@@ -10,7 +10,7 @@ lab:
 
 ![Übersicht über Lab.](../Media/SC-200-Lab_Diagrams_Mod3_L1_Ex1.png)
 
-Sie arbeiten als Security Operations Analyst in einem Unternehmen, das Cloudworkloadschutz mit Microsoft Defender für Cloud implementiert.  In diesem Lab aktivieren Sie Microsoft Defender for Cloud.
+Sie arbeiten als Security Operations Analyst in einem Unternehmen, das Cloudworkloadschutz mit Microsoft Defender für Cloud implementiert. In diesem Lab aktivieren Sie Microsoft Defender for Cloud.
 
 >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Enable%20Microsoft%20Defender%20for%20Cloud)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch. 
 
@@ -23,7 +23,7 @@ In dieser Aufgabe richten Sie ein Azure-Abonnement ein, das zum Abschließen die
 
 1. Öffnen Sie den Microsoft Edge-Browser, oder öffnen Sie eine neue Registerkarte, wenn diese bereits geöffnet ist.
 
-1. Navigieren Sie im Browser zum Azure-Portal unter (https://portal.azure.com)
+1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter <https://portal.azure.com>.
 
 1. Kopieren Sie im Dialogfeld **Anmelden**das von Ihrem Labhostinganbieter bereitgestellte Mandanten-E-Mail-Konto für den Administrator, und fügen Sie es ein, und wählen Sie dann **Weiter** aus.
 
@@ -50,7 +50,7 @@ In dieser Aufgabe richten Sie ein Azure-Abonnement ein, das zum Abschließen die
 
 ### Aufgabe 2: Erstellen eines Log Analytics-Arbeitsbereichs
 
-In dieser Aufgabeerstellen Sie einen Log Analytics-Arbeitsbereich zur Verwendung mit Microsoft Defender for Cloud.
+In dieser Aufgabe erstellen Sie einen Log Analytics-Arbeitsbereich zur Verwendung mit Azure Monitoring, Microsoft Sentinel und Microsoft Defender for Cloud.
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Log Analytics- Arbeitsbereiche* ein und wählen Sie den gleichen Dienstnamen aus.
 
@@ -108,9 +108,9 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 >**Wichtig:** Die nächsten Schritte werden in einer anderen VM ausgeführt als der, in der Sie zuvor gearbeitet haben. Suchen Sie nach den Namensverweisen der virtuellen Maschine.
 
-1. Melden Sie sich bei dem virtuellen Computer **WINServer** als Administrator*in mit dem Kennwort: **Passw0rd!** an, sofern erforderlich.  
+1. Melden Sie sich bei dem virtuellen Computer **WINServer** als Administrator*in mit dem Kennwort: **Passw0rd!** an, falls erforderlich.  
 
-1. Öffnen Sie den Microsoft Edge-Browser und navigieren Sie zum Azure-Portal unter https://portal.azure.com.
+1. Öffnen Sie den Microsoft Edge-Browser und navigieren Sie zum Azure-Portal unter <https://portal.azure.com>.
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
 
@@ -136,7 +136,7 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 1. Überprüfen Sie, welche Tags standardmäßig verfügbar sind. Wählen Sie **Weiter** aus, um zur Registerkarte Skript herunterladen und ausführen zu gelangen.
 
-1. Scrollen Sie nach unten und klicken Sie auf die Schaltfläche **Herunterladen**. **Hinweis:** Wenn Ihr Browser den Download blockiert, ergreifen Sie Maßnahmen im Browser, um ihn zuzulassen. Wählen Sie ggf. im Edge-Browser die Schaltfläche mit den Auslassungspunkten (…) und klicken Sie dann auf **Beibehalten**.
+1. Scrollen Sie nach unten und klicken Sie auf die Schaltfläche **Herunterladen**. **Hinweis:** Wenn Ihr Browser den Download blockiert, ergreifen Sie Maßnahmen im Browser, um ihn zuzulassen. Wählen Sie ggf. im Microsoft Edge-Browser die Schaltfläche mit den Auslassungspunkten (…) und klicken Sie dann auf **Beibehalten**.
 
 1. Klicken Sie mit der rechten Maustaste auf die Windows-Schaltfläche Start und wählen Sie **Windows PowerShell (Admin)** aus.
 
@@ -156,7 +156,7 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 1. Geben Sie **R** für Ausführen ein und drücken Sie die Eingabetaste (dies kann ein paar Minuten dauern).
 
-1. Während des Einrichtungsvorgangs wird eine neue Registerkarte im Edge-Browser geöffnet, um den Azure Arc-Agenten zu authentifizieren. Wählen Sie Ihr Administratorkonto aus, warten Sie, bis die Meldung „Authentifizierung abgeschlossen" angezeigt wird, und kehren Sie dann zum Windows PowerShell-Fenster zurück.
+1. Während des Einrichtungsvorgangs wird eine neue Registerkarte im Microsoft Edge-Browser geöffnet, um den Azure Arc-Agenten zu authentifizieren. Wählen Sie Ihr Administratorkonto aus, warten Sie, bis die Meldung „Authentifizierung abgeschlossen" angezeigt wird, und kehren Sie dann zum Windows PowerShell-Fenster zurück.
 
 1. Wenn die Installation abgeschlossen ist, kehren Sie zur Azure-Portalseite zurück, von der Sie das Skript heruntergeladen haben, und wählen Sie **Schließen**. Schließen Sie die Seite **Server mit Azure Arc hinzufügen**, um zur Seite Azure Arc **-Computer** zurückzukehren.
 
@@ -167,7 +167,7 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 ### Aufgabe 5: Schützen eines lokalen Servers
 
-In dieser Aufgabe installieren Sie den *Azure Monitor Agent* manuell, indem Sie eine *Datensammlungsregel (Data Collection Rule, DCR)* auf dem virtuellen Computer **WINServer** hinzufügen.
+In dieser Aufgabe installieren Sie den *Azure Monitor-Agent* manuell, indem Sie eine *Datensammlungsregel (DCR)* auf der virtuellen Maschine **WINServer** hinzufügen.
 
 1. Gehen Sie zu **Microsoft Defender for Cloud** und wählen Sie **Erste Schritte** im linken Menü aus.
 
@@ -175,7 +175,7 @@ In dieser Aufgabe installieren Sie den *Azure Monitor Agent* manuell, indem Sie 
 
 1. Scrollen Sie nach unten und wählen Sie **Konfigurieren** unter dem Abschnitt *Nicht-Azure-Server hinzufügen* aus.
 
-1. Wählen Sie **Upgrade** neben dem Arbeitsbereich, den Sie zuvor erstellt haben. Dieser Vorgang kann einige Minuten dauern. Warten Sie, bis die Benachrichtigung *„Microsoft Defender Plan für Arbeitsbereich ‚uniquenameDefender‘ wurde erfolgreich gespeichert!“* angezeigt wird.
+1. Wählen Sie **Upgrade** neben dem Arbeitsbereich, den Sie zuvor erstellt haben. Dieser Vorgang kann einige Minuten in Anspruch nehmen. Warten Sie, bis Sie die Meldung *„Microsoft Defender Plan für Arbeitsbereich uniquenameDefender wurden erfolgreich gespeichert!“* sehen.
 
 1. Wählen Sie **+ Server hinzufügen** neben dem Arbeitsbereich, den Sie zuvor erstellt haben.
 
@@ -189,7 +189,7 @@ In dieser Aufgabe installieren Sie den *Azure Monitor Agent* manuell, indem Sie 
 
 1. Sie können die Standardregion *USA, Osten* beibehalten oder eine andere bevorzugte Region auswählen.
 
-1. Wählen Sie das Optionsfeld **Windows** für *Plattformtyp* aus und anschließend **Weiter:Ressourcen**.
+1. Wählen Sie das Optionsfeld **Windows** für *Plattformtyp* und wählen Sie **Weiter: Ressourcen**.
 
 1. Wählen Sie auf der Registerkarte **Ressourcen** die Option **+ Ressourcen hinzufügen** aus.
 
@@ -197,7 +197,7 @@ In dieser Aufgabe installieren Sie den *Azure Monitor Agent* manuell, indem Sie 
 
     >**Hinweis:** Möglicherweise müssen Sie den Spaltenfilter für *Ressourcentyp* auf *Server-Azure Arc* setzen, wenn **WINServer** nicht angezeigt wird.
 
-1. Wählen Sie **Weiter: Sammeln und Übermitteln** aus.
+1. Wählen Sie **Weiter: Sammeln und liefern**
 
 1. Wählen Sie auf der Registerkarte **Sammeln und Übermitteln** die Option **+ Datenquelle hinzufügen**aus.
 
@@ -205,7 +205,7 @@ In dieser Aufgabe installieren Sie den *Azure Monitor Agent* manuell, indem Sie 
 
     >**Hinweis:** Für dieses Lab können Sie *Windows Ereignisprotokolle* auswählen. Diese Auswahlen können später überarbeitet werden.
 
-1. Klicken Sie auf die Registerkarte **Ziel**.
+1. Wählen Sie die Registerkarte **Ziel** aus.
 
 1. Wählen Sie **Azure Monitor-Protokolle** in der Dropdownliste **Zieltyp** aus.
 
@@ -213,7 +213,7 @@ In dieser Aufgabe installieren Sie den *Azure Monitor Agent* manuell, indem Sie 
 
 1. Wählen Sie ihren Arbeitsbereichsnamen aus. **Hinweis:** *RG-Defender* aus der Dropdownliste **Konto oder Namespace**
 
-1.  Wählen Sie **Datenquelle hinzufügen** und wählen Sie **Überprüfen + Erstellen** aus.
+1. Wählen Sie **Datenquelle hinzufügen** und wählen Sie **Überprüfen + Erstellen** aus.
 
 1. Wählen Sie **Erstellen** aus, nachdem *Validierung erfolgreich* angezeigt wurde.
 

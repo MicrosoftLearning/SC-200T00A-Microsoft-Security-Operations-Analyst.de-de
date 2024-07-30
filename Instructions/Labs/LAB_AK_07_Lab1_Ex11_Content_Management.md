@@ -46,7 +46,7 @@ In dieser Aufgabe aktivieren Sie die Entitätsverhaltensanalysen in Microsoft Se
 
 In dieser Aufgabe erstellen Sie ein Azure DevOps-Repository.
 
-1. Öffnen Sie eine weitere Registerkarte im Browser und navigieren Sie zu (https://aexprodcus1.vsaex.visualstudio.com/me?mkt=en-US)).
+1. Öffnen Sie eine weitere Registerkarte im Browser und navigieren Sie zu <https://aexprodcus1.vsaex.visualstudio.com/me?mkt=en-US>.
 
 1. Klicken Sie auf der Seite *Wir benötigen noch einige Details* auf **Weiter**.
 

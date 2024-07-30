@@ -40,8 +40,6 @@ In dieser Aufgabe stellen Sie den Microsoft Defender XDR-Connector bereit.
 
 1. Wählen Sie auf der Seite mit den Lösungsdetails von *Microsoft Defender XDR* die Option **Verwalten** aus
 
->**Hinweis:** Die *Microsoft Defender XDR*-Lösung installiert den *Microsoft Defender XDR-* Datenconnector, Suchabfragen, Arbeitsmappen und Analyseregeln.
-
 1. Aktivieren Sie das Kontrollkästchen „*Microsoft Defender XDR*-Datenconnector“, und wählen Sie die Option **Connectorseite öffnen** aus.
 
 1. **Deaktivieren** Sie im Abschnitt *Konfiguration* auf der Registerkarte *Anweisungen* das Kontrollkästchen für *Deaktivieren aller Microsoft-Vorfallerstellungsregeln für diese Produkte. Empfohlen*, und wählen Sie die Schaltfläche **Vorfälle und Warnungen verbinden** aus.
@@ -58,7 +56,7 @@ In dieser Aufgabe verbinden Sie einen Microsoft Sentinel-Arbeitsbereich mit Micr
 
 1. Starten Sie den Microsoft Edge-Browser.
 
-1. Wechseln Sie im Edge-Browser zum Microsoft Defender XDR-Portal unter https://security.microsoft.com).
+1. Wechseln Sie im Edge-Browser zum Microsoft Defender XDR-Portal unter <https://security.microsoft.com>.
 
 1. Kopieren Sie im Dialogfeld **Anmelden**das von Ihrem Labhostinganbieter bereitgestellte Mandanten-E-Mail-Konto für den Administrator, und fügen Sie es ein, und wählen Sie dann **Weiter** aus.
 
@@ -80,7 +78,7 @@ In dieser Aufgabe verbinden Sie einen Microsoft Sentinel-Arbeitsbereich mit Micr
 
 1. Sie sollten die Meldung *Es wir eine Verbindung mit dem Arbeitsbereich erstellt* und anschließend die Meldung *Arbeitsbereich erfolgreich verbunden* sehen.
 
-1. Klicken Sie auf die Schaltfläche **Schließen**. 
+1. Klicken Sie auf die Schaltfläche **Schließen**.
 
 1. Auf dem **Startbildschirm** des **Defender XDR**-Portals sollten Sie oben ein Banner mit der Nachricht *Ihr vereinheitlichtes SIEM und XDR ist bereit* sehen. Wählen Sie die Schaltfläche **Suche starten** aus.
 
@@ -88,6 +86,6 @@ In dieser Aufgabe verbinden Sie einen Microsoft Sentinel-Arbeitsbereich mit Micr
 
 1. Erweitern Sie den linken Hauptmenübereich, wenn er reduziert ist, und erweitern Sie die neuen **Microsoft Sentinel**-Menüelemente. Die Auswahl von *Bedrohungsverwaltung*, *Inhaltsverwaltung* und *Konfiguration* sollte angezeigt werden.
 
- >**Hinweis:** Einige Features sind möglicherweise nicht in der öffentlichen Vorschau verfügbar, und die Benutzeroberfläche unterscheidet sich von den Labanweisungen. Außerdem kann die Synchronisierung zwischen Microsoft Sentinel und Microsoft Defender XDR einige Minuten dauern, sodass möglicherweise nicht alle installierten *Datenconnectors* angezeigt werden.
+ >**Hinweis:**  Die Synchronisierung zwischen Microsoft Sentinel und Microsoft Defender XDR kann einige Minuten dauern, sodass möglicherweise nicht alle installierten *Datenconnectors* angezeigt werden.
 
 ## Sie haben das Lab abgeschlossen

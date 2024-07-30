@@ -23,7 +23,7 @@ In dieser Aufgabe überprüfen Sie die Konfiguration für die Einhaltung gesetzl
 
 1. Melden Sie sich beim virtuellen Computer **WIN1** als Administrator mit dem Kennwort **Pa55w.rd**an.  
 
-1. Öffnen Sie im Microsoft Edge-Browser das Azure-Portal unter https://portal.azure.com).
+1. Öffnen Sie im Microsoft Edge-Browser das Azure-Portal unter <https://portal.azure.com>.
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
 
@@ -39,7 +39,7 @@ In dieser Aufgabe überprüfen Sie die Konfiguration für die Einhaltung gesetzl
 
     >**Hinweis:** Wenn Sie über eine Hierarchie von Verwaltungsgruppen verfügen, wählen Sie **Alle erweitern** aus, um Ihr Abonnement zu finden.
 
-1. Wählen Sie im Portalmenü unter *Einstellungen* die Option **Sicherheitsrichtlinie** aus.
+1. Wählen Sie unter *Einstellungen* im Portalmenü **Sicherheitsrichtlinien**.
 
 1. Führen Sie einen Bildlauf nach unten aus, und überprüfen Sie die standardmäßig für Sie verfügbaren „Sicherheitsstandards“.
 
