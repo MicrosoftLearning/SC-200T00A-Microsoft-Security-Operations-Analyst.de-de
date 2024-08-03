@@ -35,13 +35,13 @@ In dieser Aufgabe untersuchen Sie die Entitätsverhaltensanalysen in Microsoft S
 
 1. Wählen Sie im Popupmenü *Entitätsverhaltenseinstellungen* die Option **UEBA festlegen**.
 
-1. Auf der nächsten Seite wählen Sie **UEBA festlegen**.
+1. Wählen Sie auf der Registerkarte *Einstellungen* unter *Einheitsverhaltensanalyse* die Option **UEBA einstellen**.
 
 1. Überprüfen Sie die drei Schritte, die erforderlich sind, um die Entitätsverhaltensanalyse zu aktivieren.
 
 1. Schließen Sie die Seite *Entitätsverhalten konfigurieren*, indem Sie das ‚x‘ oben rechts auf der Seite auswählen.
 
-1. Scrollen Sie auf der Seite *Einstellungen* nach unten und lesen Sie den Abschnitt *Anomalien*.
+1. Scrollen Sie auf der Registerkarte *Einstellungen* zum Abschnitt *Anomalien* und lesen Sie sich den Absatz durch.
 
 1. Wählen Sie **Zur Analyse gehen, um die Anomalien zu konfigurieren**.
 
@@ -74,7 +74,7 @@ In dieser Aufgabe bestätigen Sie, dass Anomalieanalyseregeln aktiviert sind.
 
 1. Setzen Sie den Wert auf **1** und wählen Sie **Weiter: Feedback senden**.
 
-1. Wählen Sie **Weiter: Überprüfen** und dann **Speichern**, um die Regel zu aktualisieren.
+1. Wählen Sie **Weiter: Überprüfen und Erstellen** und dann **Speichern**, um die Regel zu aktualisieren.
 
     >**Hinweis:** Sie können die Regel **Flighting** auf **Produktion** aktualisieren, indem Sie die Einstellung dieser Regel ändern und die Änderungen speichern. Die Regel **Produktion** wird dann zur Regel **Flighting**.
     

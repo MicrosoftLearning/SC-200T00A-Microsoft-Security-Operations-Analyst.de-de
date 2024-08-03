@@ -68,7 +68,7 @@ In dieser Aufgabe erstellen Sie eine geplante Abfrage und verbinden diese mit de
 
 1. Wählen Sie die Schaltfläche **Weiter: Automatisierte Reaktion >** aus.
 
-1. Wählen Sie auf der Registerkarte *Automatisierte Antwort* unter *Automatisierungsregeln* die Option **Neue hinzufügen** aus.
+1. Wählen Sie auf der Registerkarte *Automatisierte Antwort* unter *Automatisierungsregeln* die Option **+ Neu hinzufügen**.
 
 1. Beim *Namen der Automatisierungsregel* geben Sie **Ebene 2** ein.
 
@@ -129,7 +129,7 @@ In dieser Aufgabe testen Sie ihre neue Regel für geplante Abfragen.
 
 1. Wählen Sie den Incident aus und überprüfen Sie die Informationen auf dem rechten Blatt.
 
-1. Kehren Sie zu Microsoft Teams zurück, indem Sie die Registerkarte in Ihrem Microsoft Edge-Browser auswählen. Wenn Sie die Registerkarte geschlossen haben, öffnen Sie einfach eine neue Registerkarte und geben Sie https://teams.microsoft.com ein. Gehen Sie zu *SOC*-Teams, wählen Sie den Kanal *Neue Warnungen* und lesen Sie die Nachricht zum Incident.
+1. Kehren Sie zu Microsoft Teams zurück, indem Sie die Registerkarte in Ihrem Microsoft Edge-Browser auswählen. Wenn Sie die Registerkarte geschlossen haben, öffnen Sie einfach eine neue Registerkarte und geben Sie <https://teams.microsoft.com> ein. Gehen Sie zu *SOC*-Teams, wählen Sie den Kanal *Neue Warnungen* und lesen Sie die Nachricht zum Incident.
 
 
 ## Fahren Sie mit Übung 4 fort

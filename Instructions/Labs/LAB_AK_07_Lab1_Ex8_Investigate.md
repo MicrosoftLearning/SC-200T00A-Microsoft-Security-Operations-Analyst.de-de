@@ -59,11 +59,11 @@ In dieser Aufgabe untersuchen Sie einen Incident.
 
 1. Lesen Sie den Inhalt des Fensters **Entitäten**. Es sollte mindestens die Entität *Host* erscheinen, die wir in der KQL-Abfrage der vorherigen Übung zugeordnet haben. **Hinweis:** Wenn keine Entitäten angezeigt werden, aktualisieren Sie die Seite.
 
-1. Wählen Sie in der Befehlsleiste die neue Schaltfläche **Aufgaben (Vorschau)** aus.
+1. Wählen Sie die neue Schaltfläche **Tasks** in der Befehlsleiste.
 
 1. Wählen Sie **+ Aufgabe hinzufügen**, geben Sie im Feld „Titel“ **Überprüfen, wem der Computer gehört** ein und klicken Sie auf **Speichern**.
 
-1.  Schließen Sie die Registerkarte *Incidents-Aufgaben (Vorschau)*, indem Sie auf das Symbol **x** oben rechts klicken.
+1. Schließen Sie das Blatt *Incident-Tasks*, indem Sie das Symbol **x** oben rechts auswählen.
 
 1. Klicken Sie in der Befehlsleiste auf die neue Schaltfläche **Aktivitätsprotokoll**.
 

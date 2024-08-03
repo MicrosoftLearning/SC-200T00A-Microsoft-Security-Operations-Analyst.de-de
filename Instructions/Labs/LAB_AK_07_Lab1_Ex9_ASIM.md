@@ -64,8 +64,10 @@ In dieser Aufgabe sehen Sie sich die Registrierungsschema-Parser an, die in der 
 
     >**Hinweis:** Wenn Sie STRG+F in das Codefenster eingeben, wird die *Suchfunktion* angezeigt und die Suche nach *EventID: 4657* viel einfacher.
 
+1. Öffnen Sie in *Protokollen* eine Registerkarte „Neue Abfrage“.
+
 1. Gehen Sie zurück zur *Schema- und Filterleiste* und bewegen Sie nun den Mauszeiger auf **_Im_RegistryEvent_MicrosoftWindowsEventxxx** *Registrierungsereignis ASIM-Filterparser für Microsoft Windows-Ereignisse und Sicherheitsereignisse* und wählen Sie dann **Im Editor verwenden** aus.
 
-1. **Führen Sie** die ASIM-Funktionsabfrage aus. Sie sollten kein Ergebnis und keine Fehler erhalten, diese Abfrage dient lediglich zu Überprüfungszwecken.
+1. **Führen Sie** die ASIM-Funktionsabfrage aus. Wenn Sie die vorherigen Labübungen abgeschlossen haben, sollten Ergebnisse und keine Fehlermeldungen angezeigt werden.
 
 ## Fahren Sie mit Übung 10 fort

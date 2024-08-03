@@ -25,7 +25,7 @@ In dieser Aufgabe erstellen Sie eine Bedrohungssuchabfrage, setzen ein Lesezeich
 
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
-1. Navigieren Sie im Edge-Browser zum Azure-Portal unter https://portal.azure.com.
+1. Navigieren Sie im Edge-Browser zum Azure-Portal unter <https://portal.azure.com>.
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
 
@@ -56,7 +56,7 @@ In dieser Aufgabe erstellen Sie eine Bedrohungssuchabfrage, setzen ein Lesezeich
 
 1. Markieren Sie das Kontrollkästchen der Ergebnisse, welches die *"-file c2.ps1"* anzeigt..
 
-1. Klicken Sie in der mittleren Befehlsleiste auf die Schaltfläche **Lesezeichen hinzufügen**.
+1. Klicken Sie in der *Ergebnisse*-Befehlsleiste auf die Schaltfläche **Lesezeichen hinzufügen**.
 
 1. Wählen Sie **+ Neue Entität hinzufügen** unter *Entitätszuordnung* aus.
 
@@ -64,7 +64,7 @@ In dieser Aufgabe erstellen Sie eine Bedrohungssuchabfrage, setzen ein Lesezeich
 
 1. Bei *Taktiken und Techniken* wählen Sie **Command and Control** aus.
 
-1. Gehen Sie zurück zum Blatt *Lesezeichen hinzufügen* und wählen Sie **Erstellen** aus. Wir werden dieses Lesezeichen später einem Incident zuordnen.
+1. Klicken Sie im Bereich *Lesezeichen hinzufügen* auf **Erstellen**. Wir werden dieses Lesezeichen später einem Incident zuordnen.
 
 1. Schließen Sie das Fenster *Protokolle*, indem Sie oben rechts im Fenster auf **X** klicken und dann auf **OK**, um die Änderungen zu verwerfen. 
 
@@ -123,7 +123,7 @@ In dieser Aufgabe erstellen Sie eine Bedrohungssuchabfrage, setzen ein Lesezeich
 
 1. Wählen Sie **Zu vorhandenem Incident hinzufügen** aus. Im rechten Fensterbereich werden alle Incidents angezeigt.
 
-1. Wählen Sie einen der Incidents aus und klicken Sie anschließend auf **Hinzufügen**. 
+1. Wählen Sie einen der Incidents aus und klicken Sie anschließend auf **Hinzufügen**.
 
 1. Scrollen Sie nach links, um zu sehen, dass die Spalte *Schweregrad* nun mit den Daten des Incidents gefüllt ist.
 
@@ -132,11 +132,11 @@ In dieser Aufgabe erstellen Sie eine Bedrohungssuchabfrage, setzen ein Lesezeich
 
 In dieser Aufgabe erstellen Sie anstelle eines LiveStreams eine NRT-Analyseabfrageregel. NRT-Regeln werden jede Minute ausgeführt und schauen eine Minute zurück. Der Vorteil von NRT-Regeln ist, dass sie die Logik zum Erstellen von Warnungen und Incidents verwenden können.
 
-1. Wählen Sie in Microsoft Sentinel unter *Konfiguration* die Seite **Analysen** aus. 
+1. Wählen Sie die Seite **Analyse** unter *Konfiguration* in Microsoft Sentinel aus. 
 
-1. Wählen Sie die Registerkarte **Erstellen** und dann **NRT-Abfrageregel (Vorschau)** aus.
+1. Wählen Sie die Registerkarte **Erstellen** und dann **NRT-Abfrageregel** aus.
 
-1. Dadurch wird der „Assistent für Analyseregeln“ gestartet. Für die Registerkarte *Allgemein* geben Sie ein:
+1. Dadurch wird der Assistent für Analyseregeln geöffnet. Für die Registerkarte *Allgemein* geben Sie ein:
 
     |Einstellung|Wert|
     |---|---|
@@ -171,9 +171,11 @@ In dieser Aufgabe erstellen Sie anstelle eines LiveStreams eine NRT-Analyseabfra
     - In der Dropdownliste *Bezeichner* wählen Sie **HostName** aus.
     - In der Dropdownliste *Wert* wählen Sie **Computer** aus.
 
-1. Scrollen Sie nach unten und klicken Sie auf die Schaltfläche **Weiter: Incidenteinstellungen>**.
+1. Scrollen Sie nach unten, und wählen Sie die Schaltfläche **Weiter: Incidenteinstellungen >** aus.
 
-1. Belassen Sie auf der Registerkarte *Incidenteinstellungen* die Standardwerte und klicken Sie auf die Schaltfläche **Weiter: Überprüfen und Erstellen>**.
+1. Für die Registerkarte *Incidenteinstellungen* übernehmen Sie die Standardwerte, und wählen Sie die Schaltfläche **Weiter: Automatisierte Antwort >** aus.
+
+1. Wählen Sie die Schaltfläche *Automatische Antwort* und dann die Schaltfläche **Weiter: Prüfen und erstellen** aus.
 
 1. Wählen Sie auf der Registerkarte *Überprüfen und Erstellen* die Schaltfläche **Speichern** aus, um die neue Geplante Analyseregel zu erstellen und zu speichern.
 
