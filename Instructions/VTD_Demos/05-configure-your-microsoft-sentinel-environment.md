@@ -1,6 +1,8 @@
 # Modul 5: Konfigurieren Ihrer Microsoft Sentinel-Umgebung
 
-**Hinweis:** Der erfolgreiche Abschluss dieser Demo hängt davon ab, alle Schritte im  [Dokument](00-prerequisites.md) „Voraussetzungen“ abzuschließen. 
+**Hinweis:** Der erfolgreiche Abschluss dieser Demo hängt davon ab, alle Schritte im  [Dokument](00-prerequisites.md) „Voraussetzungen“ abzuschließen.
+
+**Wichtig:** Diese Demo ist für VTD-5002-FY25 nicht erforderlich.
 
 ## Erkunden der Microsoft Sentinel-Oberfläche
 

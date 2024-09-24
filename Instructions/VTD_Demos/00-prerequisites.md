@@ -18,6 +18,8 @@ Die Labs für diesen Kurs erfordern sowohl einen lizenzierten Microsoft 365 E5-M
 
 ## Aktivieren von Azure Pass
 
+>**Hinweis:** Dies sind bestimmte Demos, die ein Azure-Abonnement erfordern, das mit einem Microsoft 365 E5-Mandanten verbunden ist. Sie können Ihr eigenes Azure-Abonnement und Ihren Microsoft 365 E5-Mandanten verwenden, wenn keine Azure-Pässe verfügbar sind. Besuchen Sie die Website [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program/), um die Mitgliedschaft zu beantragen und ein kostenloses Microsoft 365-E5-Entwicklerabonnement festzulegen.
+
 ## Bereitstellen von Defender für Endpoint
 
 ### Abrufen Ihrer Microsoft 365-Anmeldeinformationen
@@ -36,31 +38,29 @@ In dieser Aufgabe führen Sie die Initialisierung von Microsoft Defender for End
 
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
-1. Öffnen Sie im Edge-Browser das Microsoft 365 Defender-Portal (https://security.microsoft.com)).
+1. Öffnen Sie im Edge-Browser das Microsoft Defender-Portal (https://security.microsoft.com)).
 
 1. Kopieren und fügen Sie im Dialogfeld **Anmelden** das E-Mail-Konto des Mandanten für den Administratorbenutzernamen ein, das Sie von Ihrem Lab-Hostinganbieter erhalten haben, und klicken Sie auf **Weiter**.
 
 1. Kopieren und fügen Sie im Dialogfeld **Kennwort eingeben** das vom Lab-Hostanbieter bereitgestellte Mandantenkennwort des/der Administratorin, und klicken Sie auf **Anmelden** aus.
 
-Wählen Sie im **Microsoft 365 Defender**-Portal im Navigationsmenü auf der linken Seite **Start** aus.
+Wählen Sie im **Microsoft Defender**-Portal im Navigationsmenü auf der linken Seite **Startseite** aus.
 
     >**Note:** You may need to scroll all the way to the menu top.
 
-1. Auf der Portalseite **Start** wird **Willkommen bei Microsoft 365 Defender** angezeigt.
+1. Auf der Portalseite **Start** wird **Willkommen bei Microsoft Defender** angezeigt.
 
-1. Scrollen Sie durch die Kacheln nach unten, bis Sie die Kachel mit der Bezeichnung **Microsoft 365 Defender** und der Meldung **Microsoft 365 Defender aktivieren.** finden.
+1. Scrollen Sie die Menüelemente nach unten zu **Ressourcen**, und wählen Sie **Geräte** aus.
 
-    >**Hinweis:** Sie sollte sich unten rechts in den Kacheln befinden.
+1. Der Prozess zum Bereitstellen des Defender XDR-Arbeitsbereichs sollte gestartet werden, und es sollten Meldungen wie *Laden und Initialisieren* kurz oben auf der Seite angezeigt werden. Dann sehen Sie ein Bild eines Kaffeebechers und folgende Meldung: **Warten Sie einen Moment! Wir bereiten neue Orte für Ihre Daten vor und verbinden sie.** Die Bereitstellung dauert ungefähr fünf Minuten. *Lassen Sie die Seite geöffnet, und stellen Sie sicher, dass die Bereitstellung abgeschlossen wird, da sie für das nächste Lab erforderlich ist.*
 
-1. Klicken Sie auf die Schaltfläche mit der Aufschrift **Neue Funktionen aktivieren**.
+    >**Hinweis:** Ignorieren Sie die Popups mit der Fehlermeldung: *Einige Ihrer Daten können nicht abgerufen werden*. Wenn die Meldung „Warten Sie einen Moment. Wir bereiten neue Speicherplätze für Ihre Daten vor und verknüpfen sie.“ nicht angezeigt wird, oder die Seite „Einstellungen > Microsoft Defender XDR > Konto“ geöffnet wird, Ihnen jedoch die Meldung *Fehler beim Laden des Datenspeicherorts. Versuchen Sie es später erneut.* angezeigt wird, wählen Sie im Menü „Allgemein“ die Option „Diensteinstellungen für Warnungen“ aus.
 
-1. Oben auf der Seite erscheint kurz die Meldung *Laden und Initialisieren*, dann sehen Sie das Bild einer Kaffeetasse und die Meldung: **Bleiben Sie dran! Wir bereiten neue Speicherplätze für Ihre Daten vor und verbinden sie.** Der Vorgang dauert etwa 5 Minuten. *Lassen Sie die Seite geöffnet und vergewissern Sie sich, dass sie abgeschlossen wird, da sie für das nächste Lab benötigt wird.*.
-
-    >**Hinweis:** Wenn die Meldung „Bleiben Sie dran! Wenn „Wir bereiten neue Speicherorte für Ihre Daten vor und verbinden sie“ nicht angezeigt wird oder die Seite „Einstellungen > Microsoft 365 Defender > Konto“ geöffnet wird, aber die Meldung „Fehler beim Laden des Datenspeicherorts. Bitte versuchen Sie es später erneut“ angezeigt wird, wählen Sie im Menü „Allgemein“ die Option „Warnungsdiensteinstellungen“ oder gehen Sie zum Navigationsmenü, scrollen Sie nach unten zum Abschnitt „Ressourcen“ und wählen Sie „Geräte“.
+1. Wenn die neue Arbeitsbereichsinitialisierung erfolgreich abgeschlossen ist, wird auf der Portalseite **Startseite** ein Banner **SIEM und XDR an einem zentralen Ort abrufen** angezeigt. Außerdem sind in den **Einstellungen** die allgemeinen Microsoft Defender XDR-Einstellungen für Konto, E-Mail-Benachrichtigungen, **Vorschaufeatures**, Warnungsdiensteinstellungen, Berechtigungen und Rollen und Streaming-API jetzt aktiviert.
 
 1. Wenn der neue Bereich erfolgreich abgeschlossen wurde, sehen Sie die allgemeinen Einstellungen von Microsoft 365 Defender für Konto, E-Mail-Benachrichtigungen, Einstellungen für den Benachrichtigungsdienst, Berechtigungen und Rollen und Streaming-API. Außerdem sehen Sie, dass die **Vorschaufunktionen** aktiviert sind.
 
-**Hinweis**: In der gehosteten Lab-Umgebung sollte Ihr Datenspeicherort für Sie ausgewählt sein. Und es muss in der geografischen Region liegen, die für den Ort geeignet ist, an dem dieser Schulungsmandanten verwaltet wird. Die Dauer der Datenaufbewahrung kann noch gewählt werden, ist aber nicht erforderlich.
+    >**Hinweis**: In der gehosteten Lab-Umgebung sollte Ihr Datenspeicherort für Sie ausgewählt sein. Und es muss in der geografischen Region liegen, die für den Ort geeignet ist, an dem dieser Schulungsmandanten verwaltet wird. Die Dauer der Datenaufbewahrung kann noch gewählt werden, ist aber nicht erforderlich.
 
 1. Wählen Sie in **Einstellungen** **Endpunkte**aus.
 
@@ -395,7 +395,6 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
     >**Hinweis:** Dieser Vorgang kann einige Minuten dauern.
 
-
 ### Aufgabe 6: Schützen eines lokalen Servers
 
 In dieser Aufgabe fügen Sie einen mit Azure Arc verbundenen virtuellen Nicht-Azure-Windows-Computer zu Microsoft Sentinel hinzu.  
@@ -418,6 +417,37 @@ In dieser Aufgabe fügen Sie einen mit Azure Arc verbundenen virtuellen Nicht-Az
 
 1. Wählen Sie **Erstellen** aus, nachdem *Validierung erfolgreich* angezeigt wurde.
 
+### Aufgabe 7: Verbinden von Defender XDR
+
+In dieser Aufgabe stellen Sie den Microsoft Defender XDR-Connector bereit.
+
+1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
+
+1. Navigieren Sie im Microsoft Edge-Browser zum Azure-Portal unter (<https://portal.azure.com>).
+
+1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
+
+1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das **Kennwort des Mandanten**, das Sie von Ihrem Labhostinganbieter erhalten haben, und fügen Sie es ein. Wählen Sie dann **Anmelden**.
+
+1. Geben Sie in der Suchleiste des Azure-Portals *Sentinel* ein, und wählen Sie dann ** Microsoft Sentinel** aus.
+
+1. Wählen Sie Ihren zuvor erstellten Microsoft Sentinel-Arbeitsbereich aus.
+
+1. Scrollen Sie im Bereich Microsoft Sentinel im linken Menü nach unten zu **Inhaltsverwaltung**, und wählen Sie **Content Hub** aus.
+
+1. Suchen Sie im *Inhaltshub* nach der **Microsoft Defender XDR**-Lösung, und wählen Sie sie aus der Liste aus.
+
+1. Wählen Sie auf der Seite mit den Lösungsdetails von *Microsoft Defender XDR* die Option **Installieren** aus.
+
+1. Wenn die Installation abgeschlossen ist, suchen Sie nach der **Microsoft Defender XDR**-Lösung, und wählen Sie sie aus.
+
+1. Wählen Sie auf der Seite mit den Lösungsdetails von *Microsoft Defender XDR* die Option **Verwalten** aus
+
+1. Aktivieren Sie das Kontrollkästchen „*Microsoft Defender XDR*-Datenconnector“, und wählen Sie die Option **Connectorseite öffnen** aus.
+
+1. **Deaktivieren** Sie im Abschnitt *Konfiguration* auf der Registerkarte *Anweisungen* das Kontrollkästchen für *Deaktivieren aller Microsoft-Vorfallerstellungsregeln für diese Produkte. Empfohlen*, und wählen Sie die Schaltfläche **Vorfälle und Warnungen verbinden** aus.
+
+1. Es sollte eine Meldung angezeigt werden, dass die Verbindung erfolgreich hergestellt wurde.
 
 <!--- ### Task 4: Connect the Microsoft Defender for Cloud connector.
 

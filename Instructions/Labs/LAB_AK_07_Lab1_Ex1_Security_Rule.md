@@ -10,9 +10,11 @@ lab:
 
 ![Übersicht über Lab.](../Media/SC-200-Lab_Diagrams_Mod7_L1_Ex1.png)
 
-Sie sind als Security Operations Analyst für ein Unternehmen tätig, das Microsoft Sentinel implementiert hat. Sie müssen lernen, Bedrohungen mithilfe von Microsoft Sentinel zu erkennen und abzuwehren. Zunächst müssen Sie die von Defender for Cloud in Microsoft Sentinel eingehenden Warnmeldungen nach Schweregrad filtern. 
+Sie sind als Security Operations Analyst für ein Unternehmen tätig, das Microsoft Sentinel implementiert hat. Sie müssen lernen, Bedrohungen mithilfe von Microsoft Sentinel zu erkennen und abzuwehren. Zunächst müssen Sie die von Defender for Cloud in Microsoft Sentinel eingehenden Warnmeldungen nach Schweregrad filtern.
 
 >**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Modify%20a%20Microsoft%20Security%20rule)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch. 
+
+>**Wichtig:** Wenn Sie das vorherige Lab *Lernpfad 6 – Lab 1 – Übung 4 – Verbinden von Defender XDR mit Microsoft Sentinel mithilfe von Datenconnectors abgeschlossen haben*, können Sie dieses Lab überspringen und mit der nächsten Übung fortfahren.
 
 
 ### Aufgabe 1: Aktivieren einer Microsoft-Sicherheitsregel
