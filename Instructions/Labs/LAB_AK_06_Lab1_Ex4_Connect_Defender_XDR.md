@@ -88,4 +88,4 @@ In dieser Aufgabe verbinden Sie einen Microsoft Sentinel-Arbeitsbereich mit Micr
 
  >**Hinweis:**  Die Synchronisierung zwischen Microsoft Sentinel und Microsoft Defender XDR kann einige Minuten dauern, sodass möglicherweise nicht alle installierten *Datenconnectors* angezeigt werden.
 
-## Sie haben das Lab abgeschlossen
+## Sie haben das Lab abgeschlossen – Fahren Sie mit dem Lernpfad 7 – Lab 1 – Übung 2 fort – Erstellen eines Playbook in Microsoft Sentinel

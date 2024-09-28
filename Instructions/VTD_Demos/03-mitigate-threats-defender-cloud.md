@@ -1,6 +1,8 @@
 # Modul 3: Abwehr von Bedrohungen mithilfe von Microsoft Defender for Cloud
 
-**Hinweis:** Der erfolgreiche Abschluss dieser Demo hängt davon ab, alle Schritte im  [Dokument](00-prerequisites.md) „Voraussetzungen“ abzuschließen. 
+**Hinweis:** Um diese Demo erfolgreich abzuschließen, müssen Sie alle Schritte im [Dokument „Voraussetzungen“](00-prerequisites.md) ausführen.
+
+**Wichtig:** Diese Demo ist für VTD-5002-FY25 nicht erforderlich.
 
 ## Abschwächen von Sicherheitswarnungen
 

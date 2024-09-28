@@ -1,6 +1,8 @@
 # Modul 6: Erstellen von Erkennungen und Durchführen von Untersuchungen mithilfe von Microsoft Sentinel
 
-**Hinweis:** Der erfolgreiche Abschluss dieser Demo hängt davon ab, dass Sie alle Schritte im [Dokument „Voraussetzungen“](00-prerequisites.md) abschließen. 
+**Hinweis:** Der erfolgreiche Abschluss dieser Demo hängt davon ab, dass Sie alle Schritte im [Dokument „Voraussetzungen“](00-prerequisites.md) abschließen.
+
+**Wichtig:** Diese Demo ist für VTD-5002-FY25 nicht erforderlich.
 
 ## Erstellen einer NRT-Abfrageregel
 
