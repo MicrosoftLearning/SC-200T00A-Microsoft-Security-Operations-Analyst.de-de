@@ -1,6 +1,6 @@
 ---
 lab:
-  title: "Übung 1\_– Erkunden von Microsoft Defender XDR"
+  title: Übung 1 – Erkunden von Microsoft Defender XDR
   module: Learning Path 1 - Mitigate threats using Microsoft Defender XDR
 ---
 
@@ -11,8 +11,6 @@ lab:
 ![M365 Defender](../Media/SC-200-Lab_M1_L1_Ex1.png)
 
 Sie arbeiten als Security Operations Analyst in einem Unternehmen, das Microsoft Defender XDR implementiert. Zunächst weisen Sie voreingestellte Sicherheitsrichtlinien zu, die in Exchange Online Protection (EOP) und Microsoft Defender for Office 365 verwendet werden.
-
->**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Explore%20Microsoft%20365%20Defender)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
 
 >**Hinweis:****WWL-Mandanten – Nutzungsbedingungen** Wenn Ihnen im Rahmen einer Präsenzschulung ein Mandant zugewiesen worden ist, steht dieser für Praxislabs innerhalb der Präsenzschulung zur Verfügung. Mandanten sollten nicht für Zwecke außerhalb von Praxislabs freigegeben oder verwendet werden. Der in diesem Kurs verwendete Mandant ist ein Testmandant; er kann nach Abschluss des Kurses nicht verwendet oder erreicht werden und ist nicht für Erweiterungen geeignet. Mandanten dürfen nicht in ein kostenpflichtiges Abonnement konvertiert werden. Die im Rahmen dieses Kurses erworbenen Mandanten verbleiben im Eigentum der Microsoft Corporation, und wir behalten uns das Recht vor, jederzeit auf Mandanten zuzugreifen und diese zurückzuziehen. 
 
@@ -34,7 +32,7 @@ In dieser Aufgabe weisen Sie im Microsoft 365 Security-Portal voreingestellte S
 
 1. Starten Sie den Microsoft Edge-Browser.
 
-1. Wechseln Sie im Browser Microsoft Edge zum Microsoft Defender XDR-Portal unter https://security.microsoft.com).
+1. Wechseln Sie im Microsoft Edge-Browser zum Microsoft Defender XDR-Portal unter <https://security.microsoft.com>.
 
 1. Kopieren Sie im Dialogfeld **Anmelden**das von Ihrem Labhostinganbieter bereitgestellte Mandanten-E-Mail-Konto für den Administrator, und fügen Sie es ein, und wählen Sie dann **Weiter** aus.
 
@@ -70,7 +68,7 @@ In dieser Aufgabe weisen Sie im Microsoft 365 Security-Portal voreingestellte S
 
 1. Lesen Sie den Inhalt unter *Änderungen überprüfen und bestätigen* und wählen Sie **Bestätigen**aus, um die Änderungen zu übernehmen und wählen Sie **Fertig**aus, um den Vorgang abzuschließen.
 
-    >**Hinweis:** Wenn Sie die Meldung *„Der URI ‚https://outlook.office365.com/psws/service.svc/AntiPhishPolicy‘ ist für die PUT-Operation nicht gültig. Der URI muss auf eine einzelne Ressource für PUT-Operationen zeigen“*, wählen Sie einfach **OK** und dann **Abbrechen**, um zur Hauptseite zurückzukehren. Sie werden sehen, dass die Option *Standardschutz ist aktiviert* aktiviert ist.
+    >**Hinweis:** Wenn Sie die Meldung *„Der URI ‚<https://outlook.office365.com/psws/service.svc/AntiPhishPolicy>‘ ist für die PUT-Operation nicht gültig. Der URI muss auf eine einzelne Ressource für PUT-Operationen zeigen“*, wählen Sie einfach **OK** und dann **Abbrechen**, um zur Hauptseite zurückzukehren. Sie werden sehen, dass die Option *Standardschutz ist aktiviert* aktiviert ist.
 
 1. Wählen Sie unter *Strenger Schutz* die Option **Schutzeinstellungen verwalten**aus. **Hinweis: ***Strenger Schutz* finden Sie unter „E-Mails und Zusammenarbeit – Richtlinien und Regeln – Bedrohungsrichtlinien – Voreingestellte Sicherheitsrichtlinien“.
 

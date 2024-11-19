@@ -12,10 +12,7 @@ lab:
 
 Sie sind Security Operations Analyst in einem Unternehmen, das Microsoft Sentinel implementiert. Sie sind für die Analyse von Protokolldaten verantwortlich, um nach schädlichen Aktivitäten zu suchen, Visualisierungen anzuzeigen und Bedrohungen aufzuspüren. Zum Abfragen von Protokolldaten verwenden Sie die Kusto-Abfragesprache (KQL).
 
->**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Create%20queries%20for%20Microsoft%20Sentinel%20using%20Kusto%20Query%20Language)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
-
->**Wichtig:** Dieses Lab umfasst das Eingeben vieler KQL-Skripts in Microsoft Sentinel. Die Skripte wurden zu Beginn des Labs in einer Datei zur Verfügung gestellt. Sie können auch hier: https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles heruntergeladen werden
-
+>**Wichtig:** Dieses Lab umfasst das Eingeben vieler KQL-Skripts in Microsoft Sentinel. Die Skripte wurden zu Beginn des Labs in einer Datei zur Verfügung gestellt. Sie können auch hier: <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> heruntergeladen werden
 
 ### Aufgabe 1: Zugriff auf den KQL-Testbereich
 
@@ -23,7 +20,7 @@ In dieser Aufgabe erhalten Sie Zugriff auf eine Log Analytics-Umgebung, in der S
 
 1. Melden Sie sich beim virtuellen **WIN1-Computer** als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
-1. Navigieren Sie im Browser zu https://aka.ms/lademo. Melden Sie sich mit den Anmeldeinformationen des MOD-Administrators an
+1. Navigieren Sie im Browser zu <https://aka.ms/lademo>. Melden Sie sich mit den Anmeldeinformationen des MOD-Administrators an
 
 1. Schließen Sie das Popupfenster „Log Analytics-Video“, das erscheint.
 
@@ -48,7 +45,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
 >**Wichtig:** Löschen Sie bei jeder Abfrage die vorherige Anweisung aus dem Abfragefenster oder öffnen Sie ein neues Abfragefenster, indem Sie **+** nach der zuletzt geöffneten Registerkarte (bis zu 25) auswählen.
 
-1. Die folgende Anweisung demonstriert den Operator **Suchen**, der alle Spalten der Tabelle nach dem Wert durchsucht. 
+1. Die folgende Anweisung demonstriert den Operator **Suchen**, der alle Spalten der Tabelle nach dem Wert durchsucht.
 
 1. Ändern Sie im Abfragefenster den *Zeitbereich* in **Letzte 30 Minuten**.
 
@@ -97,7 +94,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
  
     ```
 
-1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von *Variablen*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von *Variablen*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let timeOffset = 1h;
@@ -107,7 +104,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
     | where EventID != discardEventId
     ```
 
-1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von einer *dynamischen Liste*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von einer *dynamischen Liste*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let suspiciousAccounts = datatable(account: string) [
@@ -121,7 +118,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
     >**Tipp:** Sie können die Abfrage ganz einfach neu formatieren, indem Sie die Ellipse (…) im Abfragefenster markieren und **Abfrage formatieren** wählen.
 
-1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von einer *dynamischen Liste*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von einer *dynamischen Liste*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let LowActivityAccounts =
@@ -332,7 +329,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
     | summarize count() by Type
     ```
 
-1. Die folgende Anweisung demonstriert den **Join**-Operator, der die Zeilen von zwei Tabellen zu einer neuen Tabelle zusammenführt, indem er die Werte der angegebenen Spalte(n) aus jeder Tabelle abgleicht. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert den **Join**-Operator, der die Zeilen von zwei Tabellen zu einer neuen Tabelle zusammenführt, indem er die Werte der angegebenen Spalte(n) aus jeder Tabelle abgleicht. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     SecurityEvent  
@@ -388,6 +385,8 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
     | parse EventText with * "resourceName=" resourceName ", totalSlices=" totalSlices:long * "sliceNumber=" sliceNumber:long * "lockTime=" lockTime ", releaseTime=" releaseTime:date "," * "previousLockTime=" previousLockTime:date ")" *  
     | project resourceName, totalSlices, sliceNumber, lockTime, releaseTime, previousLockTime
     ```
+
+>**Wichtig:** Die folgenden Abfragen liefern derzeit keine Ergebnisse in der für diese Übung verwendeten Lademo-Umgebung. Es wurden Einträge in der Tabelle *SigninLogs* entfernt. Die KQL-Abfragen veranschaulichen jedoch wichtige Konzepte und Anwendungsfälle, daher nehmen Sie sich Zeit, diese zu überprüfen.
 
 1. Die folgende Anweisung demonstriert die Arbeit mit **dynamischen** Feldern, die etwas Besonderes sind, da sie jeden Wert anderer Datentypen annehmen können. In diesem Beispiel ist das Feld „DeviceDetail“ aus der Tabelle SigninLogs vom Typ **dynamisch**. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
@@ -445,4 +444,4 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
     PrivLogins  
     ```
 
-## Damit haben Sie das Lab beendet.
+## Damit haben Sie das Lab beendet

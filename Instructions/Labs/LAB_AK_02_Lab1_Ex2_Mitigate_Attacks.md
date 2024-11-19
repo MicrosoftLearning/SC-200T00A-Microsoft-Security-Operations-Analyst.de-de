@@ -1,6 +1,6 @@
 ---
 lab:
-  title: Übung 2 – Entschärfen von Angriffen mit Microsoft Defender for Endpoint
+  title: Übung 2 - Minimieren von Angriffen mit Microsoft Defender für Endpoint
   module: Learning Path 2 - Mitigate threats using Microsoft Defender for Endpoint
 ---
 
@@ -14,13 +14,11 @@ Sie sind Security Operations Analyst in einem Unternehmen, das Microsoft Defende
 
 Zum Erkunden der Angriffsentschärfungsfunktionen von Defender for Endpoint werden Sie das erfolgreiche Geräte-Onboarding überprüfen sowie Warnungen und Vorfälle untersuchen, die während dieses Prozesses erstellt wurden.
 
->**Hinweis:** Eine **[interaktive Labsimulation](https://mslabs.cloudguides.com/guides/SC-200%20Lab%20Simulation%20-%20Mitigate%20attacks%20with%20Microsoft%20Defender%20for%20Endpoint)** ist verfügbar, mit der Sie dieses Lab in Ihrem eigenen Tempo durcharbeiten können. Möglicherweise liegen geringfügige Unterschiede zwischen der interaktiven Simulation und dem gehosteten Lab vor, aber die dargestellten Kernkonzepte und Ideen sind identisch.
-
 ### Aufgabe 1: Überprüfung des Onboarding der Geräte
 
 In dieser Aufgabe bestätigen Sie, dass das Gerät erfolgreich integriert ist und erstellen eine Testwarnung.
 
-1. Wenn Sie noch nicht im Microsoft Defender XDR-Portal in Ihrem Microsoft Edge-Browser sind, navigieren Sie zu https://security.microsoft.com) und melden sich als Administrator*in für Ihren Mandanten an.
+1. Wenn Sie sich nicht bereits im Microsoft Defender XDR-Portal in Ihrem Microsoft Edge-Browser befinden, gehen Sie zu (<https://security.microsoft.com>) und melden Sie sich als Admin für Ihren Mandanten an.
 
 1. Wählen Sie im linken Menü unter **Ressourcen** die Option **Geräte** aus. Bitte warten Sie, bis WIN1 auf der Seite „Geräte“ angezeigt wird, bevor Sie fortfahren. Andernfalls müssen Sie diese Aufgabe möglicherweise wiederholen, um die später generierten Warnmeldungen zu sehen.
 
@@ -70,7 +68,7 @@ In dieser Aufgabe untersuchen Sie die Warnungen und Vorfälle, die vom Onboardin
 
 1. Wählen Sie unter **Information, erwartete Aktivität** **Sicherheitstests** aus.
 
-1. Fügen Sie bei Bedarf Kommentare hinzu und wählen Sie **Speichern**, um das Ereignis zu aktualisieren und zu schließen.
+1. Wählen Sie **Speichern** aus, um den Vorfall zu aktualisieren und den Vorgang abzuschließen.
 
 1. Überprüfen Sie den Inhalt der Registerkarten *Angriffshistorie, Alarme, Ressourcen, Untersuchungen, Beweise und Reaktion* und *Zusammenfassung*. Geräte und Benutzer:innen befinden sich unter der Registerkarte *Ressourcen*. In einem echten Vorfall wird auf der Registerkarte *Angriffsverlauf* das *Vorfalldiagramm* angezeigt. **Hinweis:** Einige Registerkarten sind möglicherweise wegen der Größe Ihres Displays nicht sichtbar. Wählen Sie die Registerkarte Auslassungspunkte (…), um sie anzuzeigen.
 
