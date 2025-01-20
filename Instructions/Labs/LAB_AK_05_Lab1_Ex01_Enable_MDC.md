@@ -22,8 +22,6 @@ In dieser Aufgabe aktivieren und konfigurieren Sie Microsoft Defender for Cloud.
 
 1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter <https://portal.azure.com>.
   
-    >**Hinweis:** Wählen Sie die Registerkarte **Ressourcen** aus, um den *Benutzernamen* und das *Kennwort* für das Lab einzugeben. Verwenden Sie das Konto **<LabUser-XXXXXXXX@LODSPRODXXX.onmicrosoft.com>** für dieses Lab.
-
 1. Kopieren Sie im Dialogfeld **Anmelden**das von Ihrem Labhostinganbieter bereitgestellte Mandanten-E-Mail-Konto für den Administrator, und fügen Sie es ein, und wählen Sie dann **Weiter** aus.
 
 1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das von Ihrem Labhostinganbieter bereitgestellte Mandantenkennwort für den Administrator, und fügen Sie es ein, und wählen Sie dann **Anmelden** aus.
@@ -56,7 +54,7 @@ In dieser Aufgabe aktivieren und konfigurieren Sie Microsoft Defender for Cloud.
 
 1. Close the Defender plans page by selecting the 'X' on the upper right of the page to go back to the **Environment settings**. --->
 
-### Aufgabe 3: Grundlegendes zum Microsoft Defender for Cloud-Dashboard
+### Aufgabe 2: Grundlegendes zum Microsoft Defender für Cloud-Dashboard
 
 1. Geben Sie in der Suchleiste des Microsoft Azure-Portals *Defender* ein und wählen Sie dann **Microsoft Defender für Cloud**.
 

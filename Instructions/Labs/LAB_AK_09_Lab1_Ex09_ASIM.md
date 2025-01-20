@@ -20,6 +20,8 @@ Sie sind als Security Operations Analyst für ein Unternehmen tätig, das Micros
 
 In dieser Aufgabe sehen Sie sich die Registrierungsschema-Parser an, die in der Bereitstellung von Microsoft Sentinel enthalten sind.
 
+>**Hinweis:** Microsoft Sentinel wurde in Ihrem Azure-Abonnement mit dem Namen **defenderWorkspace** vorab bereitgestellt, und die erforderlichen *Content Hub*-Lösungen wurden installiert.
+
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
 1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter <https://portal.azure.com>.
@@ -30,7 +32,7 @@ In dieser Aufgabe sehen Sie sich die Registrierungsschema-Parser an, die in der 
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Sentinel* ein, und wählen Sie dann ** Microsoft Sentinel** aus.
 
-1. Wählen Sie Ihren Microsoft Sentinel-Arbeitsbereich aus.
+1. Wählen Sie den Microsoft Sentinel **defenderWorkspace** aus.
 
 <!--- 1. In the Edge browser, open a new tab (Ctrl+T) and navigate to the Microsoft Sentinel GitHub ASIM page <https://github.com/Azure/Azure-Sentinel/tree/master/ASIM>.
 
@@ -50,7 +52,7 @@ In dieser Aufgabe sehen Sie sich die Registrierungsschema-Parser an, die in der 
 
 1. After the deployment completes return to the *Microsoft Sentinel* tab. --->
 
-1. Wählen Sie im Menü auf der linken Seite unter **Allgemein** die Option *Protokolle* aus.
+1. Wählen Sie im Navigationsmenü unter dem Abschnitt *Allgemein* die Option **Protokolle** aus.
 
 1. Öffnen Sie das Blatt *Schema und Filter*, indem Sie bei Bedarf **>>** auswählen.
 

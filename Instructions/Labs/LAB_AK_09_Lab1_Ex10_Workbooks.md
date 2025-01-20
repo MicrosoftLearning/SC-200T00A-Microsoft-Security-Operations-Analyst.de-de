@@ -22,6 +22,8 @@ Microsoft Sentinel ermöglicht es Ihnen, benutzerdefinierte Arbeitsmappen für I
 
 In dieser Aufgabe erkunden Sie die Microsoft Sentinel-Arbeitsmappenvorlagen.
 
+>**Hinweis:** Microsoft Sentinel wurde in Ihrem Azure-Abonnement mit dem Namen **defenderWorkspace** vorab bereitgestellt, und die erforderlichen *Content Hub-Lösungen* wurden installiert.
+
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
 1. Navigieren Sie im Edge-Browser zum Azure-Portal unter <https://portal.azure.com>.
@@ -32,7 +34,7 @@ In dieser Aufgabe erkunden Sie die Microsoft Sentinel-Arbeitsmappenvorlagen.
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Sentinel* ein, und wählen Sie dann ** Microsoft Sentinel** aus.
 
-1. Wählen Sie Ihren Microsoft Sentinel-Arbeitsbereich aus.
+1. Wählen Sie den Microsoft Sentinel **defenderWorkspace** aus.
 
 1. Wählen Sie im Navigationsmenü unter *Berohungsmanagement* die Option **Workbooks** aus.
 
