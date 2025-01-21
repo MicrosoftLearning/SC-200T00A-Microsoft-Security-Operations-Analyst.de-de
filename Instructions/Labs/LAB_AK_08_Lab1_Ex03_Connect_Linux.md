@@ -22,6 +22,8 @@ Sie sind als Security Operations Analyst für ein Unternehmen tätig, das Micros
 
 In dieser Aufgabe greifen Sie auf Ihren Microsoft Sentinel-Arbeitsbereich zu.
 
+>**Hinweis:** Microsoft Sentinel wurde in Ihrem Azure-Abonnement mit dem Namen **defenderWorkspace** vorab bereitgestellt, und die erforderlichen *Content Hub*-Lösungen wurden installiert.
+
 1. Melden Sie sich beim virtuellen Computer **WIN1** als Administrator mit dem Kennwort **Pa55w.rd**an.  
 
 1. Starten Sie den Microsoft Edge-Browser.
@@ -34,8 +36,7 @@ In dieser Aufgabe greifen Sie auf Ihren Microsoft Sentinel-Arbeitsbereich zu.
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Sentinel* ein, und wählen Sie dann ** Microsoft Sentinel** aus.
 
-1. Wählen Sie Ihren Microsoft Sentinel-Arbeitsbereich aus, den Sie im vorherigen Lab erstellt haben.
-
+1. Wählen Sie den Microsoft Sentinel **defenderWorkspace** aus.
 
 ### Aufgabe 2: Verbinden eines Linux-Hosts mithilfe des Common Event Format-Connectors
 
@@ -45,9 +46,7 @@ In dieser Aufgabe verbinden Sie einen Linux-Host mit Microsoft Sentinel mit dem 
 
 1. Suchen Sie im *Content Hub* nach der Lösung **Common Event Format** und wählen Sie diese aus der Liste aus.
 
-1. Wählen Sie auf der Lösungsseite *Common Event Format***Installieren** aus.
-
-1. Wenn die Installation abgeschlossen ist, wählen Sie **Verwalten** aus
+1. Wählen Sie auf der Lösungsseite *Common Event Format* **Verwalten** aus.
 
     >**Hinweis:** Die Lösung *Common Event Format* installiert sowohl den *Common Events Format (CEF) über AMA* als auch die Datenconnectors *Common Events Format (CEF)*.
 
@@ -55,13 +54,13 @@ In dieser Aufgabe verbinden Sie einen Linux-Host mit Microsoft Sentinel mit dem 
 
 1. Kopieren Sie im Abschnitt *Konfiguration* unter der Registerkarte *Anweisungen* den in *1.2 Installieren des CEF-Collectors auf dem Linux-Computer* gezeigten Befehl in die Zwischenablage.
 
-1. Starten Sie den virtuellen Computer **LIN1**. Melden Sie sich mit dem Benutzernamen und dem Kennwort an, die Sie von Ihrem Lab-Hoster erhalten haben. **Hinweis:** Möglicherweise müssen Sie die Eingabetaste drücken, um die Anmeldeaufforderung anzuzeigen. 
+1. Starten Sie den virtuellen Computer **LIN1**. Melden Sie sich mit dem Benutzernamen und dem Kennwort an, die Sie von Ihrem Lab-Hoster erhalten haben. **Hinweis:** Möglicherweise müssen Sie die Eingabetaste drücken, um die Anmeldeaufforderung anzuzeigen.
 
 1. Notieren Sie sich die IP-Adresse Ihres LIN1-Servers. Ein Beispiel dafür sehen Sie im unten stehenden Screenshot:
 
     ![Linux-Anmeldung](../Media/LinuxLoginExample.png)
 
-1. Kehren Sie zum virtuellen Computer **WIN1** zurück. Starten Sie Windows PowerShell als Administrator, indem Sie mit der rechten Maustaste auf das Symbol im Startmenü klicken und **Windows PowerShell (Admin)** auswählen. Wählen Sie **Ja**, um die Ausführung der Anwendung im erscheinenden Fenster der Benutzerkontensteuerung zu erlauben. **Hinweis:** Möglicherweise haben Sie bereits in früheren Übungen ein Windows PowerShell-Fenster geöffnet.
+1. Kehren Sie zum virtuellen Computer **WIN1** zurück. Starten Sie Windows PowerShell, indem Sie **Windows PowerShell** in das Suchformular in der Taskleiste eingeben, und wählen Sie dann **Windows PowerShell** aus.
 
 1. Geben Sie den folgenden PowerShell-Befehl ein, passen Sie ihn an Ihre spezifischen Linux-Serverinformationen an und drücken Sie die Eingabetaste:
 
@@ -97,9 +96,7 @@ In dieser Aufgabe verbinden Sie einen Linux-Host mit Microsoft Sentinel über de
 
 1. Suchen Sie im *Content Hub* nach der Lösung **Syslog** und wählen Sie diese aus der Liste aus.
 
-1. Wählen Sie auf der Lösungsseite *Syslog* **Installieren** aus.
-
-1. Wenn die Installation abgeschlossen ist, wählen Sie **Verwalten** aus
+1. Wählen Sie auf der Lösungsseite *Syslog***Verwalten** aus.
 
     >**Hinweis:** Die Lösung *Syslog* installiert den Datenconnector *Syslog*, 5 Analyseregeln, 9 Hunting-Abfragen und 1 Arbeitsmappe.
 

@@ -18,6 +18,8 @@ Mit einem Playbook können Sie Ihre Reaktion auf Bedrohungen automatisieren und 
 
 In dieser Aufgabe erstellen Sie eine Logik-App, die als Playbook in Microsoft Sentinel verwendet wird.
 
+>**Hinweis:** Microsoft Sentinel wurde in Ihrem Azure-Abonnement mit dem Namen **defenderWorkspace** vorab bereitgestellt, und die erforderlichen *Content Hub-Lösungen* wurden installiert.
+
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
@@ -26,7 +28,7 @@ In dieser Aufgabe erstellen Sie eine Logik-App, die als Playbook in Microsoft Se
 
 1. Geben Sie in der Suchleiste des Azure-Portals *Sentinel* ein, und wählen Sie dann ** Microsoft Sentinel** aus.
 
-1. Wählen Sie Ihren Microsoft Sentinel-Arbeitsbereich aus.
+1. Wählen Sie den Microsoft Sentinel **defenderWorkspace** aus.
 
 1. Navigieren Sie in *Microsoft Sentinel* zu **Inhalt-Hub**.
 
