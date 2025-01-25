@@ -13,7 +13,7 @@ Die Organisation, für die Sie arbeiten, möchte die Effizienz und die Fähigkei
 In dieser Übung durchlaufen Sie die *erste Ausführungserfahrung* von Microsoft Security Copilot, um Copilot mit einer Sicherheitsrecheneinheit (SCU) auszustatten.
 
 >**Hinweis:** Die Umgebung für diese Übung ist eine Simulation, die aus dem Produkt generiert wurde. Da es sich um eine eingeschränkte Simulation handelt, werden Links auf einer Seite möglicherweise nicht aktiviert, und textbasierte Eingaben, die außerhalb des angegebenen Skripts liegen, werden möglicherweise nicht unterstützt. Es wird eine Popup-Meldung mit dem Hinweis „Diese Funktion ist in der Simulation nicht verfügbar“ angezeigt. Wenn dies der Fall ist, wählen Sie OK und fahren Sie mit den Übungsschritten fort.  
-> :::image type="content" source="../media/simulation-pop-up-error.png" alt-text="Screenshot des Popup-Bildschirms, der anzeigt, dass diese Funktion in der Simulation nicht verfügbar ist.":::
+> :::image type="content" source="../Media/simulation-pop-up-error.png" alt-text="Screenshot des Popup-Bildschirms, der anzeigt, dass diese Funktion in der Simulation nicht verfügbar ist.":::
 
 ### Geschätzte Zeit bis zum Abschluss dieses Labs: 45 Minuten
 
@@ -103,7 +103,7 @@ In dieser Aufgabe beginnen Sie ihre Erkundung im Startmenü.
 
 1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Microsoft Security Copilot](https://app.highlights.guide/start/2cac767e-42c4-4058-afbb-a9413aac461d?link=0&token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**.
 
-1. Wählen Sie das **Menü**-Symbol ![Home-Menü-Symbol](../media/home-menu-icon.png), das manchmal auch als Hamburger-Symbol bezeichnet wird.
+1. Wählen Sie das **Menü**-Symbol ![Home-Menü-Symbol](../Media/home-menu-icon.png), das manchmal auch als Hamburger-Symbol bezeichnet wird.
 
 1. Wählen Sie **Meine Sitzungen** aus, und notieren Sie sich die verfügbaren Optionen.
     1. Wählen Sie „Zuletzt verwendet“ aus, um die zuletzt verwendeten Sitzungen anzuzeigen.
@@ -174,7 +174,7 @@ Der nächste Abschnitt der Copilot-Startseite dreht sich um Promptbooks. Auf der
 
 Die Prompt-Leiste befindet sich in der unteren Mitte der Seite. Die Prompt-Leiste enthält das Symbol „Prompts und Quellen“, das Sie in dieser Aufgabe erkunden. In nachfolgenden Übungen werden Sie Eingaben direkt in der Prompt-Leiste eingeben.
 
-1. In der Prompt-Leiste können Sie das Symbol „Prompts“ auswählen, um einen integrierten Prompt oder ein Promptbook auszuwählen. Wählen Sie das Symbol für **Eingabeaufforderungen**![Eingabeaufforderungen](../media/prompt-icon.png).
+1. In der Prompt-Leiste können Sie das Symbol „Prompts“ auswählen, um einen integrierten Prompt oder ein Promptbook auszuwählen. Wählen Sie das Symbol für **Eingabeaufforderungen**![Eingabeaufforderungen](../Media/prompt-icon.png).
     1. Wählen Sie **Alle Promptbooks anzeigen** aus.
         1. Scrollen Sie, um alle verfügbaren Promptbooks anzuzeigen.
         1. Wählen Sie den **Rückwärtspfeil** neben der Suchleiste aus, um zurück zu gelangen.
@@ -182,12 +182,12 @@ Die Prompt-Leiste befindet sich in der unteren Mitte der Seite. Die Prompt-Leist
         1. Scrollen Sie, um alle verfügbaren Promptbooks anzuzeigen.
         1. Wählen Sie den **Rückwärtspfeil** neben der Suchleiste aus, um zurück zu gelangen.
 
-1. Wählen Sie das **Quellen-Symbol**![Quellen-Symbol](../media/sources-icon.png).
+1. Wählen Sie das **Quellen-Symbol**![Quellen-Symbol](../Media/sources-icon.png).
     1. Das Quellen-Symbol öffnet das Fenster „Quellen verwalten“. Von hier aus können Sie auf Plugins oder Dateien zugreifen. Die Registerkarte **Plugins** ist standardmäßig ausgewählt.
         1. Wählen Sie aus, ob Sie alle Plugins anzeigen möchten, die aktiviert (an) oder deaktiviert (aus) sind.
         1. Erweitern/Klappen Sie die Liste der Microsoft-, Nicht-Microsoft- und benutzerdefinierten Plugins ein.
         1. Einige Plugins erfordern das Konfigurieren von Parametern. Wählen Sie das Symbol **Einrichten** für das Microsoft Sentinel-Plugin aus, um das Einstellungsfenster anzuzeigen. Wählen Sie **Abbrechen** aus, um das Fenster „Einstellungen“ zu schließen. In einer separaten Übung konfigurieren Sie das Plugin.
-    1. Sie sollten sich weiterhin im Fenster „Quellen verwalten“ befinden. Wählen Sie **Dateien** aus.
+    1. Sie sollten sich weiterhin im Fenster Quellen verwalten befinden. Wählen Sie **Dateien** aus.
         1. Schauen Sie sich die Beschreibung an.
         1. Dateien können hochgeladen und von Copilot als Wissensdatenbank verwendet werden. In einer nachfolgenden Übung werden Sie mit Dateiuploads arbeiten.
         1. Wählen Sie **X** aus, um das Fenster „Quellen verwalten“ zu schließen.
@@ -246,13 +246,15 @@ Diese Übung dauert ca. **30** Minuten.
 
 #### Unteraufgabe 3: Erkunden der Analyse von Drehbüchern
 
-1. Konzentrieren Sie sich nun auf den Warnungsverlauf. Klicken Sie auf das Symbol **Maximieren ![Maximieren-Symbol](../media/maximize-icon.png)**, das sich im Hauptbereich der Warnung direkt unter der Karte mit der Bezeichnung „partycity\jonaw“ befindet, um eine bessere Ansicht der Prozess-Baumstruktur zu erhalten. Über die maximierte Ansicht erhalten Sie eine deutlichere Übersicht darüber, wie dieser Vorfall abgelaufen ist. Viele Elemente deuten darauf hin, dass mit „powershell.exe“ ein Skript ausgeführt wurde. Da der Benutzer Jonathan Wolcott ein Kundenbetreuer ist, kann davon ausgegangen werden, dass dieser Benutzer nicht sehr häufig PowerShell-Skripts ausführt.
+1. Konzentrieren Sie sich nun auf den Warnungsverlauf. Klicken Sie auf das Symbol **Maximieren ![Maximieren-Symbol](../Media/maximize-icon.png)**, das sich im Hauptbereich der Warnung direkt unter der Karte mit der Bezeichnung „partycity\jonaw“ befindet, um eine bessere Ansicht der Prozess-Baumstruktur zu erhalten. Über die maximierte Ansicht erhalten Sie eine deutlichere Übersicht darüber, wie dieser Vorfall abgelaufen ist. Viele Elemente deuten darauf hin, dass mit „powershell.exe“ ein Skript ausgeführt wurde. Da der Benutzer Jonathan Wolcott ein Kundenbetreuer ist, kann davon ausgegangen werden, dass dieser Benutzer nicht sehr häufig PowerShell-Skripts ausführt.
 
 1. Erweitern Sie die erste Instanz von **powershell.exe execute a script** (Skriptausführung mit powershell.exe) mit dem Zeitstempel „4:57:11 AM“. Copilot ist in der Lage, Skripts zu analysieren. Wählen Sie **Analysieren** aus.
     1. Copilot generiert eine Analyse des Skripts und weist darauf hin, dass es sich um einen Phishingversuch handeln könnte, oder dass es verwendet wurde, um einen webbasierten Exploit bereitzustellen.
     1. Wählen Sie **Code anzeigen** aus. Der Code enthält eine URL, die unschädlich gemacht wurde.
 
 1. Es gibt noch einige andere Elemente, die angeben, dass ein Skript mit „powershell.exe“ ausgeführt wurde. Erweitern Sie das Element mit der Bezeichnung **powershell.exe -EncodedCommand...** mit dem Zeitstempel „5:00:47 AM“. Das ursprüngliche Skript war Base64-codiert, aber Defender hat es für Sie decodiert. Wählen Sie zum Anzeigen der decodierten Version **Analysieren** aus. In der Analyse sind spezifische Aspekte des bei diesem Angriff verwendeten Skripts hervorgehoben.
+
+    >**Hinweis:** Der Zeitstempel wird angepasst, um die Zeitzone des Browsers des Benutzenden widerzuspiegeln. Die Zeitzone in der Simulation wird auf „Pacific Time“ festgelegt.
 
 1. Schließen Sie die Seite mit dem Warnungsverlauf, indem Sie das **X** (links neben dem Copilot-Bereich) auswählen. Verwenden Sie nun die Brotkrümelnavigation, um zum Vorfall zurückzukehren. Wählen Sie **Human-operated ransomware attack was launched from a compromised asset (attack disruption)** (Ransomware-Angriff durch Personen von einer kompromittierten Ressource aus gestartet (Angriffsunterbrechung)) aus.
 
@@ -274,15 +276,15 @@ Diese Aufgabe ist komplex und erfordert das Hinzuziehen von erfahrenen Analyst:i
 
 1. Wählen Sie die Auslassungspunkte neben der Vorfallzusammenfassung von Copilot und dann **In Copilot für Security öffnen** aus.
 
-1. Copilot wird auf der eigenständigen Oberfläche geöffnet und zeigt die Vorfallzusammenfassung an. Sie können auch noch weitere Prompts ausführen. In diesem Fall werden Sie das Promptbook für einen Vorfall ausführen. Wählen Sie das **Eingabeaufforderung-Symbol**![Eingabeaufforderung-Symbol](../media/prompt-icon.png). 
+1. Copilot wird auf der eigenständigen Oberfläche geöffnet und zeigt die Vorfallzusammenfassung an. Sie können auch noch weitere Prompts ausführen. In diesem Fall werden Sie das Promptbook für einen Vorfall ausführen. Wählen Sie das **Eingabeaufforderung-Symbol**![Eingabeaufforderung-Symbol](../Media/prompt-icon.png). 
     1. Wählen Sie **Alle Promptbooks anzeigen** aus.
     1. Wählen Sie **Microsoft 365 Defender: Vorfalluntersuchung** aus.
     1. Die Seite „Promptbook“ wird mit einer Aufforderung zur Eingabe der Defender-Vorfall-ID geöffnet. Geben Sie **30342** ein, und wählen Sie dann **Ausführen** aus.
     1. Überprüfen Sie die bereitgestellten Informationen. Durch die Pivotierung auf die eigenständige Oberfläche und das Ausführen des Promptbook können Sie bei der Untersuchung Funktionen aus einer umfangreicheren Sicherheitslösung aufrufen, die nicht nur Defender XDR umfasst und auf den aktivierten Plug-Ins basiert.
 
-1. Wählen Sie das **Kästchen-Symbol ![Kästchen-Symbol](../media/box-icon.png)** neben dem Pin-Symbol, um alle Eingabeaufforderungen und die entsprechenden Antworten auszuwählen, und wählen Sie dann das **Pin-Symbol ![Pin-Symbol](../media/pin-icon.png)**, um diese Antworten auf dem Board zu speichern.
+1. Wählen Sie das **Kästchen-Symbol ![Kästchen-Symbol](../Media/box-icon.png)** neben dem Pin-Symbol, um alle Eingabeaufforderungen und die entsprechenden Antworten auszuwählen, und wählen Sie dann das **Pin-Symbol ![Pin-Symbol](../Media/pin-icon.png)**, um diese Antworten auf dem Board zu speichern.
 
-1. Das Stecknadelboard wird automatisch geöffnet. Die Pinwand enthält Ihre gespeicherten Prompts und Reaktionen mit jeweils einer Zusammenfassung. Sie können die Pinnwand öffnen und schließen, indem Sie das **Pinnwand-Symbol ![Pinnwand-Symbol](../media/pinboard-icon.png)** auswählen.
+1. Das Stecknadelboard wird automatisch geöffnet. Die Pinwand enthält Ihre gespeicherten Prompts und Reaktionen mit jeweils einer Zusammenfassung. Sie können die Pinnwand öffnen und schließen, indem Sie das **Pinnwand-Symbol ![Pinnwand-Symbol](../Media/pinboard-icon.png)** auswählen.
 
 1. Wählen Sie oben auf der Seite **Teilen** aus, um Ihre Optionen anzuzeigen. Durch das Teilen des Vorfalls über einen Link oder eine E-Mail können Personen in Ihrer Organisation mit Copilot-Zugriff diese Sitzung anzeigen. Schließen Sie das Fenster, indem Sie das **X** auswählen.
 
