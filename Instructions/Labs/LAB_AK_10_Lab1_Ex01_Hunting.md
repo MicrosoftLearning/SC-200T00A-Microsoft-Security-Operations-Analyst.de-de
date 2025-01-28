@@ -14,9 +14,13 @@ Sie sind als Security Operations Analyst für ein Unternehmen tätig, das Micros
 
 >**Wichtig:** Die Lab-Übungen für Lernpfad Nr. 10 befinden sich in einer *eigenständigen* Umgebung. Wenn Sie das Lab vor dem Abschluss verlassen, müssen Sie die Konfigurationen erneut ausführen.
 
->**Hinweis:** Die Protokolldaten, die in den vorherigen Lab-Übungen des Lernpfads *Angriffe ausführen* erstellt wurden, sind in diesem Lab nicht verfügbar, ohne dass Sie den **Angriff 3** auf dem WIN1-Server in Übung 5 erneut ausführen.
+>**Hinweis:** Die in den Lab-Übungen von Lernpfad 9 erstellten Protokolldaten sind in diesem Lab nicht verfügbar, ohne die Aufgaben 1 und 2 von Übung 5 erneut auszuführen und *Angriff 3* auf dem WIN1-Server in Übung 6 erneut auszuführen. Sie können diese Anweisungen in einem neuen Browser-Tab öffnen, indem Sie auf diese Links klicken:
 
-### Geschätzte Zeit bis zum Abschluss dieses Labs: 30 Minuten
+**[Lab 09 Übung 5](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex05_Attacks.html)**
+
+**[Lab 09 Übung 6](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex06_Perform_Attacks.html)**
+
+### Geschätzte Zeit für die Durchführung dieses Labs: 40 Minuten
 
 ### Aufgabe 1: Erstellen einer Bedrohungssuchabfrage
 
