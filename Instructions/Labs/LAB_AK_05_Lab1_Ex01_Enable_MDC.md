@@ -12,9 +12,45 @@ Sie sind eine Sicherheitsanalystin bzw. ein Sicherheitsanalyst und arbeiten in e
 
 >**Wichtig:** Die Lab-Übungen für Lernpfad 5 befinden sich in einer *eigenständigen* Umgebung. Wenn Sie das Lab vor dem Abschluss verlassen, müssen Sie die Konfigurationen erneut ausführen.
 
-### Geschätzte Zeit bis zum Abschluss dieses Labs: 15 Minuten
+### Geschätzte Zeit für dieses Lab: 25 Minuten
 
-### Aufgabe 1: Aktivieren von Microsoft Defender für Cloud
+### Aufgabe 1: Herstellen einer Verbindung mit einem lokalen Server
+
+In dieser Aufgabe verbinden Sie einen lokalen Server mit Ihrem Azure-Abonnement. Azure Arc wurde auf diesem Server vorinstalliert. Der Server wird in den nächsten Übungen als Ressource für das Anwenden von Compliance-Standards und Workload-Schutz verwendet.
+
+>**Wichtig:** Die nächsten Schritte werden auf einem anderen Computer ausgeführt als dem, auf dem Sie zuvor gearbeitet haben. Suchen Sie auf der Registerkarte „Referenzen“ nach dem Namen der virtuellen Maschine.
+
+1. Melden Sie sich bei dem virtuellen Computer **WINServer** als Administrator*in mit dem Kennwort: **Passw0rd!** an, falls erforderlich.  
+
+Wie oben beschrieben, wurde Azure Arc auf dem **WINServer-Computer** vorinstalliert. Sie verbinden diesen Computer jetzt mit Ihrem Azure-Abonnement.
+
+1. Wählen Sie auf dem *WINServer-Computer* das Symbol *Suchen* aus, und geben Sie **cmd** ein.
+
+1. Klicken Sie in den Suchergebnissen mit der rechten Maustaste auf *Eingabeaufforderung*, und wählen Sie **Als Administrator ausführen** aus.
+
+1. Geben Sie im Eingabeaufforderungsfenster den folgenden Befehl ein: *Drücken Sie nicht auf die EINGABETASTE*:
+
+    ```cmd
+    azcmagent connect -g "defender-RG" -l "EastUS" -s "Subscription ID string"
+    ```
+
+1. Ersetzen Sie die **Abonnement-ID-Zeichenfolge** durch die *Abonnement-ID*, die von Ihrem Lab-Hoster (*Registerkarte „Ressourcen“) bereitgestellt wird. Achten Sie darauf, die Anführungszeichen beizubehalten.
+
+1. Geben Sie **Eingeben** ein, um den Befehl auszuführen (dies kann einige Minuten dauern).
+
+    >**Hinweis**: Wenn das Browser-Auswahlfenster *Wie möchten Sie das öffnen?* angezeigt wird, wählen Sie **Microsoft Edge** aus.
+
+1. Geben Sie im Dialogfeld *Anmelden* Ihre **Mandanten-E-Mail** und Ihr **Mandantenkennwort** ein, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Anmelden** aus. Warten Sie auf die Meldung *Authentifizierung abgeschlossen*, schließen Sie die Browserregisterkarte, und kehren Sie zum Fenster *Eingabeaufforderung* zurück.
+
+1. Lassen Sie nach Abschluss der Ausführung der Befehle das Fenster *Eingabeaufforderung* geöffnet, und geben Sie den folgenden Befehl ein, um zu bestätigen, dass die Verbindung erfolgreich hergestellt wurde:
+
+    ```cmd
+    azcmagent show
+    ```
+
+1. Überprüfen Sie in der Befehlsausgabe, ob der *Agentstatus* verbunden** ist**.
+
+### Aufgabe 2: Aktivieren von Microsoft Defender for Cloud
 
 In dieser Aufgabe aktivieren und konfigurieren Sie Microsoft Defender for Cloud.
 
@@ -54,7 +90,7 @@ In dieser Aufgabe aktivieren und konfigurieren Sie Microsoft Defender for Cloud.
 
 1. Close the Defender plans page by selecting the 'X' on the upper right of the page to go back to the **Environment settings**. --->
 
-### Aufgabe 2: Grundlegendes zum Microsoft Defender für Cloud-Dashboard
+### Aufgabe 3: Grundlegendes zum Microsoft Defender for Cloud-Dashboard
 
 1. Geben Sie in der Suchleiste des Microsoft Azure-Portals *Defender* ein und wählen Sie dann **Microsoft Defender für Cloud**.
 

@@ -18,7 +18,7 @@ Sie simulieren die Angriffe, die Sie später für die Erkennung und Untersuchung
 
 ### Aufgabe 1: Persistenzangriff mit dem Registrierungsschlüssel hinzufügen
 
->**Wichtig:** Die nächsten Schritte werden in einer anderen VM ausgeführt als der, in der Sie zuvor gearbeitet haben. Suchen Sie nach den Namensverweisen der virtuellen Maschine.
+>**Wichtig:** Die nächsten Schritte werden auf einem anderen Computer ausgeführt als dem, auf dem Sie zuvor gearbeitet haben. Suchen Sie auf der Registerkarte „Referenzen“ nach dem Namen der virtuellen Maschine.
 
 In dieser Aufgabe werden Sie Angriffe auf den Host ausführen, der mit Azure Arc verbunden ist und auf dem der Azure Monitor-Agent konfiguriert ist.
 
@@ -123,6 +123,5 @@ In dieser Aufgabe werden Sie Angriffe auf den Host ausführen, der mit Azure Arc
     ```
 
 >**Wichtig:** Schließen Sie diese Fenster nicht. Lassen Sie dieses PowerShell-Skript im Hintergrund laufen. Der Befehl muss einige Stunden lang Protokolleinträge generieren. Sie können mit der nächsten Aufgabe und den nächsten Übungen fortfahren, während dieses Skript läuft. Die durch diese Aufgabe erzeugten Daten werden später im Lab zur Bedrohungssuche verwendet. Bei diesem Vorgang werden keine großen Datenmengen erzeugt oder verarbeitet.
-
 
 ## Fahren Sie mit Übung 7 fort
