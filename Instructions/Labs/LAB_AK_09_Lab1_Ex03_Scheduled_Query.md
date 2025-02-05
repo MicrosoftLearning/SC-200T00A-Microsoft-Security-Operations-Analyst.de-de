@@ -14,13 +14,47 @@ Mit diesen Analyseregeln werden bestimmte Ereignisse oder Ereignisgruppen in Ihr
 
 >**Wichtig:** Die Lab-Übungen für Lernpfad Nr. 9 befinden sich in einer *eigenständigen* Umgebung. Wenn Sie das Lab vor dem Abschluss verlassen, müssen Sie die Konfigurationen erneut ausführen.
 
-### Geschätzte Zeit bis zum Abschluss dieses Labs: 30 Minuten
-
-### Aufgabe 1: Erstellen einer geplanten Abfrage
-
-In dieser Aufgabe erstellen Sie eine geplante Abfrage und verbinden diese mit dem Teams-Kanal, den Sie in der vorherigen Übung erstellt haben.
+### Geschätzte Zeit bis zum Abschluss dieses Labs: 45 Minuten
 
 >**Hinweis:** Microsoft Sentinel wurde in Ihrem Azure-Abonnement mit dem Namen **defenderWorkspace** vorab bereitgestellt, und die erforderlichen *Content Hub-Lösungen* wurden installiert.
+
+<!--- >>**Important:** To sucessfully complete this task you wil need to rerun Task 3 of **[Lab 08 Exercise 1](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_08_Lab1_Ex01_Connect_Services.html)** to connect the Azure Activity data connector. --->
+
+Um diese Aufgabe erfolgreich auszuführen, müssen Sie die folgenden erforderlichen Aufgaben ausführen.
+
+### Vorausgesetzte Aufgabe: Verbinden des Azure-Aktivitätsdatenconnectors
+
+In dieser Aufgabe verbinden Sie den *Azure-Aktivitätsdatenconnectors*.
+
+1. Scrollen Sie im Navigationsmenü von Microsoft Sentinel nach unten zum Abschnitt *Inhaltsverwaltung* und wählen Sie **Content Hub** aus.
+
+1. Suchen Sie in *Content Hub* nach der Lösung **Azure-Aktivität** und wählen Sie diese aus der Liste aus.
+
+1. Wählen Sie auf der Lösungsseite *Azure-Aktivität* die Option **Verwalten**aus.
+
+    >**Hinweis:** Die Lösung *Azure-Aktivität* installiert den *Azure-Aktivitätsdatenconnector*, 12 Analyseregeln, 14 Hunting-Abfragen und 1 Arbeitsmappe.
+
+1.  Wählen Sie den *Azure-Aktivitätsdatenconnector* aus und wählen Sie **Connectorseite öffnen**.
+
+1. Scrollen Sie im Bereich *Konfiguration* unter der Registerkarte *Anweisungen* nach unten zu „2. Verbinden Sie Ihre Abonnements …“ und wählen Sie **Azure Policy-Zuweisungs-Assistenten starten** aus.
+
+1. Wählen Sie auf der Registerkarte **Grundlagen** unter **Umfang** die Schaltfläche mit dem Auslassungszeichen (...) und wählen Sie Ihr *MOC-Abonnement-XXXXXXXXXXX* aus der Dropdown-Liste aus und klicken Sie auf **Auswählen**.
+
+1. Wählen Sie auf der Registerkarte **Parameter** Ihren Workspace *uniquenameDefender* aus der Dropdownliste **Primärer Log Analytics-Arbeitsbereich** aus. Diese Aktion wendet die Abonnementkonfiguration an, um die Informationen an den Log Analytics-Arbeitsbereich zu senden.
+
+1. Wählen Sie die Registerkarte **Wartung** aus, und aktivieren Sie dann das Kontrollkästchen **Korrekturtask erstellen**. Mit dieser Aktion wird die Richtlinie auf bestehende Azure-Ressourcen angewendet.
+
+1. Wählen Sie die Schaltfläche **Überprüfen + erstellen** aus, um die Konfiguration zu überprüfen.
+
+1. Wählen Sie **Erstellen** aus, um den Vorgang abzuschließen.
+
+1. Warten Sie, bis der *Azure Activity-Datenconnector* einen *verbundenen* Status anzeigt, bevor Sie fortfahren.
+
+### Aufgabe 1: Erstellen einer geplanten Abfrageregel
+
+In dieser Aufgabe erstellen Sie eine *geplante Abfrageregel für Microsoft Sentinel-Analysen*.
+
+>**Hinweis:** Die folgenden Aufgaben funktionieren derzeit am besten im Azure Preview-Portal – <https://preview.portal.azure.com/>.
 
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
@@ -38,7 +72,7 @@ In dieser Aufgabe erstellen Sie eine geplante Abfrage und verbinden diese mit de
 
 1. Vergewissern Sie sich auf dem Blatt „Regelzusammenfassung“, dass Sie Daten erhalten, indem Sie das grüne Symbol unter *Datenquellen: Azure Activity* überprüfen.
 
-    >**Hinweis:** Wenn sie nicht in einem verbundenen Zustand angezeigt wird, stellen Sie sicher, dass Sie die Aufgabe 3 des Lernpfads 6 Lab, Übung 1, abgeschlossen haben.
+    >**Hinweis:** Wenn die Verbindung nicht hergestellt ist und Sie den Lernpfad 8 Lab, Übung 1, Aufgabe 3, wie oben beschrieben wiederholt haben, müssen Sie möglicherweise einige Minuten warten, bis der Vorgang abgeschlossen ist.
 
 1. Wählen Sie **Regel erstellen** aus, um fortzufahren.
 
@@ -113,7 +147,7 @@ In dieser Aufgabe testen Sie ihre neue Regel für geplante Abfragen.
 
 1. Wählen Sie im Fenster *Willkommen bei Azure Cloud Shell* die Option **PowerShell** aus.
 
-1. Wählen Sie auf der Seite *Erste Schritte* die Option **Speicherkonto bereitstellen** aus, und wählen Sie dann Ihren **Azure Pass – Sponsoring** aus dem Dropdownmenüelement *Speicherkontoabonnement* aus, und klicken Sie auf die Schaltfläche **Anwenden**.
+1. Wählen Sie auf der Seite *Erste Schritte* die Option **Speicherkonto einrichten** aus und wählen Sie dann Ihr **MOC-Abonnement-XXXXXXXXXXX** aus dem Dropdown-Menüpunkt *Speicherkonto-Abonnement* aus und klicken Sie auf die Schaltfläche **Anwenden**.
 
     >**Wichtig:** Wählen Sie nicht die Option *Kein Speicherkonto erforderlich* aus. Dies führt dazu, dass die Vorfallerstellung fehlschlägt.
 

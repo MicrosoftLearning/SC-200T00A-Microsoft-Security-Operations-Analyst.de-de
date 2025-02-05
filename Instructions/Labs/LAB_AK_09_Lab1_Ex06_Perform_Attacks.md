@@ -57,7 +57,6 @@ In dieser Aufgabe werden Sie Angriffe auf den Host ausführen, der mit Azure Arc
     net localgroup administrators theusernametoadd /add
     ```
 
-
 ### Aufgabe 3: Befehls- und Kontrollangriff mit DNS
 
 1. Kopieren Sie diesen Befehl und führen Sie ihn aus, um ein Skript zu erstellen, das eine DNS-Anfrage an einen C2-Server simuliert:
