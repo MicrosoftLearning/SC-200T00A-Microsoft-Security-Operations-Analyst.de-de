@@ -23,7 +23,7 @@ Für diese Übung sind Sie als Avery Howard angemeldet und verfügen über die R
 
 Diese Übung dauert ca. **15** Minuten.
 
->**Hinweis:** Wenn in einer Lab-Anweisung das Öffnen eines Links zur simulierten Umgebung gefordert wird, wird im Allgemeinen empfohlen, den Link in einem neuen Browserfenster zu öffnen, damit Sie gleichzeitig die Anweisungen und die Übungsumgebung anzeigen können. Wählen Sie dazu die Option mit der rechten Maustaste aus.
+>**Hinweis:** Wenn in einer Lab-Anweisung das Öffnen eines Links zur simulierten Umgebung gefordert wird, wird im Allgemeinen empfohlen, den Link in einem neuen Browserfenster zu öffnen, damit Sie gleichzeitig die Anweisungen und die Übungsumgebung anzeigen können. Wählen Sie dazu die rechte Maustaste und dann die Option aus.
 
 Bevor Benutzerinnen und Benutzer mit der Verwendung von Copilot beginnen können, müssen Admins Kapazität bereitstellen und zuordnen. Bereitstellen der Kapazität:
 
@@ -117,7 +117,7 @@ In dieser Aufgabe beginnen Sie ihre Erkundung im Startmenü.
     1. Wählen Sie „Filter“ aus, um die verfügbaren Optionen anzuzeigen, und wählen Sie dann das X zum Schließen aus.
     1. Wählen Sie das Startmenüsymbol aus, um das Startmenü zu öffnen.
 
-1. Wählen Sie **Besitzereinstellungen** aus. Diese Einstellungen stehen Ihnen als Copilot-Besitzerin oder -Besitzer zur Verfügung. Eine Copilot-Mitwirkende bzw. ein Copilot-Mitwirkender hat keinen Zugriff auf diese Menüoptionen.
+1. Wählen Sie **Besitzereinstellungen** aus. Diese Einstellungen stehen Ihnen als Copilot-Besitzerin oder -Besitzer zur Verfügung. Copilot-Mitwirkende haben keinen Zugriff auf diese Menüoptionen.
     1. Wählen Sie für Plugins für Security Copilot in der Dropdownliste die Option„Wer kann eigene benutzerdefinierte Plugins hinzufügen oder verwalten“ aus, um die verfügbaren Optionen anzuzeigen.
     1. Wählen Sie für alle Mitglieder der Organisation die Dropdown-Liste „Wer kann benutzerdefinierte Plugins hinzufügen und verwalten“, um die verfügbaren Optionen anzuzeigen. Beachten Sie, dass diese Option ausgegraut ist, wenn „Wer kann eigene benutzerdefinierte Plugins hinzufügen und verwalten“ auf „Nur Besitzerinnen und Besitzer“ festgelegt ist.
     1. Klicken Sie auf das Informationssymbol neben „Security Copilot Zugriff auf Daten Ihrer Microsoft 365-Dienste gewähren“.  Diese Einstellung muss aktiviert sein, wenn Sie das Microsoft Purview-Plugin verwenden möchten. Mit dieser Einstellung werden Sie in einer späteren Übung arbeiten.
@@ -274,7 +274,7 @@ Diese Aufgabe ist komplex und erfordert das Hinzuziehen von erfahrenen Analyst:i
 
 1. Kehren Sie zur Vorfallseite zurück, indem Sie oben auf der Seite die Registerkarte **Angriffsverlauf** auswählen.
 
-1. Wählen Sie die Auslassungspunkte neben der Vorfallzusammenfassung von Copilot und dann **In Copilot für Security öffnen** aus.
+1. Wählen Sie die Auslassungspunkte neben der Vorfallzusammenfassung von Copilot und dann **In Security Copilot öffnen** aus.
 
 1. Copilot wird auf der eigenständigen Oberfläche geöffnet und zeigt die Vorfallzusammenfassung an. Sie können auch noch weitere Prompts ausführen. In diesem Fall werden Sie das Promptbook für einen Vorfall ausführen. Wählen Sie das **Eingabeaufforderung-Symbol**![Eingabeaufforderung-Symbol](../Media/prompt-icon.png). 
     1. Wählen Sie **Alle Promptbooks anzeigen** aus.

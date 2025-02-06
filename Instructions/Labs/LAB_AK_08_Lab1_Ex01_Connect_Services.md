@@ -42,7 +42,7 @@ In dieser Aufgabe greifen Sie auf Ihren Microsoft Sentinel-Arbeitsbereich zu.
 
 In dieser Aufgabe verbinden Sie Microsoft Defender für Cloud-Datenconnector.
 
-   >**Wichtig:** Um die bidirektionale Synchronisierung zu *aktivieren*, lesen Sie bitte den Lernpfad 5, Übung 1, Aufgabe 1, und wählen Sie **Setup** im Navigationsmenü *Microsoft Defender für Cloud* aus, um zu bestätigen, dass alle berechtigten Azure-Abonnements integriert sind.
+   <!--- >>**Important:** To *Enable* Bi-directional sync, please rerun  **[Lab 05 Exercise 1](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_05_Lab1_Ex01_Enable_MDC.html)**, Task 2, and select **Setup** from the *Microsoft Defender for Cloud* navigation menu to verify all eligible Azure subscriptions are onboarded. --->
 
 1. Scrollen Sie im Navigationsmenü von Microsoft Sentinel nach unten zum Abschnitt **Inhaltsverwaltung** und wählen Sie **Content Hub** aus.
 
@@ -54,9 +54,15 @@ In dieser Aufgabe verbinden Sie Microsoft Defender für Cloud-Datenconnector.
 
 1. Aktivieren Sie das Kontrollkästchen *Abonnementbasierter Microsoft Defender for Cloud (Legacy)*-Datenconnector, und wählen Sie dann die Seite **Connector öffnen** aus.
 
-1. Aktivieren Sie im Abschnitt *Konfiguration* auf der Registerkarte *Anweisungen* **** das Kontrollkästchen für das Abonnement „Azure Pass – Sponsorship“, und schieben Sie die Option **Status** nach rechts.
+1. Im Abschnitt *Konfiguration* **markieren** Sie das Kontrollkästchen für das *MOC-Abonnement-XXXXXXXXXXX* und wählen entweder den Link **Verbinden** oder schieben die Option **Status** nach rechts.
 
-1. Der *Status* sollte jetzt **Verbunden** sein und „Bidirektionale Synchronisierung“ sollte *Aktiviert* sein.
+1. Um die bidirektionale Synchronisierung zu aktivieren, wählen Sie den Link **Microsoft Defender für alle Abonnements aktivieren**.
+
+1. Auf der Seite *Microsoft Defender for Cloud – Erste Schritte* sollte das Kontrollkästchen für das *MOC-Abonnement-XXXXXXXXXXX* aktiviert sein und der *Microsoft Defender-Plan* sollte *Ein – Teilweise (30 Testtage übrig)* angezeigt werden.
+
+1. Wählen Sie die Taste **X (Schließen)** oben rechts, um die Seite *Erste Schritte* zu schließen. Sie sollten wieder auf der Konfigurationsseite *Microsoft Defender for Cloud* sein.
+
+1. Der *Status* für das *MOC-Abonnement-XXXXXXXXXXX* sollte jetzt **Verbunden** lauten und *Bidirektionale Synchronisierung* sollte *Aktiviert* sein.
 
     <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
 
@@ -76,7 +82,7 @@ In dieser Aufgabe verbinden Sie den *Azure-Aktivitätsdatenconnectors*.
 
 1. Scrollen Sie im Bereich *Konfiguration* unter der Registerkarte *Anweisungen* nach unten zu „2. Verbinden Sie Ihre Abonnements …“ und wählen Sie **Azure Policy-Zuweisungs-Assistenten starten** aus.
 
-1. Wählen Sie auf der Registerkarte **Grundlagen** unter **Geltungsbereich** die Schaltfläche mit dem Auslassungszeichen (...) und wählen Sie Ihr Abonnement „Azure Pass – Sponsorship“ aus der Dropdownliste aus und klicken Sie auf **Auswählen**.
+1. Wählen Sie auf der Registerkarte **Grundlagen** unter **Umfang** die Schaltfläche mit de Auslassungspunkten (…) und wählen Sie Ihr *MOC-Abonnement-XXXXXXXXXXX* aus der Dropdown-Liste aus und klicken Sie auf **Auswählen**.
 
 1. Wählen Sie auf der Registerkarte **Parameter** Ihren Workspace *uniquenameDefender* aus der Dropdownliste **Primärer Log Analytics-Arbeitsbereich** aus. Diese Aktion wendet die Abonnementkonfiguration an, um die Informationen an den Log Analytics-Arbeitsbereich zu senden.
 
