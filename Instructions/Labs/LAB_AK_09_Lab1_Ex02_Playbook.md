@@ -60,6 +60,8 @@ In dieser Aufgabe erstellen Sie eine Logik-App, die als Playbook in Microsoft Se
 
 In dieser Aufgabe aktualisieren Sie das neu erstellte Playbook mit den richtigen Verbindungsinformationen.
 
+1. Wenn die vorherige Aufgabe abgeschlossen ist, sollten Sie sich auf der Seite *Defender_XDR_Ransomware_Playbook_SecOps-Tasks | Logic app designer* befinden. Wenn dies nicht der Fall ist, führen Sie die Schritte 1–5 unten aus.
+
 1. Geben Sie in der Suchleiste des Azure-Portals Sentinel ein, und wählen Sie dann  Microsoft Sentinel aus.
 
 1. Wählen Sie Ihren Microsoft Sentinel-Arbeitsbereich aus.
@@ -68,9 +70,9 @@ In dieser Aufgabe aktualisieren Sie das neu erstellte Playbook mit den richtigen
 
 1. Wählen Sie in der Befehlsleiste die Option Aktualisieren, falls Sie keine Playbooks sehen. Das im vorherigen Schritt erstellte Playbook sollte angezeigt werden.
 
-1. Wählen Sie den Namen **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** des Playbook.
+1. Wählen Sie den Namenslink **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** des Playbooks.
 
-1. Wählen Sie auf der Logik-App-Seite für **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** im Befehlsmenü die Option „Bearbeiten" aus.
+1. Wählen Sie auf der Logic App Designer-Seite für **Defender_XDR_Ransomware_Playbook_SecOps_Tasks** im Befehlsmenü die Option „Bearbeiten“.
 
     >**Hinweis:** Möglicherweise müssen Sie die Seite aktualisieren.
 
@@ -80,13 +82,13 @@ In dieser Aufgabe aktualisieren Sie das neu erstellte Playbook mit den richtigen
 
 1. Klicken Sie auf Neu hinzufügen und dann Anmelden. Wählen Sie im neuen Fenster Ihre Azure-Administrator-Anmeldeinformationen aus, wenn Sie dazu aufgefordert werden. Die letzte Zeile des Blocks sollte nun lauten: „Connected to your-admin-username“.
 
-1. Wählen Sie unten in der Logikaufteilung Aufgabe zu Vorfall hinzufügen.
+<!--- 1. Below within the logic split (+ sign), select Add an action to incident.--->
 
 1. Wählen Sie in der Befehlsleiste Speichern aus. Die Logik-App wird in einem zukünftigen Lab verwendet.
 
 ### Aufgabe 3: Erstellen einer Automatisierungsregel
 
-1. Gehen Sie in Microsoft Sentinel unter Konfiguration zu Automatisierung.
+1. Erweitern Sie in Microsoft Sentinel im Navigationsmenü *Konfiguration* und wählen Sie *Automatisierung*.
 
 1. Wählen Sie Erstellen und wählen Sie Automatisierungsregel.
 
@@ -96,7 +98,7 @@ In dieser Aufgabe aktualisieren Sie das neu erstellte Playbook mit den richtigen
 
 1. Belassen Sie den Namen der analytischen Regel bei Alle.
 
-1. Klicken Sie auf Hinzufügen und wählen Sie Und.
+1. Wählen Sie **+ Hinzufügen** und wählen Sie *Bedingung (Und)*.
 
 1. Wählen Sie aus der Dropdown-Liste die Option Taktik.
 
@@ -120,6 +122,6 @@ In dieser Aufgabe aktualisieren Sie das neu erstellte Playbook mit den richtigen
 
 1. Wählen Sie unten **Anwenden** aus.
 
-Von hier aus werden Sie, je nach Ihrer Rolle, entweder weitere Architektenübungen machen oder zu den Analystenübungen übergehen.
+Sie haben nun ein Playbook und eine Automatisierungsregel in Microsoft Sentinel erstellt.
 
 ## Fahren Sie mit Übung 3 fort
