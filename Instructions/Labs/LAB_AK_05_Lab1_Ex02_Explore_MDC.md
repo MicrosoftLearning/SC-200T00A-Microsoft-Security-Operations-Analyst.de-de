@@ -34,8 +34,6 @@ In dieser Aufgabe überprüfen Sie die Konfiguration für die Einhaltung gesetzl
 
 1. Wählen Sie unter *Cloudsicherheit* die Option **Einhaltung gesetzlicher Bestimmungen** aus den linken Menüelementen aus.
 
-    >**Hinweis:** Möglicherweise müssen Sie diese Seite aktualisieren, wenn die Registerkarten der *Symbolleiste* nicht angezeigt werden.
-
 1. Wählen Sie auf der Symbolleiste **Compliancestandards verwalten** aus.
 
 1. Wählen Sie Ihr Abonnement aus.
@@ -60,7 +58,7 @@ In dieser Aufgabe überprüfen Sie die Konfiguration für die Einhaltung gesetzl
 
 ### Aufgabe 2: Erkunden der Sicherheitsempfehlungen
 
-In dieser Aufgabe werden Sie die Empfehlungen zum Cloud Security Posture Management überprüfen.
+In dieser Aufgabe werden Sie die Empfehlungen zur Verwaltung der Cloud-Sicherheitslage überprüfen.
 
 1. Wählen Sie im Abschnitt *Allgemein* im Navigationsmenü **Empfehlungen** aus.
 
@@ -112,4 +110,4 @@ In dieser Aufgabe laden Sie Beispielsicherheitswarnungen und überprüfen die Wa
 
     - Lesen Sie die Informationen zu *Maßnahmen ergreifen*. Beachten Sie die Abschnitte zum Ergreifen von Maßnahmen, die je nach Art der Warnung verfügbar sind: Ressourcenkontext untersuchen, Bedrohung verringern, zukünftige Angriffe verhindern, automatische Reaktion auslösen und ähnliche Warnungen unterdrücken.
 
-## Damit haben Sie das Lab beendet
+## Damit haben Sie das Lab beendet.
