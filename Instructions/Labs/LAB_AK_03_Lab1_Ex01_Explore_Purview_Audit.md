@@ -30,7 +30,9 @@ In dieser Aufgabe weisen Sie im Microsoft 365 Security-Portal voreingestellte S
 
 1. Wählen Sie im Bereich **Weitere Ressourcen** die Schaltfläche **Öffnen** auf der Kachel *Microsoft Purview-Portal* aus.
 
-1. Wenn das Microsoft Purview-Portal geöffnet wird, erscheint eine Meldung über das *neue Microsoft Purview-Portal* auf dem Bildschirm. Wählen Sie die Option, um den Bedingungen für die Veröffentlichung des Datenflusses und der Datenschutzerklärung zuzustimmen, und wählen Sie dann **Jetzt testen** aus.
+1. Wenn das Microsoft Purview-Portal geöffnet wird, erscheint die Meldung, dass *das Compliance-Portal im Ruhestand ist*. Diese Meldung führt zu einer Zeitüberschreitung und leitet Sie zum neuen *Microsoft Purview-Portal* weiter.
+
+1. Wählen Sie in der Meldung *Willkommen im neuen Microsoft Purview-Portal* die Option, den Bedingungen für die Offenlegung des Datenflusses und der Datenschutzerklärung zuzustimmen, und wählen Sie dann **Jetzt ausprobieren** aus.
 
     ![Screenshot des Bildschirms „Willkommen im neuen Microsoft Purview-Portal“.](../Media/welcome-purview-portal.png)
 

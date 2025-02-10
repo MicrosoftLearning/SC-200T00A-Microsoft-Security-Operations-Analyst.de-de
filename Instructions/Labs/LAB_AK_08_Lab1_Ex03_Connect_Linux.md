@@ -140,7 +140,6 @@ In dieser Aufgabe verbinden Sie einen Linux-Host mit Microsoft Sentinel über de
 
 1. Wenn es fertig ist, geben Sie **exit** ein, um die Remoteshellverbindung zu LIN2 zu schließen.
 
-
 ### Aufgabe 4: Konfigurieren der zu erfassenden Einrichtungen und die zugehörigen Schweregrade für den Syslog-Connector
 
 In dieser Aufgabe konfigurieren Sie die Syslog-Sammelstellen.
