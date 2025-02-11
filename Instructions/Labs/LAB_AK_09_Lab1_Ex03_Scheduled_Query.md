@@ -38,7 +38,7 @@ In dieser Aufgabe verbinden Sie den *Azure-Aktivitätsdatenconnectors*.
 
 1. Scrollen Sie im Bereich *Konfiguration* unter der Registerkarte *Anweisungen* nach unten zu „2. Verbinden Sie Ihre Abonnements …“ und wählen Sie **Azure Policy-Zuweisungs-Assistenten starten** aus.
 
-1. Wählen Sie auf der Registerkarte **Grundlagen** unter **Umfang** die Schaltfläche mit dem Auslassungszeichen (...) und wählen Sie Ihr *MOC-Abonnement-XXXXXXXXXXX* aus der Dropdown-Liste aus und klicken Sie auf **Auswählen**.
+1. Wählen Sie auf der Registerkarte **Grundlagen** unter **Umfang** die Schaltfläche mit de Auslassungspunkten (…) und wählen Sie Ihr *MOC-Abonnement-XXXXXXXXXXX* aus der Dropdown-Liste aus und klicken Sie auf **Auswählen**.
 
 1. Wählen Sie auf der Registerkarte **Parameter** Ihren Workspace *uniquenameDefender* aus der Dropdownliste **Primärer Log Analytics-Arbeitsbereich** aus. Diese Aktion wendet die Abonnementkonfiguration an, um die Informationen an den Log Analytics-Arbeitsbereich zu senden.
 
@@ -72,7 +72,7 @@ In dieser Aufgabe erstellen Sie eine *geplante Abfrageregel für Microsoft Senti
 
 1. Vergewissern Sie sich auf dem Blatt „Regelzusammenfassung“, dass Sie Daten erhalten, indem Sie das grüne Symbol unter *Datenquellen: Azure Activity* überprüfen.
 
-    >**Hinweis:** Wenn die Verbindung nicht hergestellt ist und Sie den Lernpfad 8 Lab, Übung 1, Aufgabe 3, wie oben beschrieben wiederholt haben, müssen Sie möglicherweise einige Minuten warten, bis der Vorgang abgeschlossen ist.
+    >**Hinweis:** Wenn Sie keine Verbindung sehen und die obige *vorausgesetzte Aufgabe* ausgeführt haben, müssen Sie möglicherweise länger warten, bis der Prozess abgeschlossen ist.
 
 1. Wählen Sie **Regel erstellen** aus, um fortzufahren.
 

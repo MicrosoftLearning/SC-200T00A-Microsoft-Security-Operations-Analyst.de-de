@@ -72,7 +72,14 @@ In dieser Aufgabe aktivieren und konfigurieren Sie Microsoft Defender for Cloud.
 
 1. Überprüfen Sie die Azure-Ressourcen, die nun durch die Defender for Cloud-Pläne geschützt sind.
 
-    >**Wichtig:** Wenn alle Defender-Pläne *deaktiviert* sind, wählen Sie **Alle Pläne aktivieren** aus. Wählen Sie den *Microsoft Defender für APIs-Plan 1 für 200 USD/Monat* aus, und wählen Sie dann **Speichern**. Wählen Sie oben auf der Seite **Speichern** aus, und warten Sie auf die Benachrichtigung *„Defender-Pläne (für Ihr) Abonnement wurden erfolgreich gespeichert!“* erscheint.
+<!---
+    >**Important:** If all Defender plans are *Off*, select **Enable all plans**. Select the *$200/month Microsoft Defender for APIs Plan 1* and then select **Save**. Select **Save** at the top of the page and wait for the *"Defender plans (for your) subscription were saved successfully!"* notifications to appear.--->
+
+1. Wählen Sie im Abschnitt *Cloud Security Posture Management (CSPM)* die Option **Ein** für den *Defender CSPM* aus.
+
+1. Wählen Sie im Abschnitt *Cloud Workload Protection (CWP)* die Option **Ein** für den *Server-Plan 2* aus.
+
+1. Wählen Sie die Schaltfläche **Speichern** oben auf der Seite aus.
 
 1. Wählen Sie im Bereich Einstellungen (neben Speichern) die Registerkarte **Einstellungen und Überwachung** aus.
 
@@ -107,6 +114,8 @@ In dieser Aufgabe aktivieren und konfigurieren Sie Microsoft Defender for Cloud.
 1. Wählen Sie in der oberen Menüleiste **Azure-Abonnements** aus. Dadurch gelangen Sie zu den Umgebungseinstellungen, wo Sie aus den verfügbaren Abonnements auswählen können.
 
 1. Kehren Sie zur Seite **Übersicht** zurück und überprüfen Sie die Kachel **Sicherheitsstatus**. Sie können Ihre aktuelle *Sicherheitsbewertung* zusammen mit der Anzahl der abgeschlossenen Steuerelemente und Empfehlungen sehen. Wenn Sie diese Kachel auswählen, werden Sie zu einer Drilldownansicht für Abonnements weitergeleitet.
+
+    >**Hinweis:** Die Berechnung des Sicherheitswerts und anderer Informationen auf der Kachel *Sicherheitslage* kann bis zu 24 Stunden dauern. Es wird während dieses Labs möglicherweise nicht vollständig aufgefüllt.
 
 1. Auf der Kachel **Regulierungskonformität** erhalten Sie Einblicke in Ihre Konformität auf der Grundlage einer kontinuierlichen Bewertung von Azure- und Hybrid-Cloudumgebungen. Diese Kachel zeigt die folgenden Standards: den Microsoft Cloud Security-Benchmark und den niedrigsten regulatorischen Compliance-Standard. Zur Ansicht der Daten müssen wir zunächst die Sicherheitsrichtlinien hinzufügen.
 

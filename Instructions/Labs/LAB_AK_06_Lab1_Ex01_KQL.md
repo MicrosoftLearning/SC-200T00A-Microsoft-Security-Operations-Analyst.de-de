@@ -12,6 +12,8 @@ lab:
 
 Sie sind Security Operations Analyst in einem Unternehmen, das Microsoft Sentinel implementiert. Sie sind für die Analyse von Protokolldaten verantwortlich, um nach schädlichen Aktivitäten zu suchen, Visualisierungen anzuzeigen und Bedrohungen aufzuspüren. Zum Abfragen von Protokolldaten verwenden Sie die Kusto-Abfragesprache (KQL).
 
+>**Hinweis:** Gemäß Microsofts *Secure Future Initiative* (SFI) sind alle Informationen, die als *personenbezogene Informationen* (PII) betrachtet werden könnten, wie Standorte, Benutzernamen, IP-Adressen, Ressourcen-IDs usw. wurden aus den LA-Demo-Tabellen wie *SigninLogs* entfernt. Dies kann bei einigen Abfragen zu Meldungen wie *Keine Ergebnisse wurden gefunden* führen.
+
 >**Wichtig:** Dieses Lab umfasst das Eingeben vieler KQL-Skripts in Microsoft Sentinel. Die Skripte wurden zu Beginn des Labs in einer Datei zur Verfügung gestellt. Sie können auch hier: <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> heruntergeladen werden
 
 ### Geschätzte Zeit bis zum Abschluss dieses Labs: 60 Minuten
@@ -19,6 +21,8 @@ Sie sind Security Operations Analyst in einem Unternehmen, das Microsoft Sentine
 ### Aufgabe 1: Zugriff auf den KQL-Testbereich
 
 In dieser Aufgabe erhalten Sie Zugriff auf eine Log Analytics-Umgebung, in der Sie das Schreiben von KQL-Anweisungen üben können.
+
+  >**Hinweis:** Wenn Sie die Meldung erhalten, dass *keine Ergebnisse für den Standardzeitraum gefunden wurden*, ändern Sie den *Zeitbereich* auf *Letzte 7 Tage*.
 
 1. Melden Sie sich beim virtuellen **WIN1-Computer** als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
@@ -40,7 +44,6 @@ In dieser Aufgabe erhalten Sie Zugriff auf eine Log Analytics-Umgebung, in der S
 
 1. Wählen Sie **>** neben dem ersten Datensatz, um die Informationen für die Zeile zu erweitern.
 
-
 ### Aufgabe 2: Ausführen grundlegender KQL-Anweisungen
 
 In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
@@ -59,7 +62,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
     >**Hinweis:** Die Verwendung des *Suchoperators* ohne bestimmte Tabellen oder qualifizierende Klauseln ist weniger effizient als tabellenspezifische und spaltenspezifische Textfilterung.
 
-1. Die folgende Anweisung demonstriert die **Suche** über die in der **in**-Klausel angegebenen Tabellen. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die **Suche** über die in der **in**-Klausel angegebenen Tabellen. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     search in (SecurityEvent,App*) "new"
@@ -67,7 +70,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
 1. Ändern Sie im Abfragefenster den *Zeitbereich* auf **Letzte 24 Stunden**.
 
-1. Die folgenden Anweisungen demonstrieren den **where** Operator, der nach einem bestimmten Prädikat filtert. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgenden Anweisungen demonstrieren den Operator **where**, der nach einem bestimmten Prädikat filtert. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     >**Wichtig:** Sie sollten **Ausführen** wählen, nachdem Sie jede Abfrage aus den folgenden Codeblöcken eingegeben haben.
 
@@ -130,7 +133,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
     LowActivityAccounts | where Account contains "sql"
     ```
 
-1. Ändern Sie im Abfragefenster den **Zeitbereich** auf **Letzte Stunde**. Dies wird unsere Ergebnisse für die folgenden Anweisungen einschränken.
+1. Ändern Sie im Abfragefenster den **Zeitbereich** auf **Letzte Stunde**. Dies schränkt unsere Ergebnisse für die folgenden Anweisungen ein.
 
 1. Die folgende Anweisung demonstriert den Operator **Extend**-Operator, der eine berechnete Spalte erstellt und der Ergebnismenge hinzufügt. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
@@ -239,7 +242,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen zum Aggregieren von Daten. **Sum
         | where EventID == 4624  
         ```
 
-    1. **Abfrage 2** enthält die neueste Anmeldung für Konten, die angemeldet sind. Die SecurityEvent-Tabelle wird nach EventID 4624 gefiltert. Dann werden diese Ergebnisse nach Konto für die Zeile mit der neuesten Anmeldung zusammengefasst.
+    1. **Abfrage 2** enthält die neueste Anmeldung für Konten, die angemeldet sind. Die SecurityEvent-Tabelle wird nur nach „EventID = 4624“ gefiltert. Anschließend werden diese Ergebnisse für die neueste Anmeldezeile nach Konto zusammengefasst.
 
         ```KQL
         SecurityEvent  
@@ -295,9 +298,11 @@ In dieser Aufgabe werden Sie die Erzeugung von Visualisierungen mit KQL-Anweisun
 
 In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
 
-1. Ändern Sie im Abfragefenster den **Zeitbereich** auf **Letzte Stunde**. Dies wird unsere Ergebnisse für die folgenden Anweisungen einschränken.
+>**Wichtig:** Die Einträge in der Tabelle *SigninLogs* wurden entfernt, sodass einige der folgenden Abfragen *derzeit keine Ergebnisse* in der für dieses Lab verwendeten LA-Demo-Umgebung liefern. Die KQL-Abfragen veranschaulichen jedoch wichtige Konzepte und Anwendungsfälle, daher nehmen Sie sich Zeit, diese zu überprüfen.
 
-1. Die folgende Anweisung demonstriert den **Union**-Operator, der zwei oder mehr Tabellen verwendet und alle ihre Zeilen zurückgibt. Es ist wichtig, dass Sie grundlegendes Verständnis darüber haben, wie Ergebnisse mit dem Pipezeichen übergeben und beeinflusst werden. Geben Sie die folgenden Anweisungen in das Abfragefenster ein und wählen Sie für jede einzelne Abfrage **Ausführen**, um die Ergebnisse anzuzeigen: 
+1. Ändern Sie im Abfragefenster den **Zeitbereich** auf **Letzte Stunde**. Dies schränkt unsere Ergebnisse für die folgenden Anweisungen ein.
+
+1. Die folgende Anweisung demonstriert den **Union**-Operator, der zwei oder mehr Tabellen verwendet und alle ihre Zeilen zurückgibt. Es ist wichtig, dass Sie grundlegendes Verständnis darüber haben, wie Ergebnisse mit dem Pipezeichen übergeben und beeinflusst werden. Geben Sie die folgenden Anweisungen in das Abfragefenster ein und wählen Sie für jede einzelne Abfrage **Ausführen**, um die Ergebnisse anzuzeigen:
 
     1. **Abfrage 1** gibt alle Zeilen von SecurityEvent und alle Zeilen von SigninLogs zurück.
 
@@ -314,7 +319,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
         | summarize count() 
         ```
 
-    1. **Abfrage 3** gibt alle Zeilen von SecurityEvent und eine Zeile für SigninLogs zurück. Die letzte Zeile für „SigninLogs“ enthält die zusammengefasste Anzahl der Zeilen.
+    1. **Abfrage 3** gibt alle Zeilen von SecurityEvent und eine (letzte) Zeile für SigninLogs zurück. Die letzte Zeile für „SigninLogs“ enthält die zusammengefasste Anzahl der Zeilen.
 
         ```KQL
         SecurityEvent  
@@ -330,7 +335,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
     | summarize count() by Type
     ```
 
-1. Die folgende Anweisung demonstriert den **Join**-Operator, der die Zeilen von zwei Tabellen zu einer neuen Tabelle zusammenführt, indem er die Werte der angegebenen Spalte(n) aus jeder Tabelle abgleicht. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert den **Join**-Operator, der die Zeilen von zwei Tabellen zu einer neuen Tabelle zusammenführt, indem er die Werte der angegebenen Spalte(n) aus jeder Tabelle abgleicht. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     SecurityEvent  
@@ -386,7 +391,7 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
     | project resourceName, totalSlices, sliceNumber, lockTime, releaseTime, previousLockTime
     ```
 
->**Wichtig:** Die folgenden Abfragen liefern derzeit keine Ergebnisse in der für diese Übung verwendeten Lademo-Umgebung. Es wurden Einträge in der Tabelle *SigninLogs* entfernt. Die KQL-Abfragen veranschaulichen jedoch wichtige Konzepte und Anwendungsfälle, daher nehmen Sie sich Zeit, diese zu überprüfen.
+    >**Wichtig:** Die folgenden Abfragen *liefern derzeit keine Ergebnisse* in der für dieses Lab verwendeten La-Demo-Umgebung. Es wurden Einträge in der Tabelle *SigninLogs* entfernt. Die KQL-Abfragen veranschaulichen jedoch wichtige Konzepte und Anwendungsfälle, daher nehmen Sie sich Zeit, diese zu überprüfen.
 
 1. Die folgende Anweisung demonstriert die Arbeit mit **dynamischen** Feldern, die etwas Besonderes sind, da sie jeden Wert anderer Datentypen annehmen können. In diesem Beispiel ist das Feld „DeviceDetail“ aus der Tabelle SigninLogs vom Typ **dynamisch**. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
@@ -408,7 +413,7 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
 
     >**Wichtig:** Obwohl der dynamische Typ ähnlich wie JSON aussieht, kann er Werte enthalten, die das JSON-Modell nicht darstellt, weil sie in JSON nicht existieren. Daher werden bei der Serialisierung dynamischer Werte in eine JSON-Darstellung Werte, die JSON nicht darstellen kann, in Zeichenfolgenwerten serialisiert. 
 
-1. Die folgenden Anweisungen demonstrieren Operatoren zur Manipulation von JSON, die in Zeichenfolgenfeldern gespeichert sind. Viele Protokolle übertragen Daten im JSON-Format, weshalb Sie wissen müssen, wie Sie JSON-Daten in abfragbare Felder umwandeln können. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgenden Anweisungen demonstrieren Operatoren zur Manipulation von JSON, die in Zeichenfolgenfeldern gespeichert sind. Viele Protokolle übertragen Daten im JSON-Format, weshalb Sie wissen müssen, wie Sie JSON-Daten in abfragbare Felder umwandeln können. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     SigninLogs 
@@ -436,7 +441,7 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
     (where AuthDetails.authenticationMethod == "Password")
     ```
 
-1. Eine **Funktion** ist eine Protokollabfrage, die in anderen Protokollabfragen mit dem gespeicherten Namen als Befehl verwendet werden kann. Um eine **Funktion** zu erstellen, klicken Sie nach der Ausführung Ihrer Abfrage auf die Schaltfläche **Speichern** und wählen dann **Speichern als Funktion** aus der Dropdown-Liste. Geben Sie den gewünschten Namen (zum Beispiel: *PrivLogins*) in das Feld **Funktionsname** ein und geben Sie eine **Legacy-Kategorie** ein (zum Beispiel: *Allgemein*) und wählen Sie **Speichern**. Die Funktion wird in KQL unter dem Alias der Funktion verfügbar sein:
+1. Eine **Funktion** ist eine Protokollabfrage, die in anderen Protokollabfragen mit dem gespeicherten Namen als Befehl verwendet werden kann. Um eine **Funktion** zu erstellen, klicken Sie nach der Ausführung Ihrer Abfrage auf die Schaltfläche **Speichern** und wählen dann **Speichern als Funktion** aus der Dropdown-Liste. Geben Sie den gewünschten Namen (zum Beispiel: *PrivLogins*) in das Feld **Funktionsname** ein und geben Sie eine **Legacy-Kategorie** ein (zum Beispiel: *Allgemein*) und wählen Sie **Speichern** aus. Die Funktion wird in KQL unter dem Alias der Funktion verfügbar sein:
 
     >**Hinweis:** In der Lademo-Umgebung, die für diese Übung verwendet wurde, ist dies nicht möglich, da Ihr Konto nur über Leserechte verfügt, aber es ist ein wichtiges Konzept, um Ihre Abfragen effizienter und effektiver zu gestalten. 
 
@@ -444,4 +449,4 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
     PrivLogins  
     ```
 
-## Damit haben Sie das Lab beendet.
+## Damit haben Sie das Lab beendet

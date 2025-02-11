@@ -56,29 +56,25 @@ In dieser Aufgabe überprüfen Sie die Konfiguration für die Einhaltung gesetzl
 
     >**Hinweis:** Möglicherweise möchten Sie zu einem späteren Zeitpunkt zu *Einhaltung gesetzlicher Bestimmungen* zurückkehren, um die neuen Standardkontrollen und Empfehlungen zu überprüfen.
 
-### Aufgabe 2: Erkunden von Sicherheitsstatus und Empfehlungen
+### Aufgabe 2: Erkunden der Sicherheitsempfehlungen
 
-In dieser Aufgabe überprüfen Sie die Verwaltung des Cloudsicherheitsstatus.  Die Neuberechnung der Informationen zur Sicherheitsbewertung können 24 Stunden dauern. Es wird empfohlen, diese Aufgabe in 24 Stunden erneut auszuführen.
+In dieser Aufgabe werden Sie die Empfehlungen zur Verwaltung der Cloud-Sicherheitslage überprüfen.
 
-1. Wählen Sie unter *Cloudsicherheit* die Option **Sicherheitsstatus** aus den linken Menüelementen aus.
-
-1. Die *Sicherheitsbewertung* bezieht sich standardmäßig auf die *Azure-Umgebung*.
-
-1. Wählen Sie auf der Registerkarte *Umgebung* den Link **Empfehlungen anzeigen >** aus.
+1. Wählen Sie im Abschnitt *Allgemein* im Navigationsmenü **Empfehlungen** aus.
 
 1. Wählen Sie zunächst die Option **Filter hinzufügen** und dann **Ressourcentyp** aus.
 
 1. Aktivieren Sie das Kontrollkästchen **Computer – Azure Arc**, und wählen Sie dann die Schaltfläche **Anwenden** aus.
 
-    >**Hinweis:** Wenn das Kontrollkästchen **Computer – Azure Arc** nicht angezeigt wird, stellen Sie sicher, dass Sie den Lernpfad 3 – Lab 1 – Übung 1, Aufgabe 4 abgeschlossen haben.
+    >**Hinweis:** Wenn **Maschinen – Azure Arc** nicht aufgeführt ist, aktualisieren Sie die Seite.
 
-1. Wählen Sie eine Empfehlung aus, deren Status nicht *„Abgeschlossen“* lautet.
+1. Wählen Sie eine Empfehlung aus, deren Status nicht *Abgeschlossen* ist. Möglicherweise müssen Sie nach rechts scrollen, um die Spalte *Status* zu sehen.
 
 1. Überprüfen Sie die Empfehlung, und führen Sie auf der Registerkarte **Aktion ausführen** einen Bildlauf nach unten zu **Delegat** durch, und wählen Sie **Besitzer zuweisen und Fälligkeitsdatum festlegen** aus.
 
 1. Lassen Sie im Fenster **Zuweisung erstellen** die Option *Typ* auf *Defender for Cloud* festgelegt, und erweitern Sie die **Zuweisungsdetails**.
 
-1. Geben Sie in das Feld `Set owner` *E-Mail-Adresse* Ihre Administrator-E-Mail-Adresse ein. **Tipp:** Sie können diese aus den Anweisungen auf der Registerkarte *Ressourcen* kopieren.
+1. Geben Sie in das Feld *E-Mail-Adresse* Ihre Administrator-E-Mail-Adresse ein. **Tipp:** Sie können diese aus den Anweisungen auf der Registerkarte *Ressourcen* kopieren.
 
 1. Untersuchen Sie die Optionen *Wartungszeitrahmen festlegen* und *E-Mail-Benachrichtigungen festlegen*, und wählen Sie **Erstellen** aus.
 
