@@ -98,9 +98,9 @@ In dieser Aufgabe verbinden Sie einen Linux-Host mit Microsoft Sentinel über de
 
 1. Wählen Sie auf der Lösungsseite *Syslog***Verwalten** aus.
 
-    >**Hinweis:** Die Lösung *Syslog* installiert den Datenconnector *Syslog*, 5 Analyseregeln, 9 Hunting-Abfragen und 1 Arbeitsmappe.
+    >**Hinweis:** Die Lösung *Syslog* installiert den Datenconnector *Syslog*, 7 Analyseregeln, 9 Hunting-Abfragen, 2 Parser und 21 Arbeitsmappen.
 
-1. Wählen Sie den Datenconnector *Syslog* aus und danach **Seite des Connectors öffnen** auf dem Informationsblatt des Connectors.
+1. Wählen Sie den Datenconnector *Syslog über Legacy-Agent* aus und danach **Connectorseite öffnen** auf dem Informationsblatt des Connectors.
 
 1. Erweitern Sie im Abschnitt *Konfiguration* die Option **Agent auf einer Nicht-Azure Linux-Computer installieren**.
 

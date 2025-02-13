@@ -32,13 +32,13 @@ In dieser Aufgabe verbinden Sie den *Azure-Aktivitätsdatenconnectors*.
 
 1. Wählen Sie auf der Lösungsseite *Azure-Aktivität* die Option **Verwalten**aus.
 
-    >**Hinweis:** Die Lösung *Azure-Aktivität* installiert den *Azure-Aktivitätsdatenconnector*, 12 Analyseregeln, 14 Hunting-Abfragen und 1 Arbeitsmappe.
-
 1.  Wählen Sie den *Azure-Aktivitätsdatenconnector* aus und wählen Sie **Connectorseite öffnen**.
 
 1. Scrollen Sie im Bereich *Konfiguration* unter der Registerkarte *Anweisungen* nach unten zu „2. Verbinden Sie Ihre Abonnements …“ und wählen Sie **Azure Policy-Zuweisungs-Assistenten starten** aus.
 
 1. Wählen Sie auf der Registerkarte **Grundlagen** unter **Umfang** die Schaltfläche mit de Auslassungspunkten (…) und wählen Sie Ihr *MOC-Abonnement-XXXXXXXXXXX* aus der Dropdown-Liste aus und klicken Sie auf **Auswählen**.
+
+    >**Hinweis:** Wählen Sie *keine* optionale Ressourcengruppe aus.
 
 1. Wählen Sie auf der Registerkarte **Parameter** Ihren Workspace *uniquenameDefender* aus der Dropdownliste **Primärer Log Analytics-Arbeitsbereich** aus. Diese Aktion wendet die Abonnementkonfiguration an, um die Informationen an den Log Analytics-Arbeitsbereich zu senden.
 
