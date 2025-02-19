@@ -58,13 +58,15 @@ In dieser Aufgabe verbinden Sie Microsoft Defender für Cloud-Datenconnector.
 
 1. Um die bidirektionale Synchronisierung zu aktivieren, wählen Sie den Link **Microsoft Defender für alle Abonnements aktivieren**.
 
+    >**Hinweis:** Möglicherweise müssen Sie nach rechts scrollen, um den Link zu sehen.
+
 1. Auf der Seite *Microsoft Defender for Cloud – Erste Schritte* sollte das Kontrollkästchen für das *MOC-Abonnement-XXXXXXXXXXX* aktiviert sein und der *Microsoft Defender-Plan* sollte *Ein – Teilweise (30 Testtage übrig)* angezeigt werden.
 
 1. Wählen Sie die Taste **X (Schließen)** oben rechts, um die Seite *Erste Schritte* zu schließen. Sie sollten wieder auf der Konfigurationsseite *Microsoft Defender for Cloud* sein.
 
 1. Der *Status* für das *MOC-Abonnement-XXXXXXXXXXX* sollte jetzt **Verbunden** lauten und *Bidirektionale Synchronisierung* sollte *Aktiviert* sein.
 
-    <!--- 1. Scroll down and under the *Create incidents - Recommended!* area, verify that *Create incidents automatically from all alerts generated in this connected service* is **Enabled**. --->
+    >**Hinweis:** Möglicherweise müssen Sie die Seite aktualisieren.
 
 ### Aufgabe 3: Verbinden des Azure-Aktivitätsdatenconnectors
 

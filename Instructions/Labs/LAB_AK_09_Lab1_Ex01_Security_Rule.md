@@ -24,7 +24,7 @@ In dieser Aufgabe aktivieren Sie eine Microsoft-Sicherheitsregel.
 
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
-1. Navigieren Sie im Microsoft Edge-Browser zum Azure-Portal unter (<https://portal.azure.com>).
+1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter <https://portal.azure.com>.
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
 
