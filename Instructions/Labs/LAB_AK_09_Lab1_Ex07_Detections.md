@@ -113,7 +113,7 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den ersten Angriff der vorhe
     |Name der Automatisierungsregel|Startup RegKey|
     |Trigger|Bei Erstellung des Vorfalls|
     |Aktionen |Playbook ausführen|
-    |Playbook |PostMessageTeams-OnIncident|
+    |Playbook |Defender_XDR_Ransomware_Playbook_SecOps-Tasks|
 
     >**Hinweis:** Sie haben dem Playbook bereits Berechtigungen zugewiesen, sodass es verfügbar ist.
 

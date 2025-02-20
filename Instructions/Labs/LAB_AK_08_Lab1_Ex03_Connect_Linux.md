@@ -52,9 +52,9 @@ In dieser Aufgabe verbinden Sie einen Linux-Host mit Microsoft Sentinel mit dem 
 
 1. Wählen Sie das *Common Events Format (CEF) über den AMA*-Datenconnector aus und wählen Sie auf dem Blatt „Connector-Informationen“ die Option **Connector-Seite öffnen** aus.
 
-1. Kopieren Sie im Abschnitt *Konfiguration* unter der Registerkarte *Anweisungen* den in *1.2 Installieren des CEF-Collectors auf dem Linux-Computer* gezeigten Befehl in die Zwischenablage.
+1. Kopieren Sie im Abschnitt *Konfiguration* den in *Führen Sie den folgenden Befehl aus, um den CEF-Collector zu installieren und anzuwenden:* angezeigten Befehl in die Zwischenablage.
 
-1. Starten Sie den virtuellen Computer **LIN1**. Melden Sie sich mit dem Benutzernamen und dem Kennwort an, die Sie von Ihrem Lab-Hoster erhalten haben. **Hinweis:** Möglicherweise müssen Sie die Eingabetaste drücken, um die Anmeldeaufforderung anzuzeigen.
+1. Starten Sie den virtuellen Computer **LIN1**. Melden Sie sich mit dem Benutzernamen und dem Kennwort an, die Sie von Ihrem Lab-Hoster erhalten haben. **Hinweis:** Möglicherweise müssen Sie die Eingabetaste drücken, um die Eingabeaufforderung für die Anmeldung zu sehen. Es empfiehlt sich, den *Benutzernamen und das Kennwort* zu notieren.
 
 1. Notieren Sie sich die IP-Adresse Ihres LIN1-Servers. Ein Beispiel dafür sehen Sie im unten stehenden Screenshot:
 
@@ -72,16 +72,17 @@ In dieser Aufgabe verbinden Sie einen Linux-Host mit Microsoft Sentinel mit dem 
 
     ![Linux-Anmeldung](../Media/PSconnectLinux.png)
 
-1. Jetzt können Sie den Befehl *1.2 Installieren des CEF-Collectors auf dem Linux-Computer* aus dem vorherigen Schritt einfügen. Stellen Sie sicher, dass sich das Azure-Skript in der Zwischenablage befindet. Klicken Sie in PowerShell mit der rechten Maustaste auf die obere Leiste und wählen Sie **Bearbeiten** und dann **Einfügen**. aus. 
+1. Sie können nun den Befehl *Ausführen des folgenden Befehls zum Installieren und Anwenden des CEF-Collectors:* aus dem vorherigen Schritt einfügen. Stellen Sie sicher, dass sich das Azure-Skript in der Zwischenablage befindet. Klicken Sie in der PowerShell-SSH-Sitzung mit der rechten Maustaste, um den Befehl in die Eingabeaufforderung einzufügen.
 
-1. Fügen Sie nach dem Einfügen und vor dem Drücken der Eingabetaste das Zeichen **3** an das Wort *python* hinzu, wie unten gezeigt:
+1. Fügen Sie nach dem Einfügen und bevor Sie *Eingeben* drücken, das Zeichen **3** zum Wort *python* hinzu, wie unten dargestellt:
 
     ![ConnectorScript](../Media/ConnectorScript.png)
-
 
 1. Wenn Sie das Skript angepasst haben, drücken Sie die Eingabetaste. Das Skript wird remote auf Ihrem Linux-Server ausgeführt. Wenn das Skript ordnungsgemäß ausgeführt wird, sollte der Bildschirm so aussehen:
 
     ![ConnectorScript](../Media/LinuxConnected.png)
+
+    >**Hinweis:** Ihr Bildschirm sieht möglicherweise nicht genau wie abgebildet aus, aber Sie sollten sehen, dass die *Installation erfolgreich abgeschlossen wurde*.
 
 1. Geben Sie **exit** ein, um die Remoteshellverbindung zu LIN1 zu schließen.
 

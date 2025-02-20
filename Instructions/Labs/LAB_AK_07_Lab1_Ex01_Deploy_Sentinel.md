@@ -48,7 +48,11 @@ Erstellen Sie einen Log Analytics-Arbeitsbereich, einschließlich der Regionsopt
 
 Bereitstellen von Microsoft Sentinel in einem Arbeitsbereich.
 
-1. Wenn die Bereitstellung des Arbeitsbereichs abgeschlossen ist, wählen Sie **Auffrischen**, um den neuen Arbeitsbereich anzuzeigen.
+1. Wenn die Bereitstellung des Arbeitsbereichs abgeschlossen ist, wählen Sie im „Brotkrumen“-Menü von Microsoft Azure die Option **Home** aus.
+
+1. **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals zusehen sein. Wählen Sie ihn aus.
+
+1. Wählen Sie im oberen Menü **+ Erstellen** aus.
 
 1. Wählen Sie den Arbeitsbereich aus, dem Sie Sentinel hinzufügen möchten (erstellt in Aufgabe 1).
 
@@ -62,7 +66,7 @@ Bereitstellen von Microsoft Sentinel in einem Arbeitsbereich.
 
 1. Erweitern Sie den Abschnitt *Einstellungen* im Navigationsmenü und wählen Sie **Nutzung und geschätzte Kosten**.
 
-1. Wählen Sie **Datenaufbewahrung** aus.
+1. Wählen Sie **Datenaufbewahrung** aus den Menüelementen aus.
 
 1. Ändern Sie den Daten-Aufbewahrungszeitraum auf **180 Tage**.
 
@@ -90,6 +94,10 @@ In dieser Aufgabe erstellen Sie eine Watchlist in Microsoft Sentinel.
 
 1. Schließen Sie den Editor.
 
+1. Wählen Sie im „Breadcrumb“-Menü von Microsoft Azure **Home** aus.
+
+1. **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals zusehen sein. Wählen Sie ihn aus.
+
 1. Wählen Sie in Microsoft Sentinel unter Konfiguration die Option **Watchlist** aus.
 
 1. Wählen Sie in der Befehlsleiste **+ Neu** aus.
@@ -114,6 +122,8 @@ In dieser Aufgabe erstellen Sie eine Watchlist in Microsoft Sentinel.
 
 1. Der Bildschirm kehrt zur Seite Watchlist zurück.
 
+1. Wählen Sie im Menü **Aktualisieren** aus, um die neue Watchlist anzuzeigen.
+
 1. Wählen Sie die Watchlist *HighValueHosts* aus und wählen Sie auf der rechten Seite **In Logs anzeigen**.
 
     >**Wichtig:** Es kann bis zu zehn Minuten dauern, bis die Watchlist angezeigt wird. **Bitte fahren Sie mit der nächsten Aufgabe fort und führen Sie diesen Befehl im nächsten Lab aus**.
@@ -130,21 +140,29 @@ In dieser Aufgabe erstellen Sie einen Indikator in Microsoft Sentinel.
 
 1. Wählen Sie in der Befehlsleiste **+ Neu hinzufügen** aus.
 
-1. Überprüfen Sie die verschiedenen verfügbaren Indikatortypen in der Dropdown-Liste *Typen*. Wählen Sie den **Domänennamen** aus. 
+1. Wählen Sie das **TI-Objekt**aus.
+
+1. Wählen Sie im Dropdownmenü *Objekttyp* die Option **Indikator** aus.
+
+1. Wählen Sie die Dropdown-Liste **+ Neu beobachtbar** aus und wählen Sie **Domainname** aus.
 
 1. Geben Sie für Domain einen Domainnamen ein, zum Beispiel *contoso.com*.
 
-1. Wählen Sie für *Bedrohungsarten* die Option **+ Hinzufügen** und geben Sie **Schädliche Aktivität** ein. Wählen Sie **Übernehmen**.
-
-1. Geben Sie eine **Beschreibung** ein.
-
 1. Geben Sie für den **Namen** den gleichen Wert wie für die Domain ein.
+
+1. Wählen Sie unter *Indikatorentypen* die Option **böswillige Aktivitäten** aus.
 
 1. Setzen Sie das Feld **Gültig ab** auf das aktuelle Datum.
 
-1. Wählen Sie **Übernehmen**.
+1. Scrollen Sie nach unten zur **Beschreibung** und geben Sie *Diese Domain ist als bösartig bekannt* ein.
 
-1. Wählen Sie unter Allgemein die Option **Protokolle** aus. Eventuell können Sie die Option „Abfragen immer anzeigen“ deaktivieren und das Fenster *Abfragen* schließen, um die KQL-Anweisungen auszuführen.
+1. Wählen Sie **Hinzufügen**.
+
+1. Wählen Sie die Option **Logs** im Bereich *Allgemein* des Navigationsmenüs *Sentinel* aus. Eventuell können Sie die Option „Abfragen immer anzeigen“ deaktivieren und das Fenster *Abfragen* schließen, um die KQL-Anweisungen auszuführen.
+
+    >**Hinweis:** Auf der Standardregisterkarte *Neue Abfrage 1* sollte die Abfrage **_GetWatchList('HighValueHosts')** weiterhin vorhanden sein und bei Ausführung nun Ergebnisse liefern.
+
+1. Wählen Sie das Zeichen *+* aus, um eine neue Registerkarte für Abfragen zu erstellen.
 
 1. Führen Sie die folgende KQL-Anweisung aus.
 
@@ -154,7 +172,7 @@ In dieser Aufgabe erstellen Sie einen Indikator in Microsoft Sentinel.
 
     >**Hinweis:** Es kann bis zu fünf Minuten dauern, bis der Indikator angezeigt wird.
 
-1. Scrollen Sie nach rechts, um die Spalte DomainName zu sehen. Sie können auch die folgende KQL-Anweisung ausführen, um nur die Spalte DomainName anzuzeigen. 
+1. Scrollen Sie nach rechts, um die Spalte DomainName zu sehen. Sie können auch die folgende KQL-Anweisung ausführen, um nur die Spalte DomainName anzuzeigen.
 
     ```KQL
     ThreatIntelligenceIndicator 
@@ -171,11 +189,15 @@ In dieser Aufgabe ändern Sie die Aufbewahrungszeit für die Tabelle SecurityEve
 
 1. Wählen Sie im Arbeitsbereich Log Analytics unter dem Bereich *Einstellungen* die Option **Tabellen** aus.
 
-1. Suchen und wählen Sie die Tabelle **SecurityEvent** und wählen Sie dann die Schaltfläche mit dem Auslassungszeichen (…).
+1. Suchen Sie die Tabelle **SecurityEvent** und wählen Sie sie aus. Klicken Sie dann auf den Link mit den Auslassungspunkten (…).
+
+    >**Hinweis:** Möglicherweise müssen Sie nach rechts scrollen, um den Link mit den Auslassungspunkten zu sehen.
 
 1. Wählen Sie **Tabelle verwalten** aus.
 
-1. Wählen Sie **180 Tage** für den *Gesamten Aufbewahrungszeitraum* aus. Beachten Sie, dass der *Archivierungszeitraum* nur 150 Tage beträgt, da er 30 Tage aus der (standardmäßigen) *Interaktiven Aufbewahrung* verwendet.
+1. Ändern Sie den *interaktiven Aufbewahrungszeitraum* auf **90 Tage**.
+
+1. Setzen Sie den *gesamten Aufbewahrungszeitraum* auf **180 Tage** zurück (falls erforderlich). Beachten Sie, dass der *Archivierungszeitraum* jetzt auf *90 Tage* festgelegt ist, da *Azure Monitor* die verbleibenden 90 Tage der Gesamtspeicherdauer automatisch als kostengünstige Langzeitspeicherung behandelt.
 
 1. Klicken Sie auf **Speichern**, um die Änderungen zu übernehmen.
 

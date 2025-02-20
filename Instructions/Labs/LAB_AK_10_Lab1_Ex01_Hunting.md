@@ -14,13 +14,165 @@ Sie sind als Security Operations Analyst für ein Unternehmen tätig, das Micros
 
 >**Wichtig:** Die Lab-Übungen für Lernpfad Nr. 10 befinden sich in einer *eigenständigen* Umgebung. Wenn Sie das Lab vor dem Abschluss verlassen, müssen Sie die Konfigurationen erneut ausführen.
 
->**Hinweis:** Die in den Lab-Übungen von Lernpfad 9 erstellten Protokolldaten sind in diesem Lab nicht verfügbar, ohne die Aufgaben 1 und 2 von Übung 5 erneut auszuführen und *Angriff 3* auf dem WIN1-Server in Übung 6 erneut auszuführen. Sie können diese Anweisungen in einem neuen Browser-Tab öffnen, indem Sie auf diese Links klicken:
+Die in den Lab-Übungen von Lernpfad 9 erstellten Protokolldaten sind in diesem Lab nicht verfügbar, ohne die folgenden vorausgesetzten Aufgaben erneut auszuführen.
 
-**[Lab 09 Übung 5](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex05_Attacks.html)**
+<!--- **[Lab 09 Exercise 5](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex05_Attacks.html)**
 
-**[Lab 09 Übung 6](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex06_Perform_Attacks.html)**
+**[Lab 09 Exercise 6](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_09_Lab1_Ex06_Perform_Attacks.html)** --->
 
-### Geschätzte Zeit für die Durchführung dieses Labs: 40 Minuten
+### Geschätzte Zeit bis zum Abschluss dieses Labs: 45–60 Minuten
+
+### Vorausgesetzte Aufgabe 1: Verbinden eines lokalen Servers
+
+In dieser Aufgabe verbinden Sie einen lokalen Server mit Ihrem Azure-Abonnement. Azure Arc wurde auf diesem Server vorinstalliert. Der Server wird in den nächsten Übungen verwendet, um simulierte Angriffe auszuführen, die Sie später für die Erkennung und Untersuchung in Microsoft Sentinel verwenden werden.
+
+>**Wichtig:** Die nächsten Schritte werden auf einem anderen Computer ausgeführt als dem, auf dem Sie zuvor gearbeitet haben. Suchen Sie auf der Registerkarte „Referenzen“ nach dem Namen der virtuellen Maschine.
+
+1. Melden Sie sich bei dem virtuellen Computer **WINServer** als Administrator*in mit dem Kennwort: **Passw0rd!** an, falls erforderlich.  
+
+Wie oben beschrieben, wurde Azure Arc auf dem **WINServer-Computer** vorinstalliert. Sie verbinden diesen Computer jetzt mit Ihrem Azure-Abonnement.
+
+1. Wählen Sie auf dem *WINServer-Computer* das Symbol *Suchen* aus, und geben Sie **cmd** ein.
+
+1. Klicken Sie in den Suchergebnissen mit der rechten Maustaste auf *Eingabeaufforderung*, und wählen Sie **Als Administrator ausführen** aus.
+
+1. Geben Sie im Eingabeaufforderungsfenster den folgenden Befehl ein: *Drücken Sie nicht auf die EINGABETASTE*:
+
+    ```cmd
+    azcmagent connect -g "defender-RG" -l "EastUS" -s "Subscription ID string"
+    ```
+
+1. Ersetzen Sie die **Abonnement-ID-Zeichenfolge** durch die *Abonnement-ID*, die von Ihrem Lab-Hoster (*Registerkarte „Ressourcen“) bereitgestellt wird. Achten Sie darauf, die Anführungszeichen beizubehalten.
+
+1. Geben Sie **Eingeben** ein, um den Befehl auszuführen (dies kann einige Minuten dauern).
+
+    >**Hinweis**: Wenn das Browser-Auswahlfenster *Wie möchten Sie das öffnen?* angezeigt wird, wählen Sie **Microsoft Edge** aus.
+
+1. Geben Sie im Dialogfeld *Anmelden* Ihre **Mandanten-E-Mail** und Ihr **Mandantenkennwort** ein, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Anmelden** aus. Warten Sie auf die Meldung *Authentifizierung abgeschlossen*, schließen Sie die Browserregisterkarte, und kehren Sie zum Fenster *Eingabeaufforderung* zurück.
+
+1. Lassen Sie nach Abschluss der Ausführung der Befehle das Fenster *Eingabeaufforderung* geöffnet, und geben Sie den folgenden Befehl ein, um zu bestätigen, dass die Verbindung erfolgreich hergestellt wurde:
+
+    ```cmd
+    azcmagent show
+    ```
+
+1. Überprüfen Sie in der Befehlsausgabe, ob der *Agentstatus* verbunden** ist**.
+
+## Vorausgesetzte Aufgabe 2: Verbinden eines Windows-Computers, der nicht von Azure stammt
+
+In dieser Aufgabe fügen Sie einen mit Azure Arc verbundenen lokalen Computer zu Microsoft Sentinel hinzu.  
+
+>**Hinweis:** Microsoft Sentinel wurde in Ihrem Azure-Abonnement mit dem Namen **defenderWorkspace** vorab bereitgestellt, und die erforderlichen *Content Hub*-Lösungen wurden installiert.
+
+1. Melden Sie sich beim virtuellen **WIN1-Computer** als Administrator mit dem Kennwort **Pa55w.rd** an.  
+
+1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter <https://portal.azure.com>.
+
+1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
+
+1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das **Kennwort des Mandanten**, das Sie von Ihrem Labhostinganbieter erhalten haben, und fügen Sie es ein. Wählen Sie dann **Anmelden**.
+
+1. Geben Sie in der Suchleiste des Azure-Portals *Sentinel* ein, und wählen Sie dann ** Microsoft Sentinel** aus.
+
+1. Wählen Sie den Microsoft Sentinel **defenderWorkspace** aus.
+
+1. Scrollen Sie im linken Navigationsmenü von Microsoft Sentinel nach unten zum Abschnitt *Konfiguration* und wählen Sie **Datenconnectors** aus.
+
+1. Suchen Sie in den *Datenconnectors* nach der Lösung **Windows-Sicherheitsereignisse über AMA** und wählen Sie diese aus der Liste aus.
+
+1. Wählen Sie im Detailbereich *Windows-Sicherheitsereignisse über AMA* die Option **Connectorseite öffnen** aus.
+
+    >**Hinweis:** Die Lösung *Windows-Sicherheitsereignisse* installiert sowohl den *Windows-Sicherheitsereignisse über AMA* als auch den Datenconnector *Sicherheitsereignisse über Legacy-Agent*. Plus 2 Arbeitsmappen, 20 Analyseregeln und 43 Hunting-abfragen.
+
+1. Wählen Sie im Abschnitt *Konfiguration* unter der Registerkarte *Anweisungen* die Option **Regel zur Datensammlung erstellen** aus.
+
+1. Geben Sie **AZWINDCR** als Regelnamen ein und wählen Sie **Weiter: Ressourcen** aus.
+
+1. Erweitern Sie Ihr *Abonnement* unter *Bereich* auf der Registerkarte *Ressourcen*.
+
+    >**Hinweis:** Sie können die gesamte Hierarchie *Bereich* erweitern, indem Sie die Option „>“ vor der Spalte *Bereich* auswählen.
+
+1. Erweitern Sie die Ressourcengruppe **defender-RG** und wählen Sie dann **WINServer** aus.
+
+1. Wählen Sie **Weiter: Sammeln** aus und lassen Sie die Option *Alle Sicherheitsereignisse* ausgewählt.
+
+1. Klicken Sie auf **Weiter: Überprüfen + erstellen**.
+
+1. Wählen Sie **Erstellen** aus, nachdem *Validierung erfolgreich* angezeigt wurde.
+
+### Vorausgesetzte Aufgabe 3: Befehls- und Kontrollangriff mit DNS
+
+>**Wichtig:** Die nächsten Schritte werden auf einem anderen Computer ausgeführt als dem, auf dem Sie zuvor gearbeitet haben. Suchen Sie auf der Registerkarte „Referenzen“ nach dem Namen der virtuellen Maschine.
+
+1. Melden Sie sich bei dem virtuellen Computer **WINServer** als Administrator*in mit dem Kennwort: **Passw0rd!** an, falls erforderlich.
+
+1. Wählen Sie auf dem *WINServer-Computer* das Symbol *Suchen* aus, und geben Sie **cmd** ein.
+
+1. Klicken Sie in den Suchergebnissen mit der rechten Maustaste auf *Eingabeaufforderung*, und wählen Sie **Als Administrator ausführen** aus.
+
+1. Kopieren Sie diesen Befehl und führen Sie ihn aus, um ein Skript zu erstellen, das eine DNS-Anfrage an einen C2-Server simuliert:
+
+    ```CommandPrompt
+    notepad c2.ps1
+    ```
+
+1. Wählen Sie **Ja**, um eine neue Datei zu erstellen, und kopieren Sie das folgende PowerShell-Skript in *c2.ps1*.
+
+    >**Hinweis:** Beim Einfügen in die Datei der virtuellen Maschine wird möglicherweise nicht die gesamte Länge des Skripts angezeigt. Stellen Sie sicher, dass das Skript den Anweisungen in der Datei *c2.ps1* entspricht.
+
+    ```PowerShell
+    param(
+        [string]$Domain = "microsoft.com",
+        [string]$Subdomain = "subdomain",
+        [string]$Sub2domain = "sub2domain",
+        [string]$Sub3domain = "sub3domain",
+        [string]$QueryType = "TXT",
+        [int]$C2Interval = 8,
+        [int]$C2Jitter = 20,
+        [int]$RunTime = 240
+    )
+    $RunStart = Get-Date
+    $RunEnd = $RunStart.addminutes($RunTime)
+    $x2 = 1
+    $x3 = 1 
+    Do {
+        $TimeNow = Get-Date
+        Resolve-DnsName -type $QueryType $Subdomain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+        if ($x2 -eq 3 )
+        {
+            Resolve-DnsName -type $QueryType $Sub2domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+            $x2 = 1
+        }
+        else
+        {
+            $x2 = $x2 + 1
+        }    
+        if ($x3 -eq 7 )
+        {
+            Resolve-DnsName -type $QueryType $Sub3domain".$(Get-Random -Minimum 1 -Maximum 999999)."$Domain -QuickTimeout
+            $x3 = 1
+        }
+        else
+        {
+            $x3 = $x3 + 1
+        }
+        $Jitter = ((Get-Random -Minimum -$C2Jitter -Maximum $C2Jitter) / 100 + 1) +$C2Interval
+        Start-Sleep -Seconds $Jitter
+    }
+    Until ($TimeNow -ge $RunEnd)
+    ```
+
+1. Wählen Sie im Menü Notepad **Datei** und dann **Speichern**. 
+
+1. Kehren Sie zum Eingabeaufforderungsfenster zurück, geben Sie den folgenden Befehl ein und drücken Sie die Eingabetaste. 
+
+    >**Hinweis:** Es werden DNS-Auflösungsfehler angezeigt. Dies entspricht dem erwarteten Verhalten.
+
+    ```CommandPrompt
+    Start PowerShell.exe -file c2.ps1
+    ```
+
+>**Wichtig:** Schließen Sie diese Fenster nicht. Lassen Sie dieses PowerShell-Skript im Hintergrund laufen. Der Befehl muss einige Stunden lang Protokolleinträge generieren. Sie können mit der nächsten Aufgabe und den nächsten Übungen fortfahren, während dieses Skript läuft. Die durch diese Aufgabe erzeugten Daten werden später im Lab zur Bedrohungssuche verwendet. Bei diesem Vorgang werden keine großen Datenmengen erzeugt oder verarbeitet.
 
 ### Aufgabe 1: Erstellen einer Bedrohungssuchabfrage
 
@@ -30,7 +182,7 @@ In dieser Aufgabe erstellen Sie eine Bedrohungssuchabfrage, setzen ein Lesezeich
 
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
-1. Navigieren Sie im Edge-Browser zum Azure-Portal unter <https://portal.azure.com>.
+1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter <https://portal.azure.com>.
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
 
@@ -116,7 +268,7 @@ In dieser Aufgabe erstellen Sie eine Bedrohungssuchabfrage, setzen ein Lesezeich
 
 1. Wählen Sie die Registerkarte **Lesezeichen** im mittleren Fensterbereich aus.
 
-1. Wählen Sie in der Ergebnisliste das soeben erstellte Lesezeichen aus.
+1. Wählen Sie in der Ergebnisliste das erstellte Lesezeichen aus.
 
 1. Scrollen Sie im rechten Fensterbereich nach unten und klicken Sie auf die Schaltfläche **Untersuchen**. **Hinweis:** Es kann einige Minuten dauern, bis das Untersuchungsdiagramm angezeigt wird.
 
@@ -187,7 +339,7 @@ In dieser Aufgabe erstellen Sie anstelle eines LiveStreams eine NRT-Analyseabfra
 
 In dieser Aufgabe verwenden Sie einen Suchauftrag, um nach einem C2 zu suchen.
 
-<!--- >**Note:** The *Restore* operation incurs costs that can deplete your Azure Pass subscription credits. For that reason, you will not be performing the restore operation in this lab. However, you can follow the steps below to perform the restore operation in your own environment. --->
+**Hinweis:** Der Vorgang *Wiederherstellen* verursacht Kosten, die Ihr Azure-Abonnementguthaben aufbrauchen können. Aus diesem Grund werden Sie den Wiederherstellungsvorgang in diesem Lab nicht durchführen. Sie können jedoch die folgenden Schritte ausführen, um den Wiederherstellungsvorgang in Ihrer eigenen Umgebung auszuführen.
 
 1. Wählen Sie in Microsoft Sentinel unter *Allgemein* die Seite **Suchen** aus.
 
@@ -231,7 +383,7 @@ In dieser Aufgabe verwenden Sie einen Suchauftrag, um nach einem C2 zu suchen.
 
 1. Wählen Sie das Dropdown-Menü **Suchaktionen** in der Mitte des Bildschirms über den Filtern aus.
 
-1. Wählen Sie **Neue Suche erstellen** aus. Alle von Ihnen ausgewählten Abfragen werden für diese neue Suche geklont.
+1. Wählen Sie **Suche erstellen** aus. Alle von Ihnen ausgewählten Abfragen werden für diese neue Suche geklont.
 
 1. Füllen Sie den Namen und die optionalen Felder für die Suche aus. In der Beschreibung können Sie Ihre Hypothese als Text formulieren. Im Pulldownmenü Hypothese legen Sie den Status Ihrer Arbeitshypothese fest.
 
@@ -258,7 +410,7 @@ In dieser Aufgabe verwenden Sie einen Suchauftrag, um nach einem C2 zu suchen.
     - Erweitern Sie das Bedrohungsmanagement.
     - Wählen Sie „Suche“ aus.
     - Klicken Sie auf „Filter hinzufügen“.
-    - Legen Sie den Filter auf „tactics:persistence“ fest.
+    - Legen Sie den Filter auf „tactics: persistence“ fest.
     - Fügen Sie einen weiteren Filter hinzu.
     - Legen Sie den zweiten Filter auf folgende Techniken fest: T1098.
 
