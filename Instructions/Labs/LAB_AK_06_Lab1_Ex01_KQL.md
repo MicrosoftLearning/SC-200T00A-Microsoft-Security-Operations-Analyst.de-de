@@ -40,7 +40,7 @@ In dieser Aufgabe erhalten Sie Zugriff auf eine Log Analytics-Umgebung, in der S
 
 1. Beachten Sie, dass Sie die maximale Anzahl von Ergebnissen erreicht haben (30.000).
 
-1. Ändern Sie im Abfragefenster den *Zeitbereich* in **Letzte 30 Minuten**.
+1. Ändern Sie den *Zeitbereich* im Abfragefenster in **letzte 7 Tage**.
 
 1. Wählen Sie **>** neben dem ersten Datensatz, um die Informationen für die Zeile zu erweitern.
 
@@ -76,26 +76,26 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     ```
 
     >**Hinweis:** Der *Zeitbereich* zeigt jetzt *In der Abfrage gesetzt* an, da wir mit der Spalte „TimeGenerated“ filtern.
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == 4624
+    | where TimeGenerated > ago(7d) and EventID == 4624
     ```
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | where EventID == 4624  
     | where AccountType =~ "user"
     ```
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID in (4624, 4625)
+    | where TimeGenerated > ago(7d) and EventID in (4624, 4625)
  
     ```
 
@@ -117,7 +117,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
       @"NT AUTHORITY\SYSTEM"
     ];
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | where Account in (suspiciousAccounts)
     ```
 
@@ -139,7 +139,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) 
+    | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
     ```
@@ -148,7 +148,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) 
+    | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc
@@ -158,7 +158,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) 
+    | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc 
@@ -169,7 +169,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) 
+    | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc 
@@ -184,7 +184,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen zum Aggregieren von Daten. **Sum
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == 4688  
+    | where TimeGenerated > ago(7d) and EventID == 4688  
     | summarize count() by Process, Computer
     ```
 
@@ -192,7 +192,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen zum Aggregieren von Daten. **Sum
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h) and EventID == 4624  
+    | where TimeGenerated > ago(7d) and EventID == 4624  
     | summarize cnt=count() by AccountType, Computer
     ```
 
@@ -200,7 +200,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen zum Aggregieren von Daten. **Sum
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | summarize dcount(IpAddress)
     ```
 
@@ -256,7 +256,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen zum Aggregieren von Daten. **Sum
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | where EventID == 4624  
     | summarize make_list(Account) by Computer
     ```
@@ -265,7 +265,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen zum Aggregieren von Daten. **Sum
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | where EventID == 4624  
     | summarize make_set(Account) by Computer
     ```
@@ -279,7 +279,7 @@ In dieser Aufgabe werden Sie die Erzeugung von Visualisierungen mit KQL-Anweisun
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | summarize count() by Account
     | render barchart
     ```
@@ -288,7 +288,7 @@ In dieser Aufgabe werden Sie die Erzeugung von Visualisierungen mit KQL-Anweisun
 
     ```KQL
     SecurityEvent  
-    | where TimeGenerated > ago(1h)
+    | where TimeGenerated > ago(7d)
     | summarize count() by bin(TimeGenerated, 1m)
     | render timechart
     ```
@@ -300,7 +300,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
 
 >**Wichtig:** Die Einträge in der Tabelle *SigninLogs* wurden entfernt, sodass einige der folgenden Abfragen *derzeit keine Ergebnisse* in der für dieses Lab verwendeten LA-Demo-Umgebung liefern. Die KQL-Abfragen veranschaulichen jedoch wichtige Konzepte und Anwendungsfälle, daher nehmen Sie sich Zeit, diese zu überprüfen.
 
-1. Ändern Sie im Abfragefenster den **Zeitbereich** auf **Letzte Stunde**. Dies schränkt unsere Ergebnisse für die folgenden Anweisungen ein.
+1. Ändern Sie den **Zeitbereich** in **letzte 7 Tage** im Abfragefenster. Dies schränkt unsere Ergebnisse für die folgenden Anweisungen ein.
 
 1. Die folgende Anweisung demonstriert den **Union**-Operator, der zwei oder mehr Tabellen verwendet und alle ihre Zeilen zurückgibt. Es ist wichtig, dass Sie grundlegendes Verständnis darüber haben, wie Ergebnisse mit dem Pipezeichen übergeben und beeinflusst werden. Geben Sie die folgenden Anweisungen in das Abfragefenster ein und wählen Sie für jede einzelne Abfrage **Ausführen**, um die Ergebnisse anzuzeigen:
 
@@ -352,7 +352,7 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
 
     >**Wichtig:** Die erste in der Verknüpfung (Join) angegebene Tabelle wird als linke Tabelle betrachtet. Die Tabelle nach dem **join**-Operator ist die rechte Tabelle. Wenn Sie mit Spalten aus den Tabellen arbeiten, werden die Namen $left.Column und $right.Column verwendet, um zu unterscheiden, auf welche Tabellen die Spalten verweisen. Der **join**-Operator unterstützt eine umfangreiche Zahl von Join-Typen (Verknüpfungen): fullouter, inner, innerunique, leftanti, leftantisemi, leftouter, leftsemi, rightanti, rightantisemi, rightouter, rightsemi.
 
-1. Ändern Sie im Abfragefenster den **Zeitbereich** auf **Letzte 24 Stunden**.
+1. Sie können den **Zeitbereich** im Abfragefenster auf **Letzte 7 Tage** belassen.
 
 ### Aufgabe 6: Arbeiten mit Zeichenfolgendaten in KQL
 
