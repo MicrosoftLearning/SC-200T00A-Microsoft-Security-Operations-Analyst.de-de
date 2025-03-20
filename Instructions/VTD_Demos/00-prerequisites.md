@@ -8,41 +8,37 @@ Dieses Dokument richtet sich an Referenten, die sich auf die Teilnahme am Micros
 
 ## Demovoraussetzungen
 
-Die Labs für diesen Kurs erfordern sowohl einen lizenzierten Microsoft 365 E5-Mandanten als auch ein Azure-Abonnement.
+Für die Labs dieses Kurses benötigen Sie einen Microsoft 365 E5-lizenzierten Mandanten mit einer Microsoft Defender for Endpoint P2-Lizenz und einem Azure-Abonnement.
 
-* Sie können Microsoft Learning Azure Passes für sich anfordern.
-* Stellen Sie sicher, dass Sie diese Pässe mindestens zwei Wochen vor der Durchführung der Demos anfordern. Nachdem Sie den Pass erhalten haben, müssen Sie ihn aktivieren. 
-* Der Azure Pass funktioniert genauso wie das öffentlich verfügbare Microsoft Azure-Testabonnement. Das bedeutet, dass für die Nutzung des Passes Einschränkungen gelten.
+* Wie der Kurs SC-200 Microsoft Security Operations Analyst sind diese Demos so konzipiert, dass sie in einer autorisierten Lab-Hostumgebung ausgeführt werden.
 * Die Labanweisungen finden Sie im [SC-200 Microsoft Learning-GitHub Repository](https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Instructions/VTD_Demos/).
-* Stellen Sie sicher, dass der neue Microsoft Edge-Browser auf dem Computer installiert ist, den Sie für die Demos verwenden werden.
+* Stellen Sie sicher, dass auf dem Computer, den Sie für die Demos verwenden, der neue Microsoft Edge-Browser installiert ist.
 
-## Aktivieren von Azure Pass
-
->**Hinweis:** Dies sind bestimmte Demos, die ein Azure-Abonnement erfordern, das mit einem Microsoft 365 E5-Mandanten verbunden ist. Sie können Ihr eigenes Azure-Abonnement und Ihren Microsoft 365 E5-Mandanten verwenden, wenn keine Azure-Pässe verfügbar sind. Besuchen Sie die Website [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program/), um die Mitgliedschaft zu beantragen und ein kostenloses Microsoft 365-E5-Entwicklerabonnement festzulegen.
+>**Hinweis:** Wie bereits erwähnt, gibt es Demos, für die ein Azure-Abonnement erforderlich ist, das mit einem Microsoft 365 E5-Mandanten verbunden ist. Sie können Ihr eigenes Azure-Abonnement und Ihren eigenen Microsoft 365 E5-Mandanten verwenden. Besuchen Sie die Website [Microsoft 365 Developer Program](https://developer.microsoft.com/microsoft-365/dev-program/), um die Mitgliedschaft zu beantragen und ein kostenloses Microsoft 365-E5-Entwicklerabonnement festzulegen.
 
 ## Bereitstellen von Defender für Endpoint
 
 ### Abrufen Ihrer Microsoft 365-Anmeldeinformationen
 
-Sobald Sie das Lab gestartet haben, wird Ihnen ein kostenloser Testmandant zur Verfügung gestellt, um in der Microsoft virtuellen Labumgebung darauf zuzugreifen. Diesem Mandanten wird automatisch ein eindeutiger Benutzername und ein Kennwort zugewiesen. Sie müssen diesen Benutzernamen und das Kennwort abrufen, damit Sie sich in der Microsoft virtuellen Labumgebung bei Azure und Microsoft 365 anmelden können.
+Sobald Sie das gehostete Lab starten, wird Ihnen ein kostenloser Testmandant in der Microsoft Virtual Lab-Umgebung zur Verfügung gestellt. Diesem Mandanten wird automatisch ein eindeutiger Benutzername und ein eindeutiges Kennwort zugewiesen. Sie müssen diesen Benutzernamen und das Kennwort abrufen, damit Sie sich in der Microsoft virtuellen Labumgebung bei Azure und Microsoft 365 anmelden können.
 
-Da dieser Kurs von Lernpartnern angeboten werden kann, die einen von mehreren autorisierten Labhostinganbietern nutzen, können die tatsächlichen Schritte zum Abrufen der Ihrem Mandanten zugewiesenen Mandanten-ID je nach Labhostinganbieter variieren. Ihr Kursleiter wird Ihnen daher die notwendigen Anweisungen geben, wie Sie diese Informationen für Ihren Kurs erhalten. Notieren Sie sich die folgenden Informationen für die spätere Verwendung:
+Da dieser Kurs von Lernpartnern angeboten werden kann, die einen von mehreren autorisierten Labhostinganbietern nutzen, können die tatsächlichen Schritte zum Abrufen der Ihrem Mandanten zugewiesenen Mandanten-ID je nach Labhostinganbieter variieren. Daher erhalten Sie von Ihrer Kursleitung die erforderlichen Anweisungen, wie Sie diese Informationen für Ihren Kurs abrufen können. Notieren Sie sich die folgenden Informationen für die spätere Verwendung:
 
-    - **Mandantensuffix-ID.** Diese ID ist für die onmicrosoft.com-Konten, mit denen Sie sich während der Labs bei Microsoft 365 anmelden. Es hat das Format **{Benutzername}@M365xZZZZZZ.onmicrosoft.com**, wobei ZZZZZZ Ihre eindeutige Mandanten-Suffix-ID ist, die Sie von Ihrem Lab-Hostinganbieter erhalten haben. Notieren Sie sich diesen Wert ZZZZZZ für die spätere Verwendung. Wenn Sie in einem der Lab-Schritte aufgefordert werden, sich an den Microsoft 365-Portalen anzumelden, müssen Sie den hier erhaltenen Wert ZZZZZZ eingeben.
-    - **Mandantenkennwort.** Geben Sie das Administratorkennwort ein, das von Ihrem Labhostinganbieter erhalten haben.
-    
+-**Mandantensuffix-ID.** Diese ID ist für die onmicrosoft.com-Konten, die Sie verwenden, um sich während der Labs bei Microsoft 365 anzumelden. Es hat das Format **{Benutzername}@M365xZZZZZZ.onmicrosoft.com**, wobei ZZZZZZ Ihre eindeutige Mandanten-Suffix-ID ist, die Sie von Ihrem Lab-Hostinganbieter erhalten haben. Notieren Sie sich diesen Wert ZZZZZZ für die spätere Verwendung. Wenn Sie in einem der Lab-Schritte aufgefordert werden, sich an den Microsoft 365-Portalen anzumelden, müssen Sie den hier erhaltenen Wert ZZZZZZ eingeben.
+
+-**Mandantenkennwort.** Geben Sie das Administratorkennwort ein, das von Ihrem Labhostinganbieter erhalten haben.
 
 ### Initialisieren von Microsoft Defender für Endpunkt
 
 In dieser Aufgabe führen Sie die Initialisierung von Microsoft Defender for Endpoint durch.
 
-1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
+1. Melden Sie sich als Admin bei der virtuellen Maschine „WIN1“ mit dem Passwort: **Pa55w.rd** an.  
 
-1. Öffnen Sie im Edge-Browser das Microsoft Defender-Portal (https://security.microsoft.com)).
+1. Wechseln Sie im Microsoft Edge-Browser zum Microsoft Defender-Portal unter (https://security.microsoft.com)).
 
-1. Kopieren und fügen Sie im Dialogfeld **Anmelden** das E-Mail-Konto des Mandanten für den Administratorbenutzernamen ein, das Sie von Ihrem Lab-Hostinganbieter erhalten haben, und klicken Sie auf **Weiter**.
+1. Kopieren Sie im Dialogfeld **Anmelden**das von Ihrem Labhostinganbieter bereitgestellte Mandanten-E-Mail-Konto für den Administrator, und fügen Sie es ein, und wählen Sie dann **Weiter** aus.
 
-1. Kopieren und fügen Sie im Dialogfeld **Kennwort eingeben** das vom Lab-Hostanbieter bereitgestellte Mandantenkennwort des/der Administratorin, und klicken Sie auf **Anmelden** aus.
+1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das von Ihrem Labhostinganbieter bereitgestellte Mandantenkennwort für den Administrator, und fügen Sie es ein, und wählen Sie dann **Anmelden** aus.
 
 Wählen Sie im **Microsoft Defender**-Portal im Navigationsmenü auf der linken Seite **Startseite** aus.
 
@@ -56,9 +52,9 @@ Wählen Sie im **Microsoft Defender**-Portal im Navigationsmenü auf der linken 
 
     >**Hinweis:** Ignorieren Sie die Popups mit der Fehlermeldung: *Einige Ihrer Daten können nicht abgerufen werden*. Wenn die Meldung „Warten Sie einen Moment. Wir bereiten neue Speicherplätze für Ihre Daten vor und verknüpfen sie.“ nicht angezeigt wird, oder die Seite „Einstellungen > Microsoft Defender XDR > Konto“ geöffnet wird, Ihnen jedoch die Meldung *Fehler beim Laden des Datenspeicherorts. Versuchen Sie es später erneut.* angezeigt wird, wählen Sie im Menü „Allgemein“ die Option „Diensteinstellungen für Warnungen“ aus.
 
-1. Wenn die neue Arbeitsbereichsinitialisierung erfolgreich abgeschlossen ist, wird auf der Portalseite **Startseite** ein Banner **SIEM und XDR an einem zentralen Ort abrufen** angezeigt. Außerdem sind in den **Einstellungen** die allgemeinen Microsoft Defender XDR-Einstellungen für Konto, E-Mail-Benachrichtigungen, **Vorschaufeatures**, Warnungsdiensteinstellungen, Berechtigungen und Rollen und Streaming-API jetzt aktiviert.
+1. Wenn die neue Arbeitsbereichsinitialisierung erfolgreich abgeschlossen ist, wird auf der Portalseite **Startseite** ein Banner **SIEM und XDR an einem zentralen Ort abrufen** angezeigt. Außerdem sind in den **Einstellungen** die allgemeinen Microsoft Defender XDR-Einstellungen für Konto, E-Mail-Benachrichtigungen, **Vorschaufeatures**, Warnungsdiensteinstellungen, Berechtigungen sowie Rollen und Streaming-API jetzt aktiviert.
 
-1. Wenn der neue Bereich erfolgreich abgeschlossen wurde, sehen Sie die allgemeinen Einstellungen von Microsoft 365 Defender für Konto, E-Mail-Benachrichtigungen, Einstellungen für den Benachrichtigungsdienst, Berechtigungen und Rollen und Streaming-API. Außerdem sehen Sie, dass die **Vorschaufunktionen** aktiviert sind.
+1. Wenn der neue Bereich erfolgreich abgeschlossen wurde, sehen Sie die allgemeinen Microsoft 365 Defender-Einstellungen für Konto, E-Mail-Benachrichtigungen, Warnungsdiensteinstellungen, Berechtigungen sowie Rollen und Streaming-API. Außerdem werden **Features in der Preview** aktiviert.
 
     >**Hinweis**: In der gehosteten Lab-Umgebung sollte Ihr Datenspeicherort für Sie ausgewählt sein. Und es muss in der geografischen Region liegen, die für den Ort geeignet ist, an dem dieser Schulungsmandanten verwaltet wird. Die Dauer der Datenaufbewahrung kann noch gewählt werden, ist aber nicht erforderlich.
 
@@ -132,7 +128,7 @@ In dieser Aufgabe konfigurieren Sie Gerätegruppen, die die Zugriffssteuerung un
 1. . Wählen Sie auf der Registerkarte „Geräte“ für die Betriebssystemvoraussetzung **Windows 10** und klicken Sie auf **Weiter**.
 
 1. Wählen Sie auf der Registerkarte „Gerätevorschau“ **Vorschau anzeigen**aus, um den virtuellen Computer WIN1 anzuzeigen. Wählen Sie **Weiter** aus. 
-**Hinweis:** Wenn Sie den virtuellen Computer nicht in der Vorschauliste sehen, gehen Sie zurück und wählen Sie auch *Keine* für die Betriebssystembedingung aus. Die Daten für den virtuellen Computer sind noch nicht aufgefüllt.
+**Hinweis:** Wenn Sie den virtuellen Computer nicht in der Vorschauliste sehen, gehen Sie zurück und wählen Sie zusätzlich *Keine* für die Betriebssystembedingung aus. Die Daten für den virtuellen Computer sind noch nicht aufgefüllt.
 
 1. Wählen Sie auf der Registerkarte „Benutzerzugriff“ **sg-IT** und dann **Ausgewählte Gruppen hinzufügen** aus.
 
@@ -140,7 +136,7 @@ In dieser Aufgabe konfigurieren Sie Gerätegruppen, die die Zugriffssteuerung un
 
 1. Die Gerätegruppenkonfiguration wurde geändert. Klicken Sie auf **Änderungen übernehmen**, um die Übereinstimmungen zu überprüfen und die Gruppierungen neu zu berechnen.
 
-1. Sie haben nun zwei Gerätegruppen: die soeben erstellte Gerätegruppe „Regulär“ und die Gerätegruppe „Ungruppierte Geräte (Standard)“ mit der gleichen Wartungsebene.
+1. Sie haben jetzt zwei Gerätegruppen: die von Ihnen erstellte Gruppe „Regulär“ und die Gruppe „Nicht gruppierte Geräte (Standard)“ mit der gleichen Korrekturstufe.
 
 <!--- 
 ## Deploy sample alerts for Demo in Module 3
@@ -169,9 +165,9 @@ In this task, you will load sample security alerts and review the alert details.
 
 In dieser Aufgabe erstellen Sie einen Microsoft Sentinel-Arbeitsbereich.
 
- >**Hinweis:** Für die folgende Demo müssen Sie einen Azure Pass oder ein anderes Azure Abonnement aktiviert haben.
+ >**Hinweis:** Für die folgende Demo müssen Sie ein aktiviertes Azure-Abonnement haben.
 
-1. Navigieren Sie im Edge-Browser zum Azure-Portal unter https://portal.azure.com.
+1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter https://portal.azure.com.
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
 
@@ -207,11 +203,11 @@ In dieser Aufgabe erstellen Sie einen Microsoft Sentinel-Arbeitsbereich.
 
 In dieser Aufgabe greifen Sie auf Ihren Microsoft Sentinel-Arbeitsbereich zu.
 
-1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
+1. Melden Sie sich als Admin bei der virtuellen Maschine „WIN1“ mit dem Passwort: **Pa55w.rd** an.  
 
-1. Öffnen Sie den Browser, suchen, laden und installieren Sie den neuen Microsoft Edge-Browser. Starten Sie den neuen Edge-Browser.
+1. Öffnen Sie den Browser, suchen, laden und installieren Sie den neuen Microsoft Edge-Browser. Starten Sie den neuen Microsoft Edge-Browser.
 
-1. Navigieren Sie im Edge-Browser zum Azure-Portal unter https://portal.azure.com.
+1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter https://portal.azure.com.
 
 1. Kopieren Sie im Dialogfeld **Anmelden** die **E-Mail vom Mandanten**, die Sie von Ihrem Labhostinganbieter erhalten haben, und wählen Sie **Weiter**.
 
@@ -223,7 +219,7 @@ In dieser Aufgabe greifen Sie auf Ihren Microsoft Sentinel-Arbeitsbereich zu.
 
 ### Aufgabe 2: Verbinden des Azure-Aktivitätsdatenconnectors.
 
-In dieser Aufgabe verbinden Sie den *Azure-Aktivitätsdatenconnectors*.
+In dieser Aufgabe verbinden Sie den *Azure-Aktivitätsdatenconnector*.
 
 1. Scrollen Sie im Bereich Microsoft Sentinel im linken Menü nach unten zu *Inhaltsverwaltung*, und wählen Sie **Content Hub** aus.
 
@@ -239,9 +235,9 @@ In dieser Aufgabe verbinden Sie den *Azure-Aktivitätsdatenconnectors*.
 
 1. Scrollen Sie im Bereich *Konfiguration* unter der Registerkarte *Anweisungen* nach unten zu „2. Verbinden Sie Ihre Abonnements …“ und wählen Sie **Azure Policy-Zuweisungs-Assistenten starten** aus.
 
-1. Wählen Sie auf der Registerkarte **Grundlagen** unter **Geltungsbereich** die Schaltfläche mit dem Auslassungszeichen (...) und wählen Sie Ihr Abonnement „Azure Pass – Sponsorship“ aus der Dropdownliste aus und klicken Sie auf **Auswählen**.
+1. Wählen Sie auf der Registerkarte **Grundlagen** unter **Bereich** die Ellipsen-Schaltfläche (…) und wählen Sie Ihr gehostetes Azure-Abonnement aus der Dropdownliste aus und wählen Sie **Auswählen**.
 
-1. Wählen Sie die Registerkarte **Parameter** aus, wählen Sie Ihren Arbeitsbereich aus der Dropdownliste **Arbeitsbereich für primäre Protokollanalyse** aus. Diese Aktion wendet die Abonnementkonfiguration an, um die Informationen an den Log Analytics-Arbeitsbereich zu senden.
+1. Wählen Sie die Registerkarte **Parameter** aus, wählen Sie Ihren Arbeitsbereich aus der Dropdownliste **Arbeitsbereich für primäre Protokollanalyse** aus. Mit dieser Aktion wird die Abonnementkonfiguration angewendet, um die Informationen an den Log Analytics-Arbeitsbereich zu senden.
 
 1. Wählen Sie die Registerkarte **Wartung** aus, und aktivieren Sie dann das Kontrollkästchen **Korrekturtask erstellen**. Mit dieser Aktion wird die Richtlinie auf bestehende Azure-Ressourcen angewendet.
 
@@ -253,7 +249,7 @@ In dieser Aufgabe verbinden Sie den *Azure-Aktivitätsdatenconnectors*.
 
 In dieser Aufgabe erstellen Sie einen virtuellen Windows-Computer in Azure.
 
-1. Melden Sie sich beim virtuellen **WIN1-Computer** als Administrator mit dem Kennwort **Pa55w.rd** an.  
+1. Melden Sie sich als Admin bei der virtuellen Maschine **WIN1** mit dem Passwort: **Pa55w.rd** an.  
 
 1. Navigieren Sie im Microsoft Edge-Browser zu der Azure-Portal unter https://portal.azure.com.
 
@@ -261,7 +257,7 @@ In dieser Aufgabe erstellen Sie einen virtuellen Windows-Computer in Azure.
 
 1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das **Kennwort des Mandanten**, das Sie von Ihrem Labhostinganbieter erhalten haben, und fügen Sie es ein. Wählen Sie dann **Anmelden**.
 
-1. Klicken Sie auf **+ Ressource erstellen**. **Hinweis:** Wenn Sie bereits im Azure-Portal waren, müssen Sie möglicherweise *Microsoft Azure* in der oberen Leiste auswählen, um zu „Start“ zu wechseln..
+1. Klicken Sie auf **+ Ressource erstellen**. **Hinweis:** Wenn Sie bereits im Azure-Portal waren, müssen Sie möglicherweise *Microsoft Azure* in der oberen Leiste auswählen, um zum Startmenü zu wechseln.
 
 1. Geben Sie im Feld **Services und Marketplace durchsuchen** *Windows 10* ein und wählen Sie **Microsoft Windows 10** aus der Dropdownliste.
 
@@ -341,7 +337,7 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 >**Wichtig:** Die nächsten Schritte werden in einer anderen VM ausgeführt als der, in der Sie zuvor gearbeitet haben. Suchen Sie nach den Namensverweisen der virtuellen Maschine.
 
-1. Melden Sie sich bei dem virtuellen Computer **WINServer** als Administrator*in mit dem Kennwort: **Passw0rd!** an, sofern erforderlich.  
+1. Melden Sie sich am virtuellen Computer **WINServer** als Admin mit dem Kennwort: **Passw0rd!** an. falls erforderlich.  
 
 1. Öffnen Sie den Microsoft Edge-Browser und navigieren Sie zum Azure-Portal unter https://portal.azure.com.
 
@@ -367,7 +363,7 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 1. Überprüfen Sie, welche Tags standardmäßig verfügbar sind. Wählen Sie **Weiter** aus, um zur Registerkarte Skript herunterladen und ausführen zu gelangen.
 
-1. Scrollen Sie nach unten und klicken Sie auf die Schaltfläche **Herunterladen**. **Hinweis:** Wenn Ihr Browser den Download blockiert, ergreifen Sie Maßnahmen im Browser, um ihn zuzulassen. Wählen Sie ggf. im Edge-Browser die Schaltfläche mit den Auslassungspunkten (…) und klicken Sie dann auf **Beibehalten**.
+1. Scrollen Sie nach unten und klicken Sie auf die Schaltfläche **Herunterladen**. **Hinweis:** Wenn Ihr Browser den Download blockiert, ergreifen Sie Maßnahmen im Browser, um ihn zuzulassen. Wählen Sie ggf. im Microsoft Edge-Browser die Schaltfläche mit den Auslassungspunkten (…) und klicken Sie dann auf **Beibehalten**.
 
 1. Klicken Sie mit der rechten Maustaste auf die Windows-Schaltfläche Start und wählen Sie **Windows PowerShell (Admin)** aus.
 
@@ -387,7 +383,7 @@ In dieser Aufgabe installieren Sie Azure Arc auf einem lokalen Server, um das On
 
 1. Geben Sie **R** für Ausführen ein und drücken Sie die Eingabetaste (dies kann ein paar Minuten dauern).
 
-1. Während des Einrichtungsvorgangs wird eine neue Registerkarte im Edge-Browser geöffnet, um den Azure Arc-Agenten zu authentifizieren. Wählen Sie Ihr Administratorkonto aus, warten Sie, bis die Meldung „Authentifizierung abgeschlossen" angezeigt wird, und kehren Sie dann zum Windows PowerShell-Fenster zurück.
+1. Während des Einrichtungsvorgangs wird eine neue Registerkarte im Microsoft Edge-Browser geöffnet, um den Azure Arc-Agenten zu authentifizieren. Wählen Sie Ihr Administratorkonto aus, warten Sie, bis die Meldung „Authentifizierung abgeschlossen" angezeigt wird, und kehren Sie dann zum Windows PowerShell-Fenster zurück.
 
 1. Wenn die Installation abgeschlossen ist, kehren Sie zur Azure-Portalseite zurück, von der Sie das Skript heruntergeladen haben, und wählen Sie **Schließen**. Schließen Sie die Seite **Server mit Azure Arc hinzufügen**, um zur Seite Azure Arc **-Computer** zurückzukehren.
 
@@ -421,7 +417,7 @@ In dieser Aufgabe fügen Sie einen mit Azure Arc verbundenen virtuellen Nicht-Az
 
 In dieser Aufgabe stellen Sie den Microsoft Defender XDR-Connector bereit.
 
-1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
+1. Melden Sie sich als Admin bei der virtuellen Maschine „WIN1“ mit dem Passwort: **Pa55w.rd** an.  
 
 1. Navigieren Sie im Microsoft Edge-Browser zum Azure-Portal unter (<https://portal.azure.com>).
 
@@ -606,7 +602,7 @@ You should still be connected to the WIN2 virtual machine.  The following instru
 
 In dieser Aufgabe führen Sie Angriffe auf einen Host aus, auf dem Microsoft Defender for Endpoint konfiguriert ist.
 
-1. Melden Sie sich beim `WIN1`virtuellen Computer als Administrator*in mit dem Kennwort **Pa55w.rd** an.  
+1. Melden Sie sich am virtuellen Computer `WIN1` als Admin mit dem Kennwort: **Pa55w.rd** an.  
 
 1. Geben Sie bei der Suche in der Taskleiste *Befehl* ein.  Die Eingabeaufforderung wird in den Suchergebnissen angezeigt.  Klicken Sie mit der rechten Maustaste auf „Eingabeaufforderung“, und wählen Sie **Als Administrator ausführen** aus. Bestätigen Sie alle Aufforderungen zur Benutzerkontensteuerung, die erscheinen.
 
@@ -626,7 +622,7 @@ In dieser Aufgabe führen Sie Angriffe auf einen Host aus, auf dem Microsoft Def
 
 ### Aufgabe 2: Erstellen eines C2-Angriffs (Command and Control)
 
-1. Melden Sie sich beim `WIN1`virtuellen Computer als Administrator*in mit dem Kennwort **Pa55w.rd** an.  
+1. Melden Sie sich am virtuellen Computer `WIN1` als Admin mit dem Kennwort: **Pa55w.rd** an.  
 
 1. Geben Sie bei der Suche in der Taskleiste *Befehl* ein.  Die Eingabeaufforderung wird in den Suchergebnissen angezeigt.  Klicken Sie mit der rechten Maustaste auf „Eingabeaufforderung“, und wählen Sie **Als Administrator ausführen** aus. Bestätigen Sie alle Aufforderungen zur Benutzerkontensteuerung, die erscheinen.
 
@@ -695,7 +691,7 @@ Klicken Sie auf **Ja**, um eine neue Datei zu erstellen und kopieren Sie das fol
     Until ($TimeNow -ge $RunEnd)
     ```
 
-Geben Sie an der Eingabeaufforderung Folgendes ein, und geben Sie den Befehl in jeder Zeile ein, und drücken Sie nach jeder Zeile die Eingabetaste:
+Geben Sie in der Eingabeaufforderung Folgendes ein: Geben Sie den Befehl in jede Zeile ein und drücken Sie nach jeder Zeile die Eingabetaste:
 
     ```PowerShell
     .\c2.ps1
