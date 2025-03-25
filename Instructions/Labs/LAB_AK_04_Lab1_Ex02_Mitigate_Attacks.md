@@ -58,7 +58,7 @@ In dieser Aufgabe untersuchen Sie die Warnungen und Vorfälle, die vom Onboardin
 
 1. Deaktivieren Sie den Filter *Warnungsschweregrad*, indem Sie auf der rechten Seite des Filters das Symbol **X** auswählen.
 
-1. Im rechten Bereich wird ein neuer Incident namens *[TestAlert] Verdächtige PowerShell-Befehlszeile* angezeigt. Wählen Sie den Namen des Vorfalls, um seine Details zu laden.
+1. Ein neuer Vorfall namens *Ausführungsvorfall an einem Endgerät* wird im rechten Bereich angezeigt. Wählen Sie den Namen des Vorfalls, um seine Details zu laden.
 
 1. Wählen Sie den Link **Vorfall verwalten** (mit einem Bleistiftsymbol) aus. Daraufhin wird ein neues Fensterblatt angezeigt.
 

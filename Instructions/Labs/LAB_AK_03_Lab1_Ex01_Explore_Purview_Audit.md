@@ -10,6 +10,20 @@ lab:
 
 Sie sind eine Sicherheitsanalystin bzw. ein Sicherheitsanalyst und arbeiten in einem Unternehmen, das Microsoft Defender XDR und Microsoft Purview implementiert. Sie unterstützen die Kollegen im IT-Compliance-Team bei der Konfiguration von Purview Audit (Standard) und Audit (Premium). Ihr Ziel ist es sicherzustellen, dass alle Zugriffe auf Patientendaten und Änderungen an diesen Daten in unserem Netzwerk von Gesundheitseinrichtungen genau protokolliert werden, um die Vorschriften zum Schutz von Integritätsdaten zu erfüllen.
 
+>[!alert] Wenn Sie eine Fehlermeldung erhalten und die Überwachungsaufzeichnung in dieser Übung nicht starten können, gehen Sie wie folgt vor:
+>
+>1. Öffnen Sie eine erweiterte PowerShell-Sitzung, indem Sie *PowerShell* in das Windows-Suchformular eingeben und dann **Als Administrator ausführen** wählen.
+>1. Installieren Sie das ExchangeOnlineManagement-Modul, indem Sie `Install-Module -Name ExchangeOnlineManagement` ausführen.
+>1. Stellen Sie eine Verbindung zu ExchangeOnlineManagement her, indem Sie `Connect-ExchangeOnline` ausführen.
+>1. Wenn Sie dazu aufgefordert werden, melden Sie sich an, indem Sie den Administratorbenutzernamen und das Kennwort von Ihrem Lab-Hostinganbieter eingeben.
+>1. Um zu überprüfen, ob die Überwachung aktiviert ist, führen Sie `Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled` aus.
+>1. Wenn „false“, dann ist das Überwachungsprotokoll deaktiviert.
+>1. Um die Überwachung zu aktivieren, führen Sie `Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true` aus.
+>1. Wenn eine Fehlermeldung angezeigt wird, dass Sie das Skript in Ihrer Organisation nicht ausführen können, führen Sie `Enable-OrganizationCustomization` aus.
+>1. Versuchen Sie es erneut, `Set-AdminAuditLogConfig -UnifiedAuditLogIngestionEnabled $true` auszuführen.
+>1. Um zu überprüfen, ob die Überwachung aktiviert ist, führen Sie `Get-AdminAuditLogConfig | FL UnifiedAuditLogIngestionEnabled` aus.
+>1. Wenn Sie fertig sind, führen Sie `Disconnect-ExchangeOnline` aus, um Ihre Sitzung zu beenden.
+
 ### Geschätzte Zeit bis zum Abschluss dieses Labs: 15 Minuten
 
 ### Aufgabe 1: Aktivieren von Purview Überwachungsprotokollen

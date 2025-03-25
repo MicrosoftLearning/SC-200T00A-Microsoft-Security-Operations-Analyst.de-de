@@ -120,9 +120,9 @@ In dieser Aufgabe konfigurieren Sie Gerätegruppen, die die Zugriffssteuerung un
 
 1. Wählen Sie **Weiter** aus.
 
-1. Wählen Sie auf der Registerkarte „Geräte“ für die Betriebssystemvoraussetzung **Windows 10** und klicken Sie auf **Weiter**.
+1. Wählen Sie auf der Registerkarte „Geräte“ für die Betriebssystembedingung **Windows 11** aus und klicken Sie auf **Weiter**.
 
-    >**Hinweis:** Einige Lab-Hostinganbieter haben möglicherweise *Windows 11*-Images für WIN1 konfiguriert. Sie können eines oder beide auswählen.
+    >**Hinweis:** Einige Lab-Hosting-Anbieter haben möglicherweise noch *Windows 10* Images für WIN1. Sie können eines oder beide auswählen.
 
 1. Auf der Registerkarte „Gerätevorschau“ könnte die Schaltfläche *Vorschau anzeigen* den virtuellen Computer WIN1 anzeigen, aber höchstwahrscheinlich sind die Daten noch nicht ausgefüllt. Klicken Sie auf **Weiter**, um fortzufahren.
 
