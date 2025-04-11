@@ -126,7 +126,7 @@ In dieser Aufgabe verbinden Sie einen virtuellen Azure-Windows-Computer mit Micr
 
 1. Wählen Sie den Datenconnector *Windows Sicherheitsereignisse über AMA* und wählen Sie auf dem Connector-Informationsblatt**Connectorseite öffnen**aus.
 
-1. Wählen Sie im Abschnitt *Konfiguration* die Option **Regel für die Datensammlung erstellen** aus.
+1. Wählen Sie im Abschnitt *Konfiguration* die Schaltfläche **+Regel für die Datensammlung erstellen**.
 
 1. Geben Sie **AZWINDCR** als Regelnamen ein und wählen Sie **Weiter: Ressourcen** aus.
 
