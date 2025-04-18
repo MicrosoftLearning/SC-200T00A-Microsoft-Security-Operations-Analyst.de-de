@@ -89,11 +89,7 @@ In dieser Aufgabe weisen Sie im Microsoft 365 Security-Portal voreingestellte S
 
 ### Aufgabe 3: Vorbereiten des Microsoft Defender XDR-Arbeitsbereichs
 
-1. Wählen Sie im **Microsoft Defender**-Portal im Navigationsmenü auf der linken Seite **Startseite** aus.
-
-    >**Hinweis:** Möglicherweise müssen Sie im Menü ganz nach oben scrollen.
-
-1. Scrollen Sie die Menüelemente nach unten zu **Ressourcen**, und wählen Sie **Geräte** aus.
+1. Scrollen Sie auf dem *Startbildschirm* des **Microsoft Defender-Portals** nach unten zu den Navigationsmenüelementen zum Abschnitt **Assets**, und wählen Sie **Geräte** aus.
 
 1. Der Prozess zum Bereitstellen des Defender XDR-Arbeitsbereichs sollte gestartet werden, und es sollten Meldungen wie *Laden und Initialisieren* kurz oben auf der Seite angezeigt werden. Dann sehen Sie ein Bild eines Kaffeebechers und folgende Meldung: **Warten Sie einen Moment! Wir bereiten neue Orte für Ihre Daten vor und verbinden sie.** Die Bereitstellung dauert ungefähr fünf Minuten. *Lassen Sie die Seite geöffnet, und stellen Sie sicher, dass die Bereitstellung abgeschlossen wird, da sie für das nächste Lab erforderlich ist.*
 
