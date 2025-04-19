@@ -28,7 +28,7 @@ In dieser Aufgabe erstellen Sie einen virtuellen Windows-Computer in Azure.
 
 1. Kopieren Sie im Dialogfeld **Kennwort eingeben** das **Kennwort des Mandanten**, das Sie von Ihrem Labhostinganbieter erhalten haben, und fügen Sie es ein. Wählen Sie dann **Anmelden**.
 
-1. Klicken Sie auf **+ Ressource erstellen**. **Hinweis:** Wenn Sie bereits im Azure-Portal waren, müssen Sie möglicherweise *Microsoft Azure* in der oberen Leiste auswählen, um zu „Start“ zu wechseln..
+1. Klicken Sie auf **+ Ressource erstellen**. **Hinweis:** Wenn Sie bereits im Azure-Portal waren, müssen Sie möglicherweise *Microsoft Azure* in der oberen Leiste auswählen, um zum Startmenü zu wechseln.
 
 1. Geben Sie im Feld **Services und Marketplace durchsuchen** *Windows 10* ein und wählen Sie **Microsoft Windows 10** aus der Dropdownliste.
 
@@ -40,7 +40,7 @@ In dieser Aufgabe erstellen Sie einen virtuellen Windows-Computer in Azure.
 
 1. Wählen Sie **Dev/Test** und dann **Fortfahren, um eine VM zu erstellen**aus.
 
-1. Wählen Sie **Neu anlegen** für *Ressourcengruppe*, geben Sie RG-AZWIN01 als Namen ein und wählen Sie **OK**.
+1. Wählen Sie **Neu anlegen** für *Ressourcengruppe*, geben Sie „RG-AZWIN01“ als Namen ein und wählen Sie **OK**.
 
     >**Hinweis:** Dies ist eine neue Ressourcengruppe für Nachverfolgungszwecke. 
 
@@ -66,7 +66,7 @@ In dieser Aufgabe erstellen Sie einen virtuellen Windows-Computer in Azure.
 
 1. Klicken Sie auf **Erstellen**. Warten Sie, bis die Ressource erstellt ist. Dies kann einige Minuten in Anspruch nehmen.
 
-### Aufgabe 2: Verbinden Sie einen lokalen Server mit Azure
+### Aufgabe 2: Verbinden eines lokalen Servers mit Azure
 
 In dieser Aufgabe verbinden Sie einen lokalen Server mit Ihrem Azure-Abonnement. Azure Arc wurde auf diesem Server vorinstalliert. Der Server wird in den nächsten Übungen verwendet, um simulierte Angriffe auszuführen, die Sie später für die Erkennung und Untersuchung in Microsoft Sentinel verwenden werden.
 
@@ -134,7 +134,7 @@ In dieser Aufgabe verbinden Sie einen virtuellen Azure-Windows-Computer mit Micr
 
     >**Hinweis:** Sie können die gesamte Hierarchie *Bereich* erweitern, indem Sie die Option „>“ vor der Spalte *Bereich* auswählen.
 
-1. Erweitern Sie **defender-RG**, und wählen Sie dann **AZWIN01** aus.
+1. Erweitern Sie **RG-AZWIN01**, und wählen Sie **dann AZWIN01** aus.
 
 1. Wählen Sie **Weiter: Sammeln**.
 

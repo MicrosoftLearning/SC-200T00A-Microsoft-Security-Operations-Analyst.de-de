@@ -78,28 +78,45 @@ In dieser Aufgabe integrieren Sie ein Gerät in Microsoft Defender for Endpoint 
 
 In dieser Aufgabe konfigurieren Sie Rollen für die Verwendung mit Gerätegruppen.
 
-1. Erweitern Sie in der linken Menüleiste des Microsoft Defender XDR-Portals den Abschnitt **System** und wählen Sie **Einstellungen**, dann **Endpunkte** aus.
+1. Erweitern Sie im Navigationsmenü des Microsoft Defender XDR-Portals den Abschnitt **System** und wählen Sie **Einstellungen**, dann **Microsoft Defender XDR** aus.
 
-1. Wählen Sie im Bereich „Berechtigungen“ die Option **Rollen** aus.
+1. Wählen Sie **Berechtigungen und Rollen** unter dem Abschnitt *Konto* aus.
 
-1. Wählen Sie die Schaltfläche **Rollen aktivieren** aus.
+1. Scrollen Sie auf der Seite nach unten und wählen Sie den Link **Zu Berechtigungen und Rollen wechseln**.
 
-1. Wählen Sie **+ Rolle hinzufügen** aus.
+1. Auf der Seite *Berechtigungen und Rollen* wählen Sie **+ Benutzerdefinierte Rolle erstellen**.
 
-1. Geben Sie im Dialogfeld „Rolle hinzufügen“ die folgenden Daten ein:
+1. Auf der Seite *Grundlagen* im Dialogfeld „Rolle hinzufügen“ geben Sie Folgendes ein:
 
-    |Allgemeine Einstellung|Wert|
+    |Grundlegende Einstellungen|Wert|
     |---|---|
     |Rollenname|**Support der Ebene 1**|
-    |Berechtigungen|Livereaktionsfunktionen – Erweitert|
 
 1. Wählen Sie **Weiter** aus.
 
-1. Geben Sie auf der Seite **Zugeordnete Benutzergruppen** **sg-IT** in das Formular *Benutzergruppen filtern* ein, und wählen Sie dann **Ausgewählte Gruppen hinzufügen** aus. Stellen Sie sicher, dass sie unter *Azure AD-Benutzergruppen mit dieser Rolle* angezeigt wird.
+1. Auf der Seite **Berechtigungen** wählen Sie die folgenden Berechtigungen aus:
+
+    |Berechtigungsgruppe|Beschreibung|  |Sicherheitsvorgänge|Verwaltet alltägliche Vorgänge und reagiert auf Vorfälle und Empfehlungen|
+
+1. Wählen Sie auf der Popout-Seite für *Sicherheitsvorgänge* das Optionsfeld **Alle Lese- und Verwaltungsrechte**.
+
+1. Wählen Sie **Anwenden** und anschließend **Weiter**.
+
+1. Wählen Sie auf der Seite **Benutzer und Datenquellen zuweisen** die Schaltfläche **Zuweisung erstellen**.
+
+1. Im Dialog *Zuweisung hinzufügen* geben Sie Folgendes ein:
+
+    |Zuweisungseinstellungen|Wert|
+    |---|---|
+    |Zuweisungsname|**Support der Ebene 1**|
+    |Employees|****sg-IT**|
+    |Datenquellen|**Standardeinstellung beibehalten**|
+
+1. Wählen Sie **Hinzufügen** aus und dann **Weiter**.
 
 1. Klicken Sie auf **Senden** und dann auf **Fertig**, wenn Sie fertig sind.
 
-    >**Hinweis:** Wenn Sie die Fehlermeldung *„Der Benutzer kann diese Aktion nicht ausführen, da sein UserAuthEnforcementMode Rbac ist und diese Aktion eine der folgenden Bedingungen erfordert: RbacV2“* erhalten, klicken Sie auf **OK** und versuchen Sie es erneut.
+<!--- 1. On the *Permissions and roles* page, select the **Activate workloads** button. --->
 
 ### Aufgabe 4: Konfigurieren von Gerätegruppen
 
@@ -116,7 +133,7 @@ In dieser Aufgabe konfigurieren Sie Gerätegruppen, die die Zugriffssteuerung un
     |Allgemeine Einstellung|Wert|
     |---|---|
     |Name der Gerätegruppe|**Regulär**|
-    |Wartungsebene|Vollständig – Automatisches Beheben von Bedrohungen|
+    |Wartungsebene|Vollständige Wartung|
 
 1. Wählen Sie **Weiter** aus.
 
