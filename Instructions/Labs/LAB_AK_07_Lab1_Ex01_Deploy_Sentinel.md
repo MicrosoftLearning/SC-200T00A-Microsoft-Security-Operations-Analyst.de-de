@@ -50,7 +50,7 @@ Bereitstellen von Microsoft Sentinel in einem Arbeitsbereich.
 
 1. Wenn die Bereitstellung des Arbeitsbereichs abgeschlossen ist, wählen Sie im „Brotkrumen“-Menü von Microsoft Azure die Option **Home** aus.
 
-1. **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals zusehen sein. Wählen Sie ihn aus.
+1. **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals zusehen sein. Wählen Sie dies aus.
 
 1. Wählen Sie im oberen Menü **+ Erstellen** aus.
 
@@ -96,7 +96,7 @@ In dieser Aufgabe erstellen Sie eine Watchlist in Microsoft Sentinel.
 
 1. Wählen Sie im „Breadcrumb“-Menü von Microsoft Azure **Home** aus.
 
-1. **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals zusehen sein. Wählen Sie ihn aus.
+1. **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals zusehen sein. Wählen Sie dies aus.
 
 1. Wählen Sie in Microsoft Sentinel unter Konfiguration die Option **Watchlist** aus.
 
