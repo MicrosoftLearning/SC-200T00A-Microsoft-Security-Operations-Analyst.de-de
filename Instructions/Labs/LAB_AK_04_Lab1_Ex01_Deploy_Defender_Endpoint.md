@@ -96,7 +96,9 @@ In dieser Aufgabe konfigurieren Sie Rollen für die Verwendung mit Gerätegruppe
 
 1. Auf der Seite **Berechtigungen** wählen Sie die folgenden Berechtigungen aus:
 
-    |Berechtigungsgruppe|Beschreibung|  |Sicherheitsvorgänge|Verwaltet alltägliche Vorgänge und reagiert auf Vorfälle und Empfehlungen|
+    |Berechtigungsgruppen|Beschreibung|
+    |---|---|
+    |Sicherheitsvorgänge|Verwalten tägliche Vorgänge und reagieren auf Vorfälle und Empfehlungen|
 
 1. Wählen Sie auf der Popout-Seite für *Sicherheitsvorgänge* das Optionsfeld **Alle Lese- und Verwaltungsrechte**.
 
@@ -109,7 +111,7 @@ In dieser Aufgabe konfigurieren Sie Rollen für die Verwendung mit Gerätegruppe
     |Zuweisungseinstellungen|Wert|
     |---|---|
     |Zuweisungsname|**Support der Ebene 1**|
-    |Employees|****sg-IT**|
+    |Employees|**sg-IT**|
     |Datenquellen|**Standardeinstellung beibehalten**|
 
 1. Wählen Sie **Hinzufügen** aus und dann **Weiter**.
