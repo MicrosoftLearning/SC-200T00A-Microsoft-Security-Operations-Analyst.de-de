@@ -127,6 +127,8 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den ersten Angriff der vorhe
 
 In dieser Aufgabe erstellen Sie eine Erkennung für den zweiten Angriff aus der vorherigen Übung.
 
+>**Hinweis:** Wir haben die lokale Sicherheitsrichtlinie auf dem WINServer-Computer so konfiguriert, dass 4732-Ereignisse protokolliert werden. Dies wird unter *Erweiterte Überwachungsrichtlinienkonfiguration > Systemüberwachungsrichtlinien – Lokales Gruppenrichtlinienobjekt > Kontenverwaltung > Überwachung der Sicherheitsgruppenverwaltung: Erfolg und Fehler* konfiguriert.
+
 1. Wählen Sie im Microsoft Sentinel-Portal **Protokolle** im Bereich Allgemein, wenn Sie von dieser Seite aus navigiert haben.
 
 1. **Führen** Sie die folgende KQL-Anweisung aus, um alle Einträge zu identifizieren, die sich auf Administrator*innen beziehen:
@@ -217,7 +219,7 @@ In dieser Aufgabe erstellen Sie eine Erkennung für den zweiten Angriff aus der 
    |Name der Automatisierungsregel|SecurityEvent Benutzer*in zu „Lokale Administratoren“ hinzufügen|
    |Trigger|Bei Erstellung des Vorfalls|
    |Aktionen |Playbook ausführen|
-   |Playbook |PostMessageTeams-OnIncident|
+   |Playbook |Defender_XDR_Ransomware_Playbook_SecOps-Tasks|
 
    >**Hinweis:** Sie haben dem Playbook bereits Berechtigungen zugewiesen, sodass es verfügbar ist.
 
