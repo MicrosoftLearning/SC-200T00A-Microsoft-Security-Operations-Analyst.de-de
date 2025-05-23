@@ -30,11 +30,11 @@ In dieser Aufgabe erstellen Sie einen virtuellen Windows-Computer in Azure.
 
 1. Klicken Sie auf **+ Ressource erstellen**. **Hinweis:** Wenn Sie bereits im Azure-Portal waren, müssen Sie möglicherweise *Microsoft Azure* in der oberen Leiste auswählen, um zum Startmenü zu wechseln.
 
-1. Geben Sie im Feld **Services und Marketplace durchsuchen** *Windows 10* ein und wählen Sie **Microsoft Windows 10** aus der Dropdownliste.
+1. Geben Sie im Feld **Services und Marketplace durchsuchen***Windows 11* ein und wählen Sie **Microsoft Windows 11** aus der Dropdownliste.
 
-1. Wählen Sie das Feld für **Microsoft Window 10** aus.
+1. Wählen Sie das Feld für **Microsoft Window 11** aus.
 
-1. Öffnen Sie die Dropdownliste *Plan* und wählen Sie **Windows 10 Enterprise, Version 22H2**.
+1. Öffnen Sie die Dropdownliste *Plan* und wählen Sie **Windows 11 Enterprise, Version 22H2**.
 
 1. Wählen Sie **Mit vordefinierter Konfiguration starten** aus, um fortzufahren.
 
@@ -48,15 +48,15 @@ In dieser Aufgabe erstellen Sie einen virtuellen Windows-Computer in Azure.
 
 1. Belassen Sie **(US) East US** als Standardwert für *Region*.
 
-1. Scrollen Sie nach unten und überprüfen Sie *Image* für den virtuellen Computer. Wenn es leer ist, wählen Sie **Windows 10 Enterprise, Version 22H2** aus.
+1. Scrollen Sie nach unten und überprüfen Sie *Image* für den virtuellen Computer. Wenn das Feld leer ist, wählen Sie **Windows 11 Enterprise, Version 22H2** aus.
 
-1. Überprüfen Sie die *Größe* des virtuellen Computers. Wenn sie leer ist, wählen Sie **Alle Größen anzeigen** aus, wählen Sie die erste VM-Größe unter *Von Azure-Benutzern am häufigsten verwendet* und danach wählen Sie **Auswählen** aus.
+1. Überprüfen Sie die *Größe* des virtuellen Computers. Wenn das Feld leer ist, wählen Sie **Alle Größen anzeigen**, wählen Sie die erste aufgeführte VM-Größe (D-Serie) und klicken Sie auf **Auswählen**.
 
     >**Hinweis:** Wenn die folgende Meldung angezeigt wird: *Dieses Bild wird für Azure Automanage nicht unterstützt. Um diese Funktion zu deaktivieren, navigieren Sie zur Registerkarte Verwaltung. Andernfalls wählen Sie ein unterstütztes Bild aus.* Navigieren Sie zur Registerkarte Verwaltung und deaktivieren Sie „Automanage“. Der Erstellungsprozess wird dann erfolgreich sein.
 
 1. Scrollen Sie nach unten und geben Sie einen *Benutzernamen* Ihrer Wahl ein. **Hinweis:** Vermeiden Sie reservierte Wörter wie Admin oder Root.
 
-1. Geben Sie ein *Kennwort* Ihrer Wahl ein. **Hinweis:** Es kann einfacher sein, Ihr Mandantenkennwort wiederzuverwenden. Sie finden es auf der Registerkarte Ressourcen.
+1. Geben Sie ein *Kennwort* Ihrer Wahl ein. **Hinweis:** Es kann einfacher sein, Ihr LabUser-Kennwort wiederzuverwenden. Sie befindet sich auf der Registerkarte „Ressourcen“. Möglicherweise müssen Sie es zweimal eingeben.
 
 1. Scrollen Sie bis zum Ende der Seite und aktivieren Sie das Kontrollkästchen unter *Lizenzierung*, um zu bestätigen, dass Sie die entsprechende Lizenz besitzen.
 
