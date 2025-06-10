@@ -77,7 +77,7 @@ In dieser Aufgabe erkunden Sie die Verwendung von Notebooks in Microsoft Sentine
 
 1. Wählen Sie die Schaltfläche **Überprüfen + erstellen** unten auf dem Bildschirm aus. Scrollen Sie dann nach unten, und wählen Sie **Erstellen** aus. Schließen Sie ein eventuell erscheinendes Feedbackfenster. Dies dauert einige Minuten. Nach Abschluss wird eine Benachrichtigung (Glockensymbol) angezeigt, und das *Computeinstanz*-Symbol links wechselt von Blau zu Grün.
 
-1. Vergewissern Sie sich nach der Compute-Erstellung und -Ausführung, dass der zu verwendende Kernel *Python 3.8 – Pytorch und Tensorflow* ist. **Hinweis:** Dies wird rechts in der Befehlsleiste angezeigt.
+1. Sobald der Compute erstellt wurde und läuft, überprüfen Sie, dass der zu verwendende Kernel *Python 3.10 - Pytorch and Tensorflow* lautet. **Hinweis:** Dies wird rechts in der Befehlsleiste angezeigt.
 
 1. Klicken Sie auf die Schaltfläche **Authentifizieren** und warten Sie, bis die Authentifizierung abgeschlossen ist.
 
