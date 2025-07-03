@@ -12,15 +12,20 @@ lab:
 
 Sie sind Security Operations Analyst in einem Unternehmen, das Microsoft Sentinel implementiert. Sie sind für die Analyse von Protokolldaten verantwortlich, um nach schädlichen Aktivitäten zu suchen, Visualisierungen anzuzeigen und Bedrohungen aufzuspüren. Zum Abfragen von Protokolldaten verwenden Sie die Kusto-Abfragesprache (KQL).
 
->**Hinweis:** Gemäß Microsofts *Secure Future Initiative* (SFI) sind alle Informationen, die als *personenbezogene Informationen* (PII) betrachtet werden könnten, wie Standorte, Benutzernamen, IP-Adressen, Ressourcen-IDs usw. wurden aus den LA-Demo-Tabellen wie *SigninLogs* entfernt. Dies kann bei einigen Abfragen zu Meldungen wie *Keine Ergebnisse wurden gefunden* führen.
+>**Wichtig:** Der [LA Demo](https://aka.ms/lademo) Log Analytics-Arbeitsbereich, der für diese Übung verwendet wird, befindet sich in einem Übergang. Wenn Sie nicht auf die Umgebung zugreifen können oder eine Fehlermeldung erhalten, können Sie versuchen, die Abfragen in Ihrem eigenen Azure-Abonnement mit installiertem Microsoft Sentinel auszuführen. Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/?azure-portal=true) erstellen, bevor Sie beginnen.
 
->**Wichtig:** Dieses Lab umfasst das Eingeben vieler KQL-Skripts in Microsoft Sentinel. Die Skripte wurden zu Beginn des Labs in einer Datei zur Verfügung gestellt. Sie können auch hier: <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> heruntergeladen werden
+>**Hinweis:** Wenn Sie sich dafür entscheiden, den Log Analytics-Arbeitsbereich [LA Demo](https://aka.ms/lademo) für diese Übung zu verwenden, müssen Sie einen benutzerdefinierten Zeitbereich im Abfragefenster festlegen. Wir empfehlen, den benutzerdefinierten Zeitbereich auf den 1. April 2025 festzulegen.
+
+<!--- 
+>**Note:** Per Microsoft's *Secure Future Initiative* (SFI), any information that could be considered *Personally Identifiable Information* (PII), such as locations, usernames, IP addresses, resource IDs etc.. have been removed from the LA Demo tables such as *SigninLogs*. This may produce *No results were found* messages for some queries. --->
+
+>**Tipp:** Bei dieser Übung müssen viele KQL-Skripte in Microsoft Sentinel eingegeben werden. Die Skripte wurden zu Beginn des Labs in einer Datei zur Verfügung gestellt. Sie können auch hier: <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> heruntergeladen werden
 
 ### Geschätzte Zeit bis zum Abschluss dieses Labs: 60 Minuten
 
 ### Aufgabe 1: Zugriff auf den KQL-Testbereich
 
-In dieser Aufgabe erhalten Sie Zugriff auf eine Log Analytics-Umgebung, in der Sie das Schreiben von KQL-Anweisungen üben können.
+In dieser Aufgabe greifen Sie auf eine Log Analytics-Umgebung zu, in der Sie das Schreiben von KQL-Anweisungen üben können.
 
   >**Hinweis:** Wenn Sie die Meldung erhalten, dass *keine Ergebnisse für den Standardzeitraum gefunden wurden*, ändern Sie den *Zeitbereich* auf *Letzte 7 Tage*.
 
