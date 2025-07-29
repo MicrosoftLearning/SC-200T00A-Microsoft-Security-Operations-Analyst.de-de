@@ -13,7 +13,8 @@ Die Organisation, für die Sie arbeiten, möchte die Effizienz und die Fähigkei
 In dieser Übung durchlaufen Sie die *erste Ausführungserfahrung* von Microsoft Security Copilot, um Copilot mit einer Sicherheitsrecheneinheit (SCU) auszustatten.
 
 >**Hinweis:** Die Umgebung für diese Übung ist eine Simulation, die aus dem Produkt generiert wurde. Da es sich um eine eingeschränkte Simulation handelt, werden Links auf einer Seite möglicherweise nicht aktiviert, und textbasierte Eingaben, die außerhalb des angegebenen Skripts liegen, werden möglicherweise nicht unterstützt. Es wird eine Popup-Meldung mit dem Hinweis „Diese Funktion ist in der Simulation nicht verfügbar“ angezeigt. Wenn dies der Fall ist, wählen Sie OK und fahren Sie mit den Übungsschritten fort.  
-> :::image type="content" source="../Media/simulation-pop-up-error.png" alt-text="Screenshot des Popup-Bildschirms, der anzeigt, dass diese Funktion in der Simulation nicht verfügbar ist.":::
+
+![Popupfenster mit Fehlermeldung](../Media/simulation-pop-up-error.png)
 
 ### Geschätzte Zeit bis zum Abschluss dieses Labs: 45 Minuten
 
@@ -34,7 +35,7 @@ In dieser Aufgabe werden Sie schrittweise durch den Prozess geführt, um sicherz
 
 Nachdem Sie die Rolle "Benutzerzugriffsadministrator" in Azure zugewiesen haben, können Sie einem Benutzer den erforderlichen Zugriff für die Bereitstellung von SCUs für Copilot zuweisen.  Nur für diese Übung, die Ihnen die einzelnen Schritte zeigen soll, werden Sie sich selbst die erforderlichen Zugriffsrechte zuweisen.  Die folgenden Schritte führen Sie durch den Prozess.
 
-1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Azure-Portal](https://app.highlights.guide/start/6373500f-1f10-4584-a14e-ca0b4aa7399f?link=1&token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**.
+1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Azure-Portal](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&link=1&azure-portal=true)**.
 
 1. Sie beginnen, indem Sie die Access-Verwaltung für Azure-Ressourcen aktivieren. So greifen Sie auf diese Einstellung zu:
     1. Wählen Sie im Azure-Portal **Microsoft Entra ID** aus.
@@ -65,7 +66,7 @@ In dieser Aufgabe durchlaufen Sie die Schritte der Bereitstellung von Kapazität
 
 Für diese Übung stellen Sie die Kapazität über Security Copilot bereit. Wenn Sie Security Copilot zum ersten Mal öffnen, führt ein Assistent Sie durch die Schritte zum Einrichten der Kapazität für Ihre Organisation.
 
-1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Microsoft Security Copilot](https://app.highlights.guide/start/6373500f-1f10-4584-a14e-ca0b4aa7399f?link=0&token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**.
+1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Microsoft Security Copilot](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**.
 
 1. Führen Sie die Schritte im Assistenten aus, und wählen Sie **Erste Schritte** aus.
 1. Auf dieser Seite richten Sie Ihre Sicherheitskapazität ein. Für alle unten aufgeführten Felder können Sie das Informationssymbol auswählen, um weitere Informationen zu erhalten.
@@ -84,7 +85,7 @@ Für diese Übung stellen Sie die Kapazität über Security Copilot bereit. Wenn
 1. Sie können Optionen auswählen, um bei der Verbesserung von Copilot zu helfen. Sie können die Umschaltfläche basierend auf Ihren Einstellungen auswählen.  Wählen Sie **Weiter**.
 
 1. Im Rahmen des anfänglichen Setups bietet Copilot standardmäßig Zugriff als Mitwirkender für alle Benutzer und schließt globale Administratoren und Sicherheitsadministratoren als Copilot-Besitzer ein. In Ihrer Produktionsumgebung können Sie ändern, wer Zugriff auf Copilot hat, nachdem Sie die Ersteinrichtung abgeschlossen haben. Wählen Sie **Weiter**.
-1. Alles erledigt! Wählen Sie **Fertig stellen**aus.
+1. Alles erledigt! Wählen Sie **Fertig stellen** aus.
 1. Schließen Sie die Browserregisterkarte, da in der nächsten Übung ein separater Link zu einer lab-ähnlichen Umgebung verwendet wird.
 
 ### Aufgabe 2: Erkunden der eigenständigen Erfahrung von Microsoft Security Copilot
@@ -101,7 +102,7 @@ Diese Übung dauert ca. **15** Minuten.
 
 In dieser Aufgabe beginnen Sie ihre Erkundung im Startmenü.
 
-1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Microsoft Security Copilot](https://app.highlights.guide/start/2cac767e-42c4-4058-afbb-a9413aac461d?link=0&token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**.
+1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Microsoft Security Copilot](https://app.highlights.guide/start/7608581a-ee3a-4fe0-be03-309a58b78c60?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**.
 
 1. Wählen Sie das **Menü**-Symbol ![Home-Menü-Symbol](../Media/home-menu-icon.png), das manchmal auch als Hamburger-Symbol bezeichnet wird.
 
@@ -212,7 +213,7 @@ Diese Übung dauert ca. **30** Minuten.
 
 #### Unteraufgabe 1: Zusammenfassung der Vorfallzusammenfassung und geleitete Antworten
 
-1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Microsoft Defender-Portal.](https://app.highlights.guide/start/f4f590f6-8937-40f9-91ec-632de546ab98?token=40f793d4-2956-40a4-b11a-6b3d4f92557f&azure-portal=true)**
+1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Microsoft Defender-Portal.](https://app.highlights.guide/start/be8a91c3-3979-4048-ad38-fd38deaf7117?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**
 
 1. Über das Microsoft Defender-Portal:
     1. Erweitern Sie **Untersuchung und Antwort**.
