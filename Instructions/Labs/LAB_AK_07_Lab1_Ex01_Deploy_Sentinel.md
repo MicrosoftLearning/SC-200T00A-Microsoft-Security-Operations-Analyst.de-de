@@ -54,7 +54,7 @@ Bereitstellen von Microsoft Sentinel in einem Arbeitsbereich.
 
 1. Wählen Sie im oberen Menü **+ Erstellen** aus.
 
-1. Wählen Sie den Arbeitsbereich aus, dem Sie Sentinel hinzufügen möchten (erstellt in Aufgabe 1).
+1. Wählen Sie den Arbeitsbereich aus, dem Sie Microsoft Sentinel hinzufügen möchten (erstellt in Aufgabe 1).
 
 1. Wählen Sie **Hinzufügen**.
 
@@ -96,7 +96,9 @@ In dieser Aufgabe erstellen Sie eine Watchlist in Microsoft Sentinel.
 
 1. Wählen Sie im „Breadcrumb“-Menü von Microsoft Azure **Home** aus.
 
-1. **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals zusehen sein. Wählen Sie dies aus.
+1. Die Kachel **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals angezeigt werden. Wählen Sie dies aus.
+
+1. Wählen Sie den Microsoft Sentinel-Arbeitsbereich **defenderWorkspace** aus.
 
 1. Wählen Sie in Microsoft Sentinel unter Konfiguration die Option **Watchlist** aus.
 
@@ -112,9 +114,9 @@ In dieser Aufgabe erstellen Sie eine Watchlist in Microsoft Sentinel.
 
 1. Wählen Sie die Option **Weiter: Quelle >** aus.
 
-1. Wählen Sie **Dateien suchen** unter *Datei hochladen* und suchen Sie die soeben erstellte Datei *HighValue.csv* aus.
+1. Wählen Sie unter *Datei hochladen* die Option **Zu Dateien navigieren** aus, und suchen Sie nach der von Ihnen erstellten Datei *HighValue.csv*.
 
-1. Wählen Sie im Feld *SearchKey* **Hostname** aus.
+1. Wählen Sie im Feld *SearchKey* die Option **Hostname** aus.
 
 1. Wählen Sie **Weiter: Überprüfen und erstellen** aus.
 
@@ -148,7 +150,7 @@ In dieser Aufgabe erstellen Sie einen Indikator in Microsoft Sentinel.
 
 1. Geben Sie für Domain einen Domainnamen ein, zum Beispiel *contoso.com*.
 
-1. Geben Sie für den **Namen** den gleichen Wert wie für die Domain ein.
+1. Geben Sie im Feld **Name** denselben Wert ein, der für die Domäne verwendet wird.
 
 1. Wählen Sie unter *Indikatorentypen* die Option **böswillige Aktivitäten** aus.
 
@@ -181,7 +183,7 @@ In dieser Aufgabe erstellen Sie einen Indikator in Microsoft Sentinel.
 
 ### Aufgabe 6: Konfigurieren der Protokollaufbewahrung
 
-In dieser Aufgabe ändern Sie die Aufbewahrungszeit für die Tabelle SecurityEvent.
+In dieser Aufgabe ändern Sie den Aufbewahrungszeitraum für die SecurityEvent-Tabelle.
 
 1. Wählen Sie in Microsoft Sentinel unter *Konfiguration* die Option **Einstellungen** aus.
 
@@ -197,7 +199,7 @@ In dieser Aufgabe ändern Sie die Aufbewahrungszeit für die Tabelle SecurityEve
 
 1. Ändern Sie den *interaktiven Aufbewahrungszeitraum* auf **90 Tage**.
 
-1. Setzen Sie den *gesamten Aufbewahrungszeitraum* auf **180 Tage** zurück (falls erforderlich). Beachten Sie, dass der *Archivierungszeitraum* jetzt auf *90 Tage* festgelegt ist, da *Azure Monitor* die verbleibenden 90 Tage der Gesamtspeicherdauer automatisch als kostengünstige Langzeitspeicherung behandelt.
+1. Setzen Sie den *gesamten Aufbewahrungszeitraum* auf **180 Tage** zurück (falls erforderlich). Beachten Sie, dass der *Archivierungszeitraum* auf *90 Tage* festgelegt ist, da *Azure Monitor* die verbleibenden 90 Tage der Gesamtaufbewahrungsdauer automatisch als kostengünstige Langzeitaufbewahrung behandelt.
 
 1. Klicken Sie auf **Speichern**, um die Änderungen zu übernehmen.
 
