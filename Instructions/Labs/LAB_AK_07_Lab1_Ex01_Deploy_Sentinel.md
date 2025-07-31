@@ -50,11 +50,11 @@ Bereitstellen von Microsoft Sentinel in einem Arbeitsbereich.
 
 1. Wenn die Bereitstellung des Arbeitsbereichs abgeschlossen ist, wählen Sie im „Brotkrumen“-Menü von Microsoft Azure die Option **Home** aus.
 
-1. **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals zusehen sein. Wählen Sie dies aus.
+1. Die Kachel **Microsoft Sentinel** sollte im Abschnitt *Azure-Dienste* des Portals angezeigt werden. Wählen Sie dies aus.
 
 1. Wählen Sie im oberen Menü **+ Erstellen** aus.
 
-1. Wählen Sie den Arbeitsbereich aus, dem Sie Microsoft Sentinel hinzufügen möchten (erstellt in Aufgabe 1).
+1. Wählen Sie den *defenderWorkspace* aus, den Sie in Aufgabe 1 erstellt haben.
 
 1. Wählen Sie **Hinzufügen**.
 
@@ -62,7 +62,9 @@ Bereitstellen von Microsoft Sentinel in einem Arbeitsbereich.
 
 1. Wählen Sie im „Breadcrumb“-Menü von Microsoft Azure **Home**.
 
-1. Geben Sie in der Suchleiste des Azure-Portals „Protokollanalyse“ ein und wählen Sie den in Aufgabe 1 erstellten Arbeitsbereich aus.
+1. Geben Sie in der Suchleiste des Azure-Portal „Log Analytics“ ein, und wählen Sie im Abschnitt *Dienste* **Log Analytics-Arbeitsbereiche** aus.
+
+1. Wählen Sie den *defenderWorkspace* aus, den Sie in Aufgabe 1 erstellt haben.
 
 1. Erweitern Sie den Abschnitt *Einstellungen* im Navigationsmenü und wählen Sie **Nutzung und geschätzte Kosten**.
 
