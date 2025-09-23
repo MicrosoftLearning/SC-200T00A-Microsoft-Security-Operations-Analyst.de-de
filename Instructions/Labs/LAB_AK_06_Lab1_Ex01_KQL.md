@@ -12,44 +12,67 @@ lab:
 
 Sie sind Security Operations Analyst in einem Unternehmen, das Microsoft Sentinel implementiert. Sie sind für die Analyse von Protokolldaten verantwortlich, um nach schädlichen Aktivitäten zu suchen, Visualisierungen anzuzeigen und Bedrohungen aufzuspüren. Zum Abfragen von Protokolldaten verwenden Sie die Kusto-Abfragesprache (KQL).
 
->**Wichtig:** Der [LA Demo](https://aka.ms/lademo) Log Analytics-Arbeitsbereich, der für diese Übung verwendet wird, befindet sich in einem Übergang. Wenn Sie nicht auf die Umgebung zugreifen können oder eine Fehlermeldung erhalten, können Sie versuchen, die Abfragen in Ihrem eigenen Azure-Abonnement mit installiertem Microsoft Sentinel auszuführen. Wenn Sie kein Azure-Abonnement besitzen, können Sie ein [kostenloses Konto](https://azure.microsoft.com/free/?azure-portal=true) erstellen, bevor Sie beginnen.
+>**Wichtig:** Die Labübungen für den Lernpfad 6 befinden sich in einer *eigenständigen* Umgebung. Wenn Sie die Übung beenden, bevor Sie diese abschließen, müssen Sie alle Konfigurationsschritte erneut ausführen.
 
->**Hinweis:** Wenn Sie sich dafür entscheiden, den Log Analytics-Arbeitsbereich [LA Demo](https://aka.ms/lademo) für diese Übung zu verwenden, müssen Sie einen benutzerdefinierten Zeitbereich im Abfragefenster festlegen. Wir empfehlen, den benutzerdefinierten Zeitbereich auf den 1. April 2025 festzulegen.
+>**Hinweis:** Die vollständige Erstellung dieses Labprofils dauert mindestens 15 Minuten, während Microsoft Sentinel in Ihrem Azure-Abonnement mit dem Namen **defenderWorkspace** vorab bereitgestellt wird.
 
-<!--- 
->**Note:** Per Microsoft's *Secure Future Initiative* (SFI), any information that could be considered *Personally Identifiable Information* (PII), such as locations, usernames, IP addresses, resource IDs etc.. have been removed from the LA Demo tables such as *SigninLogs*. This may produce *No results were found* messages for some queries. --->
-
->**Tipp:** Bei dieser Übung müssen viele KQL-Skripte in Microsoft Sentinel eingegeben werden. Die Skripte wurden zu Beginn des Labs in einer Datei zur Verfügung gestellt. Sie können auch hier: <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> heruntergeladen werden
+<!--- >**Tip:** This lab involves entering many KQL scripts into Microsoft Sentinel. The scripts were provided in a file at the beginning of this lab. An alternate location to download them is:  <https://github.com/MicrosoftLearning/SC-200T00A-Microsoft-Security-Operations-Analyst/tree/master/Allfiles> --->
 
 ### Geschätzte Zeit bis zum Abschluss dieses Labs: 60 Minuten
 
-### Aufgabe 1: Zugriff auf den KQL-Testbereich
+### Aufgabe 1: Vorbereiten des KQL-Testbereichs
 
-In dieser Aufgabe greifen Sie auf eine Log Analytics-Umgebung zu, in der Sie das Schreiben von KQL-Anweisungen üben können.
-
-  >**Hinweis:** Wenn Sie die Meldung erhalten, dass *keine Ergebnisse für den Standardzeitraum gefunden wurden*, ändern Sie den *Zeitbereich* auf *Letzte 7 Tage*.
+Bei dieser Aufgabe installieren Sie die **Microsoft Sentinel-Trainingslablösung** aus dem Marketplace, die einen Log Analytics-Arbeitsbereich mit Beispieldaten auffüllt, mit denen Sie das Schreiben von KQL-Anweisungen üben können.
 
 1. Melden Sie sich beim virtuellen **WIN1-Computer** als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
-1. Gehen Sie im Microsoft Edge-Browser zu <https://aka.ms/lademo> und melden Sie sich mit den Administrator-Anmeldeinformationen an.
+1. Wechseln Sie im Browser Microsoft Edge zu <https://portal.azure.com>, und melden Sie sich mit den Ihnen zugewiesenen Anmeldeinformationen an.
+
+1. Geben Sie in der Azure-Suchleiste **Microsoft Sentinel-Trainingslablösung** ein, und wählen Sie diese aus den Ergebnissen aus.
+
+    >**Hinweis:** Sie befindet sich im Abschnitt „Marketplace“.
+
+1. Wählen Sie auf der Seite **Microsoft Sentinel-Trainingslablösung** die Option **Erstellen** aus, um die Lösung zu installieren.
+
+1. Wählen Sie auf der Seite **Microsoft Sentinel-Trainingslablösung erstellen** die Ressourcengruppe **defender-RG** und den Arbeitsbereich **defenderWorkspace** aus.
+
+1. Wählen Sie **Überprüfung und erstellen** aus, um die Lösung bereitzustellen.
+
+1. Wenn die Überprüfung abgeschlossen ist, wählen Sie **Erstellen** aus, um die Lösung bereitzustellen.
+
+  >**Hinweis:** Es dauert ungefähr zehn Minuten, bis die Lösung vollständig bereitgestellt wurde und alle Ressourcen verfügbar sind.
+
+1. Warten Sie, bis die Bereitstellung abgeschlossen ist, und wählen Sie dann aus der Brotkrümelnavigation die Option **Start** aus.
+
+### Aufgabe 2: Untersuchen des Log Analytics-Arbeitsbereichs
+
+1. Geben Sie in der Suchleiste des Azure-Portals **Microsoft Sentinel** ein, und wählen Sie die Lösung aus den Ergebnissen aus.
+
+1. Wählen Sie auf der Microsoft Sentinel-Seite den Arbeitsbereich **defenderWorkspace** aus.
+
+1. Erweitern Sie in Microsoft Sentinel den Abschnitt **Allgemein**, und wählen Sie im Navigationsmenü die Option **Protokolle** aus.
 
 1. Schließen Sie das Popupfenster „Log Analytics-Video“, das erscheint.
+
+1. Schließen Sie den **Abfragehub**.
+
+1. Verwenden Sie das Dropdownmenü, um von **Einfacher Modus ** zu **KQL-Modus** zu wechseln.
 
 1. Sehen Sie sich die verfügbaren Tabellen und andere Tools an, die im *Schema und im Filterbereich* auf der linken Seite des Bildschirms aufgeführt sind.
 
 1. Geben Sie im Abfrage-Editor die folgende Abfrage ein und wählen Sie die Schaltfläche **„Ausführen“**. Die Abfrageergebnisse sollten im unteren Fenster angezeigt werden.
 
     ```KQL
-    SecurityEvent
+    SecurityEvent_CL
     ```
 
-1. Beachten Sie, dass Sie die maximale Anzahl von Ergebnissen erreicht haben (30.000).
+    >**Hinweis:** Die Tabelle *SecurityEvent_CL* ist eine benutzerdefinierte Tabelle, die von der Microsoft Sentinel-Trainingslablösung erstellt wird. Sie enthält Beispieldaten, die Sie zum Schreiben von KQL-Anweisungen verwenden können.
 
-1. Ändern Sie den *Zeitbereich* im Abfragefenster in **letzte 7 Tage**.
+1. Beachten Sie, dass der Filter auf **Anzeigen: 1.000 Ergebnisse** festgelegt ist.
 
 1. Wählen Sie **>** neben dem ersten Datensatz, um die Informationen für die Zeile zu erweitern.
 
-### Aufgabe 2: Ausführen grundlegender KQL-Anweisungen
+### Aufgabe 3: Ausführen grundlegender KQL-Anweisungen
 
 In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
@@ -57,12 +80,12 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
 1. Die folgende Anweisung demonstriert den Operator **Suchen**, der alle Spalten der Tabelle nach dem Wert durchsucht.
 
-1. Ändern Sie im Abfragefenster den *Zeitbereich* in **Letzte 30 Minuten**.
+1. Für den *Zeitbereich* sollte im Abfragefenster die Standardeinstellung **Letzte 24 Stunden** ausgewählt sein.
 
 1. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    search "location"
+    search "Computer"
     ```
 
     >**Hinweis:** Die Verwendung des *Suchoperators* ohne bestimmte Tabellen oder qualifizierende Klauseln ist weniger effizient als tabellenspezifische und spaltenspezifische Textfilterung.
@@ -70,7 +93,7 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 1. Die folgende Anweisung demonstriert die **Suche** über die in der **in**-Klausel angegebenen Tabellen. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    search in (SecurityEvent,App*) "new"
+    search in (SecurityEvent_CL,App*) "new"
     ```
 
 1. Ändern Sie im Abfragefenster den *Zeitbereich* auf **Letzte 24 Stunden**.
@@ -80,89 +103,89 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
     >**Wichtig:** Sie sollten **Ausführen** wählen, nachdem Sie jede Abfrage aus den folgenden Codeblöcken eingegeben haben.
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d)
     ```
 
     >**Hinweis:** Der *Zeitbereich* zeigt jetzt *In der Abfrage gesetzt* an, da wir mit der Spalte „TimeGenerated“ filtern.
 
     ```KQL
-    SecurityEvent  
-    | where TimeGenerated > ago(7d) and EventID == 4624
+    SecurityEvent_CL  
+    | where TimeGenerated > ago(7d) and EventID_s == 4624
     ```
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d)
-    | where EventID == 4624  
-    | where AccountType =~ "user"
+    | where EventID_s == 4624  
+    | where AccountType_s =~ "user"
     ```
 
     ```KQL
-    SecurityEvent  
-    | where TimeGenerated > ago(7d) and EventID in (4624, 4625)
+    SecurityEvent_CL  
+    | where TimeGenerated > ago(7d) and EventID_s in (4624, 4625)
  
     ```
 
-1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von *Variablen*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von *Variablen*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let timeOffset = 1h;
-    let discardEventId = 4688;
-    SecurityEvent
+    let discardEventID = 4688;
+    SecurityEvent_CL
     | where TimeGenerated > ago(timeOffset*2) and TimeGenerated < ago(timeOffset)
-    | where EventID != discardEventId
+    | where EventID_s != discardEventID
     ```
 
-1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von einer *dynamischen Liste*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von einer *dynamischen Liste*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let suspiciousAccounts = datatable(account: string) [
       @"NA\timadmin", 
       @"NT AUTHORITY\SYSTEM"
     ];
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d)
-    | where Account in (suspiciousAccounts)
+    | where Account_s in (suspiciousAccounts)
     ```
 
     >**Tipp:** Sie können die Abfrage ganz einfach neu formatieren, indem Sie die Ellipse (…) im Abfragefenster markieren und **Abfrage formatieren** wählen.
 
-1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von einer *dynamischen Liste*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von einer *dynamischen Liste*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let LowActivityAccounts =
-        SecurityEvent 
-        | summarize cnt = count() by Account 
+        SecurityEvent_CL 
+        | summarize cnt = count() by Account_s 
         | where cnt < 1000;
-    LowActivityAccounts | where Account contains "sql"
+    LowActivityAccounts | where Account_s contains "sql"
     ```
 
-1. Ändern Sie im Abfragefenster den **Zeitbereich** auf **Letzte Stunde**. Dies schränkt unsere Ergebnisse für die folgenden Anweisungen ein.
+    <!--- 1. Change the **Time range** to **Last hour** in the Query Window. This limits our results for the following statements.
 
-1. Die folgende Anweisung demonstriert den Operator **Extend**-Operator, der eine berechnete Spalte erstellt und der Ergebnismenge hinzufügt. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+    1. The following statement demonstrates the **extend** operator, which creates a calculated column and adds it to the result set. In the Query Window, enter the following statement and select **Run**: 
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process))
     ```
 
-1. Die folgende Anweisung demonstriert den Operator **Order by**, der die Zeilen der Eingabetabelle nach einer oder mehreren Spalten in aufsteigender oder absteigender Reihenfolge sortiert. Der Operator **Order by** ist ein Alias für den Operator **Sortieren nach**. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+    1. The following statement demonstrates the **order by** operator, which sorts the rows of the input table by one or more columns in ascending or descending order. The **order by** operator is an alias to the **sort by** operator. In the Query Window, enter the following statement and select **Run**: 
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc
     ```
 
-1. Die folgenden Anweisungen demonstrieren den **Project**-Operator, der die einzufügenden Spalten in der angegebenen Reihenfolge auswählt. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+    1. The following statements demonstrate the **project** operator, which selects the columns to include in the order specified. In the Query Window, enter the following statement and select **Run**: 
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
@@ -170,168 +193,164 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
     | project Process, StartDir
     ```
 
-1. Die folgenden Anweisungen demonstrieren den **project-away**-Operator, der die Spalten auswählt, die von der Ausgabe ausgeschlossen werden sollen. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+    1. The following statements demonstrate the **project-away** operator, which selects the columns to exclude from the output. In the Query Window, enter the following statement and select **Run**: 
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d) 
     | where ProcessName != "" and Process != "" 
     | extend StartDir =  substring(ProcessName,0, string_size(ProcessName)-string_size(Process)) 
     | order by StartDir desc, Process asc 
-    | project-away ProcessName
+    | project-away ProcessName --->
     ```
 
-### Aufgabe 3: Analysieren von Ergebnissen in KQL mit dem summarize-Operator
+### Task 4: Analyze Results in KQL with the Summarize Operator
 
-In dieser Aufgabe erstellen Sie KQL-Anweisungen zum Aggregieren von Daten. **Summarize** gruppiert die Zeilen gemäß den **by** Group-Spalten und berechnet Aggregationen über jede Gruppe.
+In this task, you'll build KQL statements to aggregate data. **Summarize** groups the rows according to the **by** group columns, and calculates aggregations over each group.
 
-1. Die folgende Anweisung demonstriert die **count()**-Funktion, die eine Zählung der Gruppe zurückgibt. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. The following statement demonstrates the **count()** function, which returns a count of the group. In the Query Window enter the following statement and select **Run**: 
 
     ```KQL
-    SecurityEvent  
-    | where TimeGenerated > ago(7d) and EventID == 4688  
-    | summarize count() by Process, Computer
+    SecurityEvent_CL  
+    | where TimeGenerated > ago(7d) and EventID_s == 4688  
+    | summarize count() by Computer
     ```
 
 1. Die folgende Anweisung demonstriert die **count()**-Funktion, aber in diesem Beispiel benennen wir die Spalte mit *cnt*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
     ```KQL
-    SecurityEvent  
-    | where TimeGenerated > ago(7d) and EventID == 4624  
-    | summarize cnt=count() by AccountType, Computer
+    SecurityEvent_CL  
+    | where TimeGenerated > ago(7d) and EventID_s == 4624  
+    | summarize cnt=count() by AccountType_s, Computer
     ```
 
-1. Die folgende Anweisung demonstriert die **dcount()**-Funktion, die eine ungefähre Anzahl der Gruppenelemente zurückgibt. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die **dcount()**-Funktion, die eine ungefähre Anzahl der Gruppenelemente zurückgibt. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    SecurityEvent  
+    SigninLogs_CL  
     | where TimeGenerated > ago(7d)
     | summarize dcount(IpAddress)
     ```
 
-1. Die folgende Anweisung ist eine Regel zur Erkennung von Fehlern aufgrund eines ungültigen Kennworts bei mehreren Anwendungen für dasselbe Konto. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung ist eine Regel zur Erkennung von Fehlern aufgrund eines ungültigen Kennworts bei mehreren Anwendungen für dasselbe Konto. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let timeframe = 30d;
     let threshold = 1;
-    SigninLogs
+    SigninLogs_CL
     | where TimeGenerated >= ago(timeframe)
     | where ResultDescription has "Invalid password"
-    | summarize applicationCount = dcount(AppDisplayName) by UserPrincipalName, IPAddress
+    | summarize applicationCount = dcount(AppDisplayName_s) by UserPrincipalName_s, IPAddress
     | where applicationCount >= threshold
     ```
 
-1. Die folgende Anweisung demonstriert die **arg_max()** Funktion, die einen oder mehrere Ausdrücke zurückgibt, wenn das Argument maximiert ist. Die folgende Anweisung gibt die neueste Zeile aus der SecurityEvent-Tabelle für den Computer „SQL10.NA.contosohotels.com“ zurück. Mit dem Sternchen (*) in der arg_max-Funktion werden alle Spalten für die Zeile angefordert. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die **arg_max()** Funktion, die einen oder mehrere Ausdrücke zurückgibt, wenn das Argument maximiert ist. Die folgende Anweisung gibt die aktuellste Zeile aus der Tabelle „SecurityEvent_CL“ für den Computer *VictimPC2* zurück. Mit dem Sternchen (*) in der arg_max-Funktion werden alle Spalten für die Zeile angefordert. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    SecurityEvent  
-    | where Computer == "SQL10.na.contosohotels.com"
+    SecurityEvent_CL  
+    | where Computer == "VictimPC2"
     | summarize arg_max(TimeGenerated,*) by Computer
     ```
 
-1. Die folgende Anweisung demonstriert die **arg_min()**-Funktion, die einen oder mehrere Ausdrücke zurückgibt, wenn das Argument minimiert ist. In dieser Anweisung wird das älteste SecurityEvent für den Computer „SQL10.NA.contosohotels.com“ als Resultset zurückgegeben. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die **arg_min()**-Funktion, die einen oder mehrere Ausdrücke zurückgibt, wenn das Argument minimiert ist. In dieser Anweisung wird die älteste Tabelle „SecurityEvent_CL“ für den Computer *VictimPC2* als Resultset zurückgegeben. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    SecurityEvent  
-    | where Computer == "SQL10.na.contosohotels.com"
+    SecurityEvent_CL  
+    | where Computer == "VictimPC2"
     | summarize arg_min(TimeGenerated,*) by Computer
     ```
 
-1. Die folgenden Aussagen zeigen, wie wichtig es ist, die Ergebnisse auf der Grundlage der Reihenfolge der *Pipe* zu verstehen. Geben Sie im Abfragefenster die folgende Abfrage ein, und führen Sie jede Abfrage einzeln aus: 
+1. Die folgenden Aussagen zeigen, wie wichtig es ist, die Ergebnisse auf der Grundlage der Reihenfolge der *Pipe* zu verstehen. Geben Sie im Abfragefenster die folgende Abfrage ein, und führen Sie jede Abfrage einzeln aus:
 
-    1. **Abfrage 1** enthält Konten, deren letzte Aktivität eine Anmeldung war. Zuerst wird die SecurityEvent-Tabelle zusammengefasst, dann wird die neueste Zeile für jedes Konto zurückgegeben. Danach werden nur Zeilen zurückgegeben, deren EventID 4624 (Anmeldung) lautet.
+    1. **Abfrage 1** enthält Konten, deren letzte Aktivität eine Anmeldung war. Zuächst wird die Tabelle „SecurityEvent_CL“ zusammengefasst, und anschließend wird die aktuellste Zeile für jedes Konto zurückgegeben. Daraufhin werden ausschließlich Zeilen mit „EventID_s gleich 4.624 (Anmeldung)“ zurückgegeben.
 
         ```KQL
-        SecurityEvent  
-        | summarize arg_max(TimeGenerated, *) by Account 
-        | where EventID == 4624  
+        SecurityEvent_CL  
+        | summarize arg_max(TimeGenerated, *) by Account_s 
+        | where EventID_s == 4624  
         ```
 
-    1. **Abfrage 2** enthält die neueste Anmeldung für Konten, die angemeldet sind. Die SecurityEvent-Tabelle wird nur nach „EventID = 4624“ gefiltert. Anschließend werden diese Ergebnisse für die neueste Anmeldezeile nach Konto zusammengefasst.
+    1. **Abfrage 2** enthält die neueste Anmeldung für Konten, die angemeldet sind. Die Tabelle „SecurityEvent_CL“ wird so gefiltert, dass lediglich „EventID_s = 4.624“ eingeschlossen wird. Anschließend werden diese Ergebnisse für die neueste Anmeldezeile nach Konto zusammengefasst.
 
         ```KQL
-        SecurityEvent  
-        | where EventID == 4624  
-        | summarize arg_max(TimeGenerated, *) by Account
+        SecurityEvent_CL  
+        | where EventID_s == 4624  
+        | summarize arg_max(TimeGenerated, *) by Account_s
         ```
 
     >**Hinweis:** Sie können auch die „Gesamt-CPU“ und die „Für die verarbeitete Abfrage verwendeten Daten“ überprüfen, indem Sie den Link „Abfragedetails“ unten rechts auswählen und die Daten zwischen den beiden Aussagen vergleichen.
 
-1. Die folgende Anweisung demonstriert die **make_list()**-Funktion, die eine *Liste* mit allen Werten innerhalb der Gruppe zurückgibt. Diese KQL-Abfrage filtert zuerst die EventID mit dem where-Operator. Danach sind die Ergebnisse für jeden Computer ein JSON-Array aus Konten. Das resultierende JSON-Array enthält doppelte Konten. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die **make_list()**-Funktion, die eine *Liste* mit allen Werten innerhalb der Gruppe zurückgibt. Diese KQL-Abfrage filtert zunächst die Tabelle „EventID_s“ mit dem where-Operator. Danach sind die Ergebnisse für jeden Computer ein JSON-Array aus Konten. Das resultierende JSON-Array enthält doppelte Konten. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d)
-    | where EventID == 4624  
-    | summarize make_list(Account) by Computer
+    | where EventID_s == 4624  
+    | summarize make_list(Account_s) by Computer
     ```
 
-1. Die folgende Anweisung demonstriert die **make_set()**-Funktion, die eine Menge von *Distinct*-Werten innerhalb der Gruppe zurückgibt. Diese KQL-Abfrage filtert zuerst die EventID mit dem where-Operator. Danach sind die Ergebnisse für jeden Computer ein JSON-Array aus eindeutigen Konten. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die **make_set()**-Funktion, die eine Menge von *Distinct*-Werten innerhalb der Gruppe zurückgibt. Diese KQL-Abfrage filtert zunächst die Tabelle „EventID_s“ mit dem where-Operator. Danach sind die Ergebnisse für jeden Computer ein JSON-Array aus eindeutigen Konten. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d)
-    | where EventID == 4624  
-    | summarize make_set(Account) by Computer
+    | where EventID_s == 4624  
+    | summarize make_set(Account_s) by Computer
     ```
 
-
-### Aufgabe 4: Erstellen von Visualisierungen in KQL mit dem render-Operator
+### Aufgabe 5: Erstellen von Visualisierungen in KQL mit dem Renderoperator
 
 In dieser Aufgabe werden Sie die Erzeugung von Visualisierungen mit KQL-Anweisungen verwenden.
 
 1. Die folgende Anweisung demonstriert den **render**-Operator (der die Ergebnisse als grafische Ausgabe rendert) anhand einer **Balkendiagramm**-Visualisierung. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d)
-    | summarize count() by Account
+    | summarize count() by Account_s
     | render barchart
     ```
 
 1. Die folgende Anweisung demonstriert den **render**-Operator zur Visualisierung von Ergebnissen mit einer Zeitreihe. Die **bin()**-Funktion rundet alle Werte in einem Zeitrahmen und gruppiert sie. Sie wird häufig in Kombination mit **summarize** verwendet. Wenn Sie einen unregelmäßig verteilten Satz von Werten haben, werden die Werte in einen kleineren Satz mit spezifischen Werten gruppiert. Durch das Kombinieren der generierten Ergebnisse und der Pipe zu einem **render**-Operator mit einem **Zeitdiagrammtyp** erhalten Sie eine Visualisierung der Zeitreihe. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
     ```KQL
-    SecurityEvent  
+    SecurityEvent_CL  
     | where TimeGenerated > ago(7d)
     | summarize count() by bin(TimeGenerated, 1m)
     | render timechart
     ```
 
-
-### Aufgabe 5: Erstellen von Anweisungen mit mehreren Tabellen in KQL
+### Aufgabe 6: Erstellen von Anweisungen mit mehreren Tabellen in KQL
 
 In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
-
->**Wichtig:** Die Einträge in der Tabelle *SigninLogs* wurden entfernt, sodass einige der folgenden Abfragen *derzeit keine Ergebnisse* in der für dieses Lab verwendeten LA-Demo-Umgebung liefern. Die KQL-Abfragen veranschaulichen jedoch wichtige Konzepte und Anwendungsfälle, daher nehmen Sie sich Zeit, diese zu überprüfen.
 
 1. Ändern Sie den **Zeitbereich** in **letzte 7 Tage** im Abfragefenster. Dies schränkt unsere Ergebnisse für die folgenden Anweisungen ein.
 
 1. Die folgende Anweisung demonstriert den **Union**-Operator, der zwei oder mehr Tabellen verwendet und alle ihre Zeilen zurückgibt. Es ist wichtig, dass Sie grundlegendes Verständnis darüber haben, wie Ergebnisse mit dem Pipezeichen übergeben und beeinflusst werden. Geben Sie die folgenden Anweisungen in das Abfragefenster ein und wählen Sie für jede einzelne Abfrage **Ausführen**, um die Ergebnisse anzuzeigen:
 
-    1. **Abfrage 1** gibt alle Zeilen von SecurityEvent und alle Zeilen von SigninLogs zurück.
+    1. **Abfrage 1** gibt alle Zeilen der Tabellen „SecurityEvent_CL“ und „SigninLogs_CL“ zurück.
 
         ```KQL
-        SecurityEvent  
-        | union SigninLogs  
+        SecurityEvent_CL  
+        | union SigninLogs_CL  
         ```
 
-    1. **Abfrage 2** gibt eine Zeile und eine Spalte zurück, nämlich die Anzahl aller Zeilen von SecurityEvent und aller Zeilen von SigninLogs.
+    1. **Abfrage 2** gibt eine Zeile und Spalte zurück, bei der es sich um die Anzahl aller Zeilen der Tabellen „SigninLogs_CL“ und „SecurityEvent_CL“ handelt.
 
         ```KQL
-        SecurityEvent  
-        | union SigninLogs  
+        SecurityEvent_CL  
+        | union SigninLogs_CL  
         | summarize count() 
         ```
 
-    1. **Abfrage 3** gibt alle Zeilen von SecurityEvent und eine (letzte) Zeile für SigninLogs zurück. Die letzte Zeile für „SigninLogs“ enthält die zusammengefasste Anzahl der Zeilen.
+    1. **Abfrage 3** gibt alle Zeilen der Tabelle „SecurityEvent_CL“ und eine (letzte) Zeile der Tabelle „SigninLogs_CL“ zurück. Die letzte Zeile der Tabelle „SigninLogs_CL“ enthält die Gesamtanzahl der Zeilen.
 
         ```KQL
-        SecurityEvent  
-        | union (SigninLogs | summarize count() | project count_)
+        SecurityEvent_CL  
+        | union (SigninLogs_CL | summarize count() | project count_)
         ```
 
-    >**Hinweis:** Die „leere Zeile“ in den Ergebnissen zeigt die zusammengefasste Anzahl von SigninLogs an.
+    >**Hinweis:** In der „leeren Zeile“ der Ergebnisse wird die zusammengefasste Anzahl der Tabelle „SigninLogs_CL“ angezeigt.
 
 1. Die folgende Anweisung demonstriert die Unterstützung des **Union**-Operators zur Vereinigung mehrerer Tabellen mit Platzhaltern. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
@@ -343,23 +362,23 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
 1. Die folgende Anweisung demonstriert den **Join**-Operator, der die Zeilen von zwei Tabellen zu einer neuen Tabelle zusammenführt, indem er die Werte der angegebenen Spalte(n) aus jeder Tabelle abgleicht. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    SecurityEvent  
-    | where EventID == 4624 
-    | summarize LogOnCount=count() by  EventID, Account
-    | project LogOnCount, Account
+    SecurityEvent_CL  
+    | where EventID_s == 4624 
+    | summarize LogOnCount=count() by  EventID_s, Account_s
+    | project LogOnCount, Account_s
     | join kind = inner( 
-     SecurityEvent  
-    | where EventID == 4634 
-    | summarize LogOffCount=count() by  EventID, Account
-    | project LogOffCount, Account
-    ) on Account
+     SecurityEvent_CL  
+    | where EventID_s == 4634 
+    | summarize LogOffCount=count() by  EventID_s, Account_s
+    | project LogOffCount, Account_s
+    ) on Account_s
     ```
 
     >**Wichtig:** Die erste in der Verknüpfung (Join) angegebene Tabelle wird als linke Tabelle betrachtet. Die Tabelle nach dem **join**-Operator ist die rechte Tabelle. Wenn Sie mit Spalten aus den Tabellen arbeiten, werden die Namen $left.Column und $right.Column verwendet, um zu unterscheiden, auf welche Tabellen die Spalten verweisen. Der **join**-Operator unterstützt eine umfangreiche Zahl von Join-Typen (Verknüpfungen): fullouter, inner, innerunique, leftanti, leftantisemi, leftouter, leftsemi, rightanti, rightantisemi, rightouter, rightsemi.
 
 1. Sie können den **Zeitbereich** im Abfragefenster auf **Letzte 7 Tage** belassen.
 
-### Aufgabe 6: Arbeiten mit Zeichenfolgendaten in KQL
+### Aufgabe 7: Arbeiten mit Zeichenfolgendaten in KQL
 
 In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfolgenfeldern mit KQL-Anweisungen.
 
@@ -369,18 +388,18 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
     print extract("x=([0-9.]+)", 1, "hello x=45.6|wo") == "45.6"
     ```
 
-1. Die folgenden Anweisungen verwenden die **extract**-Funktion, um den Kontonamen aus dem Feld „Account“ der Tabelle „SecurityEvent“ auszulesen. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgenden Anweisungen verwenden die Funktion zum **Extrahieren**, um aus dem Feld „Account_s“ der Tabelle „SecurityEvent_CL“ den Namen „Account_s“ abzurufen. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
 
     ```KQL
-    SecurityEvent  
-    | where EventID == 4672 and AccountType == 'User' 
-    | extend Account_Name = extract(@"^(.*\\)?([^@]*)(@.*)?$", 2, tolower(Account))
+    SecurityEvent_CL  
+    | where EventID_s == 4672 and AccountType_s == 'User' 
+    | extend Account_Name = extract(@"^(.*\\)?([^@]*)(@.*)?$", 2, tolower(Account_s))
     | summarize LoginCount = count() by Account_Name
     | where Account_Name != "" 
     | where LoginCount < 10
     ```
 
-1. Die folgende Anweisung demonstriert den **Parse**-Operator, der einen Zeichenfolgenausdruck auswertet und seinen Wert in eine oder mehrere berechnete Spalten umwandelt. Ermöglicht die Strukturierung unstrukturierter Daten. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert den **Parse**-Operator, der einen Zeichenfolgenausdruck auswertet und seinen Wert in eine oder mehrere berechnete Spalten umwandelt. Ermöglicht die Strukturierung unstrukturierter Daten. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let Traces = datatable(EventText:string)
@@ -396,33 +415,40 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
     | project resourceName, totalSlices, sliceNumber, lockTime, releaseTime, previousLockTime
     ```
 
-    >**Wichtig:** Die folgenden Abfragen *liefern derzeit keine Ergebnisse* in der für dieses Lab verwendeten La-Demo-Umgebung. Es wurden Einträge in der Tabelle *SigninLogs* entfernt. Die KQL-Abfragen veranschaulichen jedoch wichtige Konzepte und Anwendungsfälle, daher nehmen Sie sich Zeit, diese zu überprüfen.
-
-1. Die folgende Anweisung demonstriert die Arbeit mit **dynamischen** Feldern, die etwas Besonderes sind, da sie jeden Wert anderer Datentypen annehmen können. In diesem Beispiel ist das Feld „DeviceDetail“ aus der Tabelle SigninLogs vom Typ **dynamisch**. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+    <!--- 1. The following statement demonstrates working with **dynamic** fields, which are special since they can take on any value of other data types. In this example, The DeviceDetail_s field from the SigninLogs_CL table is of type **dynamic**. In the Query Window, enter the following statement and select **Run**:
 
     ```KQL
-    SigninLogs 
+    SigninLogs
     | extend OS = DeviceDetail.operatingSystem
     ```
 
-1. Das folgende Beispiel zeigt, wie gepackte Felder für SigninLogs aufgeteilt werden können. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
+     1. The following example shows how to break out packed fields for SigninLogs_CL. In the Query Window, enter the following statement and select **Run**:
 
     ```KQL
-    SigninLogs 
+    SigninLogs_CL 
     | extend OS = DeviceDetail.operatingSystem, Browser = DeviceDetail.browser 
     | extend StatusCode = tostring(Status.errorCode), StatusDetails = tostring(Status.additionalDetails) 
     | extend Date = startofday(TimeGenerated) 
     | summarize count() by Date, Identity, UserDisplayName, UserPrincipalName, IPAddress, ResultType, ResultDescription, StatusCode, StatusDetails 
     | sort by Date
+
+    SigninLogs_CL 
+    | extend OS = todynamic(DeviceDetail_s)
+    | where OS = DeviceDetail_s.operatingSystem, Browser = DeviceDetail_s.browser
+    | extend StatusCode = tostring(Status_s.errorCode), StatusDetails = tostring(Status_s.additionalDetails) 
+    | extend Date = startofday(TimeGenerated) 
+    | summarize count() by Date, UserDisplayName_s, UserPrincipalName_s, IPAddress, ResultType, ResultDescription, StatusCode, StatusDetails, OS, Browser 
+    | sort by Date
+
     ```
 
-    >**Wichtig:** Obwohl der dynamische Typ ähnlich wie JSON aussieht, kann er Werte enthalten, die das JSON-Modell nicht darstellt, weil sie in JSON nicht existieren. Daher werden bei der Serialisierung dynamischer Werte in eine JSON-Darstellung Werte, die JSON nicht darstellen kann, in Zeichenfolgenwerten serialisiert. 
+    >**Important:** Although the dynamic type appears JSON-like, it can hold values that the JSON model does not represent because they do not exist in JSON. Therefore, in serializing dynamic values into a JSON representation, values that JSON cannot represent are serialized into string values. --->
 
 1. Die folgenden Anweisungen demonstrieren Operatoren zur Manipulation von JSON, die in Zeichenfolgenfeldern gespeichert sind. Viele Protokolle übertragen Daten im JSON-Format, weshalb Sie wissen müssen, wie Sie JSON-Daten in abfragbare Felder umwandeln können. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    SigninLogs 
-    | extend AuthDetails =  parse_json(AuthenticationDetails) 
+    SigninLogs_CL 
+    | extend AuthDetails =  parse_json(AuthenticationDetails_s) 
     | extend AuthMethod =  AuthDetails[0].authenticationMethod 
     | extend AuthResult = AuthDetails[0].["authenticationStepResultDetail"] 
     | project AuthMethod, AuthResult, AuthDetails 
@@ -431,8 +457,8 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
 1. Die folgende Anweisung demonstriert den **mv-expand**-Operator, der dynamische Arrays in Zeilen umwandelt (mehrwertige Erweiterung).
 
     ```KQL
-    SigninLogs 
-    | mv-expand AuthDetails = parse_json(AuthenticationDetails) 
+    SigninLogs_CL 
+    | mv-expand AuthDetails = parse_json(AuthenticationDetails_s) 
     | project AuthDetails
     ```
 
@@ -441,14 +467,12 @@ In dieser Aufgabe arbeiten Sie mit strukturierten und unstrukturierten Zeichenfo
 1. Die folgende Anweisung demonstriert den **mv-apply**-Operator, der eine Unterabfrage auf jeden Datensatz anwendet und die Vereinigung der Ergebnisse aller Unterabfragen zurückgibt.
 
     ```KQL
-    SigninLogs 
-    | mv-apply AuthDetails = parse_json(AuthenticationDetails) on
+    SigninLogs_CL 
+    | mv-apply AuthDetails = parse_json(AuthenticationDetails_s) on
     (where AuthDetails.authenticationMethod == "Password")
     ```
 
 1. Eine **Funktion** ist eine Protokollabfrage, die in anderen Protokollabfragen mit dem gespeicherten Namen als Befehl verwendet werden kann. Um eine **Funktion** zu erstellen, klicken Sie nach der Ausführung Ihrer Abfrage auf die Schaltfläche **Speichern** und wählen dann **Speichern als Funktion** aus der Dropdown-Liste. Geben Sie den gewünschten Namen (zum Beispiel: *PrivLogins*) in das Feld **Funktionsname** ein und geben Sie eine **Legacy-Kategorie** ein (zum Beispiel: *Allgemein*) und wählen Sie **Speichern** aus. Die Funktion wird in KQL unter dem Alias der Funktion verfügbar sein:
-
-    >**Hinweis:** In der Lademo-Umgebung, die für diese Übung verwendet wurde, ist dies nicht möglich, da Ihr Konto nur über Leserechte verfügt, aber es ist ein wichtiges Konzept, um Ihre Abfragen effizienter und effektiver zu gestalten. 
 
     ```KQL
     PrivLogins  
