@@ -6,7 +6,7 @@
 
 In dieser Aufgabe führen Sie zwei simulierte Angriffe aus, um die Funktionen von Microsoft Defender for Endpoint zu erkunden.
 
-1. Wenn Sie noch nicht im Microsoft Defender XDR-Portal in Ihrem Microsoft Edge-Browser sind, navigieren Sie unter https://security.microsoft.com) zu Microsoft Defender for XDR und melden sich als Administrator*in für Ihren Mandanten an.
+1. Wenn Sie sich in Ihrem Browser noch nicht im Microsoft Defender XDR-Portal befinden, wechseln Sie unter (<https://security.microsoft.com>) zu Microsoft Defender XDR, während Sie als Admin für Ihren Mandanten angemeldet sind.
 
 Sie führen die *simulierten* Angriffe mit *PowerShell* auf *WIN1* aus, um die Funktionen von Microsoft Defender for Endpoint zu erkunden.
 

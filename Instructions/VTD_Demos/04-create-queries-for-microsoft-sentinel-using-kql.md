@@ -1,16 +1,22 @@
 # Modul 4: Erstellen von Abfragen für Microsoft Sentinel mithilfe von Kusto Query Language (KQL)
 
-**Hinweis:** Der erfolgreiche Abschluss dieser Demo hängt davon ab, alle Schritte im  [Dokument](00-prerequisites.md) „Voraussetzungen“ abzuschließen. 
+<!--- **Note** Successful completion of this demo depends on completing all of the steps in the  [Pre-requisites document](00-prerequisites.md). --->
+
+>**Wichtig:** Es wird empfohlen, die Abfragen für dieses Lab in der Demoumgebung Zava (ehemals Alpine Ski House) durchzuführen. Die Alternative besteht darin, die Labumgebung SC-200 mit dem Lab 06: [Erstellen von Abfragen für Microsoft Sentinel mithilfe der Kusto-Abfragesprache (Kusto Query Language, KQL)](https://microsoftlearning.github.io/SC-200T00A-Microsoft-Security-Operations-Analyst/Instructions/Labs/LAB_AK_06_Lab1_Ex01_KQL.html/) zu verwenden. Letzteres erfordert 30 Minuten Bereitstellungszeit.
 
 ## Zugriff auf KQL-Testbereich
 
-In dieser Aufgabe erhalten Sie Zugriff auf eine Log Analytics-Umgebung, in der Sie das Schreiben von KQL-Anweisungen üben können.
+Bei dieser Aufgabe greifen Sie auf eine Microsoft Sentinel Log Analytics-Umgebung zu, in der Sie das Schreiben von KQL-Anweisungen üben können.
 
 1. Melden Sie sich beim virtuellen Computer WIN1 als Administrator mit dem Kennwort **Pa55w.rd** an.  
 
-1. Navigieren Sie im Browser zu https://aka.ms/lademo. Melden Sie sich mit den Anmeldeinformationen des MOD-Administrators an 
+1. Navigieren Sie im Browser zu <https://security.microsoft.com>. Melden Sie sich mit den Anmeldeinformationen der Zava- oder Alpine Ski House-Umgebung an.
 
-1. Erkunden Sie die verfügbaren Tabellen auf der Registerkarte auf der linken Seite des Bildschirms.
+1. Erweitern Sie im linken Navigationsbereich den Abschnitt **Untersuchung und Antwort**.
+
+1. Erweitern Sie den Abschnitt **Suche nach Cyberbedrohungen**, und wählen Sie **Erweiterte Bedrohungssuche** aus.
+
+1. Untersuchen Sie die verfügbaren Tabellen, die auf der linken Seite des Bildschirms auf der Registerkarte *Schema* aufgeführt sind. Beachten Sie die Tabellen *Microsoft Sentinel* und *Sicherheit und Überwachung*.
 
 1. Geben Sie im Abfrage-Editor die folgende Abfrage ein und wählen Sie die Schaltfläche „Ausführen“.  Die Abfrageergebnisse sollten im unteren Fenster angezeigt werden.
 
@@ -25,6 +31,8 @@ In dieser Aufgabe erhalten Sie Zugriff auf eine Log Analytics-Umgebung, in der S
 In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 
 1. Der `search`-Operator ermöglicht die Suche mit mehreren Tabellen und Spalten. In der folgenden Abfrage wird die Verwendung des `search`-Operators demonstriert.
+
+    > **Hinweis:** Der Operator `search` ist ressourcenintensiv. Schränken Sie den *Zeitraum* auf *Letzte 3 Stunden* ein, und verwenden Sie *Limit | 100*.
 
 ```KQL
 search "err" 
