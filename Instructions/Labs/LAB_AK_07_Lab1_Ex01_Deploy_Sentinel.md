@@ -199,9 +199,9 @@ In dieser Aufgabe ändern Sie den Aufbewahrungszeitraum für die SecurityEvent-T
 
 1. Wählen Sie **Tabelle verwalten** aus.
 
-1. Ändern Sie den *interaktiven Aufbewahrungszeitraum* auf **90 Tage**.
+1. Ändern Sie die *Analytics-Aufbewahrung* auf **90 Tage**.
 
-1. Setzen Sie den *gesamten Aufbewahrungszeitraum* auf **180 Tage** zurück (falls erforderlich). Beachten Sie, dass der *Archivierungszeitraum* auf *90 Tage* festgelegt ist, da *Azure Monitor* die verbleibenden 90 Tage der Gesamtaufbewahrungsdauer automatisch als kostengünstige Langzeitaufbewahrung behandelt.
+1. Setzen Sie den *gesamten Aufbewahrungszeitraum* auf **180 Tage** zurück (falls erforderlich). Beachten Sie, dass die *Langzeitaufbewahrung* auf *90 Tage* festgelegt ist, da *Azure Monitor* die verbleibenden 90 Tage der Gesamtaufbewahrungsdauer automatisch als kostengünstige Langzeitaufbewahrung behandelt.
 
 1. Klicken Sie auf **Speichern**, um die Änderungen zu übernehmen.
 
