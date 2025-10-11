@@ -35,7 +35,11 @@ In dieser Aufgabe werden Sie schrittweise durch den Prozess geführt, um sicherz
 
 Nachdem Sie die Rolle "Benutzerzugriffsadministrator" in Azure zugewiesen haben, können Sie einem Benutzer den erforderlichen Zugriff für die Bereitstellung von SCUs für Copilot zuweisen.  Nur für diese Übung, die Ihnen die einzelnen Schritte zeigen soll, werden Sie sich selbst die erforderlichen Zugriffsrechte zuweisen.  Die folgenden Schritte führen Sie durch den Prozess.
 
-1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Azure-Portal](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&link=1&azure-portal=true)**.
+1. Stellen Sie sicher, dass die Rolle der Administratorin bzw. des Administrators für Benutzerzugriff Ihrem Konto zugewiesen ist.
+
+1. Öffnen Sie die simulierte Umgebung, indem Sie diesen Link auswählen: <https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&link=1&azure-portal=true>.
+
+    <!--- Open the simulated environment by selecting this link: **[Azure portal](https://app.highlights.guide/start/6d7270b9-7187-456a-ac16-97bc227d5c27?token=045faae1-1078-4eac-bf56-e12472eddaf9&link=1&azure-portal=true)**.--->
 
 1. Sie beginnen, indem Sie die Access-Verwaltung für Azure-Ressourcen aktivieren. So greifen Sie auf diese Einstellung zu:
     1. Wählen Sie im Azure-Portal **Microsoft Entra ID** aus.
@@ -215,7 +219,7 @@ Diese Übung dauert ca. **30** Minuten.
 
 1. Öffnen Sie die simulierte Umgebung, indem Sie den folgenden Link auswählen: **[Microsoft Defender-Portal.](https://app.highlights.guide/start/be8a91c3-3979-4048-ad38-fd38deaf7117?token=045faae1-1078-4eac-bf56-e12472eddaf9&azure-portal=true)**
 
-1. Über das Microsoft Defender-Portal:
+1. Über das Microsoft Defender-Portal:
     1. Erweitern Sie **Untersuchung und Antwort**.
     1. Erweitern Sie **Vorfälle und Warnungen**.
     1. Wählen Sie **Vorfälle** aus.
@@ -249,7 +253,7 @@ Diese Übung dauert ca. **30** Minuten.
 
 1. Konzentrieren Sie sich nun auf den Warnungsverlauf. Klicken Sie auf das Symbol **Maximieren ![Maximieren-Symbol](../Media/maximize-icon.png)**, das sich im Hauptbereich der Warnung direkt unter der Karte mit der Bezeichnung „partycity\jonaw“ befindet, um eine bessere Ansicht der Prozess-Baumstruktur zu erhalten. Über die maximierte Ansicht erhalten Sie eine deutlichere Übersicht darüber, wie dieser Vorfall abgelaufen ist. Viele Elemente deuten darauf hin, dass mit „powershell.exe“ ein Skript ausgeführt wurde. Da der Benutzer Jonathan Wolcott ein Kundenbetreuer ist, kann davon ausgegangen werden, dass dieser Benutzer nicht sehr häufig PowerShell-Skripts ausführt.
 
-1. Erweitern Sie die erste Instanz von **powershell.exe execute a script** (Skriptausführung mit powershell.exe) mit dem Zeitstempel „4:57:11 AM“. Copilot ist in der Lage, Skripts zu analysieren. Wählen Sie **Analysieren** aus.
+1. Erweitern Sie die erste Instanz von **powershell.exe execute a script** (Skriptausführung mit powershell.exe) mit dem Zeitstempel „4:57:11 AM“. Copilot ist in der Lage, Skripts zu analysieren. Klicken Sie auf **Analysieren**.
     1. Copilot generiert eine Analyse des Skripts und weist darauf hin, dass es sich um einen Phishingversuch handeln könnte, oder dass es verwendet wurde, um einen webbasierten Exploit bereitzustellen.
     1. Wählen Sie **Code anzeigen** aus. Der Code enthält eine URL, die unschädlich gemacht wurde.
 

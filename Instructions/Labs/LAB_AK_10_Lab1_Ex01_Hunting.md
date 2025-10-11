@@ -321,7 +321,9 @@ In dieser Aufgabe erstellen Sie anstelle eines LiveStreams eine NRT-Analyseabfra
 
 1. Wählen Sie **Test mit aktuellen Daten** unter *Ergebnissimulation* aus. Beachten Sie die erwartete Anzahl von *Warnungen pro Tag*.
 
-1. Wählen Sie unter *Entitätszuordnung* Folgendes aus:
+1. Wählen Sie im Abschnitt *Warnungserweiterung* die Option *Entitätszuordnung >* **+ Neue Entität hinzufügen** aus.
+
+1. Wählen Sie in der *Entität* Folgendes aus:
 
     - In der Dropdownliste *Entitätstyp* wählen Sie **Host** aus.
     - In der Dropdownliste *Bezeichner* wählen Sie **HostName** aus.
