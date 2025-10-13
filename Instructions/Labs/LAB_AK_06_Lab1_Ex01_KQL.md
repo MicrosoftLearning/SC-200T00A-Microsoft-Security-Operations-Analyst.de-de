@@ -130,10 +130,10 @@ In dieser Aufgabe werden Sie grundlegende KQL-Anweisungen erstellen.
 1. Die folgende Anweisung demonstriert die Verwendung der **let**-Anweisung zur Deklaration von *Variablen*. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    let timeOffset = 1h;
+    let timeOffset = 10m;
     let discardEventID = 4688;
     SecurityEvent_CL
-    | where TimeGenerated > ago(timeOffset*2) and TimeGenerated < ago(timeOffset)
+    | where TimeGenerated > ago(timeOffset*60) and TimeGenerated < ago(timeOffset)
     | where EventID_s != discardEventID
     ```
 
@@ -189,14 +189,14 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen zum Aggregieren von Daten. **Sum
     | summarize dcount(IpAddress)
     ```
 
-1. Die folgende Anweisung ist eine Regel zur Erkennung von Fehlern aufgrund eines ungültigen Kennworts bei mehreren Anwendungen für dasselbe Konto. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
+1. Die folgende Anweisung ist eine Regel zur Erkennung der Fehler *Benutzerkonto ist deaktiviert* in mehreren Anwendungen für dasselbe Konto. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
     let timeframe = 30d;
     let threshold = 1;
     SigninLogs_CL
     | where TimeGenerated >= ago(timeframe)
-    | where ResultDescription has "Invalid password"
+    | where ResultDescription has "User account is disabled"
     | summarize applicationCount = dcount(AppDisplayName_s) by UserPrincipalName_s, IPAddress
     | where applicationCount >= threshold
     ```
@@ -309,10 +309,10 @@ In dieser Aufgabe erstellen Sie KQL-Anweisungen mit mehreren Tabellen.
 
     >**Hinweis:** In der „leeren Zeile“ der Ergebnisse wird die zusammengefasste Anzahl der Tabelle „SigninLogs_CL“ angezeigt.
 
-1. Die folgende Anweisung demonstriert die Unterstützung des **Union**-Operators zur Vereinigung mehrerer Tabellen mit Platzhaltern. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus: 
+1. Die folgende Anweisung demonstriert die Unterstützung des **Union**-Operators zur Vereinigung mehrerer Tabellen mit Platzhaltern. Geben Sie im Abfragefenster die folgende Anweisung ein, und wählen Sie dann **Ausführen** aus:
 
     ```KQL
-    union App*  
+    union Sec*  
     | summarize count() by Type
     ```
 
